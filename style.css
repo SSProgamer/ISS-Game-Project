@@ -1,0 +1,44 @@
+w.wow {
+  width: 100px;
+}
+body {
+  background: grey;
+}
+h1 {
+  color: #ffd800;
+}
+h2{
+  font-family: sans-serif;
+  color: #ffd800;
+}
+#room1{
+  width: 100px;
+  height: 100px;
+  background: black;
+  position: absolute;
+  top: 10px;
+  z-index: 0;
+}
+#room2{
+  width: 100px;
+  height: 100px;
+  background: white;
+  position: absolute;
+  z-index: -10;
+}
+#content{
+  position: absolute;  
+  height:150px;
+  right: 0px;
+  left: 0px;
+  background:khaki;
+}
+sussy{
+  position: fixed;
+  display: block;
+  top: 30%;
+  left: 30%;
+  height:100px;
+  width:100px;
+  background: red;
+}
