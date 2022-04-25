@@ -1,4 +1,4 @@
-w.wow {
+qw.wow {
   width: 100px;
 }
 body {
@@ -16,15 +16,14 @@ h2{
   height: 100px;
   background: black;
   position: absolute;
-  top: 10px;
-  z-index: 0;
+  z-index: 2;
 }
 #room2{
   width: 100px;
   height: 100px;
   background: white;
   position: absolute;
-  z-index: -10;
+  z-index: 1;
 }
 #content{
   position: absolute;  
