@@ -1,35 +1,111 @@
-qw.wow {
+:root{
+  --bgcolor: #010a2d;
+  --labelcolor: #2d3585;
+  --text: #784284;
+  --button: #1a2653;
+}
+
+.wow {
   width: 100px;
 }
 body {
-  background: grey;
+  background-color: var(--bgcolor);
 }
 h1 {
-  color: #ffd800;
+  background-color: black;
+  color: white;
+}
+
+.roomname{
+  position: absolute;
+  padding: 2vh;
+  right: 10vh;
+  top: 0px;
+  background-color: var(--bgcolor);
+  border-radius: 16px;
+  border: solid 4px white;
+}
+.clock{
+  position: absolute;
+  padding: 2vh;
+  left: 10vh;
+  top: 0px;
+  background-color: var(--bgcolor);
+  border-radius: 16px;
+  border: solid 4px white;
 }
 h2{
   font-family: sans-serif;
-  color: #ffd800;
+  color: var(--text);
 }
-#room1{
-  width: 100px;
-  height: 100px;
+.room{
+  margin: 6vw 20vw;
+  padding: 10vh;
   background: black;
   position: absolute;
-  z-index: 2;
+  width: 50vw;
+  height: 50vh;
+/*   display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  
 }
-#room2{
-  width: 100px;
-  height: 100px;
-  background: white;
+.bed{
+  background-image: url("images\\Roomresting.jpg");
+  z-index:3;
+  
+}
+.gym{
+  background-image: url("images\\Gym.png");
+  z-index:2;
+}
+.cafetaria{
+  background-image: url("images\\Cafetaria.png");
+  z-index:2;
+}
+.lab{
+  background-image: url("images\\lab.png");
+  z-index:2;
+}
+
+button{
+  background-color: var(--button);
+  margin: 1vh;
   position: absolute;
-  z-index: 1;
+  width: 128px;
+  height: 64px;
+  color: white;
+  font-size: 16px;
+  border-radius: 16px;
+  border: solid 4px white;
 }
+button:hover{
+  cursor: pointer;
+}
+.right{
+  top: 50%;
+  right: 0%;
+}
+.left{
+  top: 50%;
+  left: 0%;
+}
+.top{
+  top: 0%;
+  right: 50%;
+}
+.bottom{
+  bottom: 0%;
+  right: 50%;
+}
+
 #content{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   position: absolute;  
   height:150px;
-  right: 0px;
-  left: 0px;
   background:khaki;
 }
 sussy{

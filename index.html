@@ -4,26 +4,41 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>ISS</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="another_style.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-  <h1>ทดลอง</h1>
-  Just Click go bruh
   <div id="content">
-    <div id="room1">
-      <button onclick="room1.style.zIndex = `1`">กดดิ๊</button>
+    
+    <div class="room bed">
+      <h1 class="roomname">Bedroom</h1><br>
+      <h1 class="clock">9.00am</h1>
+      <button class="right" onclick="cafetaria.style.zIndex = `5`;bedroom.style.zIndex = `1`">Cafetaria</button>
+      <button class="left" onclick="gym.style.zIndex = `5`;bedroom.style.zIndex = `1`">Gym</button>
+      <button class="top" onclick="lab.style.zIndex = `5`;bedroom.style.zIndex = `1`">Lab</button>
     </div>
-    <div id="room2">
-      <button onclick="room1.style.zIndex = `2`">กดดิ๊ ภาค 2</button>
+    
+    <div class="room gym">
+      <h1 class="roomname">Gym</h1>
+      <h1 class="clock">12.00am</h1>
+      <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`">Bedroom</button>
     </div>
+
+    <div class="room cafetaria">
+      <h1 class="roomname">Cafetaria</h1>
+      <h1 class="clock">15.00am</h1>
+      <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
+    </div>
+
+    <div class="room lab">
+      <h1 class="roomname">Laboratory</h1>
+      <h1 class="clock">18.00am</h1>
+      <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`">Bedroom</button>
+    </div>
+    
   </div>
-  <sussy>
-      
-  </sussy>
   <script src="script.js"></script>
 </body>
-
 </html>
