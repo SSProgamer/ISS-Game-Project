@@ -19,7 +19,7 @@ h1 {
 .roomname{
   position: absolute;
   padding: 2vh;
-  right: 10vh;
+  right: 2vh;
   top: 0px;
   background-color: var(--bgcolor);
   border-radius: 16px;
@@ -28,7 +28,7 @@ h1 {
 .clock{
   position: absolute;
   padding: 2vh;
-  left: 10vh;
+  left: 2vh;
   top: 0px;
   background-color: var(--bgcolor);
   border-radius: 16px;
@@ -52,21 +52,54 @@ h2{
   
 }
 .bed{
-  background-image: url("images\\Roomresting.jpg");
+ /* background-image: url("images\\Roomresting.jpg");*/
   z-index:3;
   
 }
 .gym{
-  background-image: url("images\\Gym.png");
+  /*background-image: url("images\\Gym.png");*/
   z-index:2;
 }
 .cafetaria{
-  background-image: url("images\\Cafetaria.png");
+ /* background-image: url("images\\Cafetaria.png");*/
   z-index:2;
 }
 .lab{
-  background-image: url("images\\lab.png");
+ /* background-image: url("images\\lab.png"); */
   z-index:2;
+}
+
+.minigame{
+  margin: 6vw 20vw;
+  padding: 10vh;
+  background: white;
+  position: absolute;
+  width: 50vw;
+  height: 50vh;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  z-index: -5;
+}
+
+.cycling{
+background: grey;
+
+}
+.breakfast{
+  background: grey;
+}
+.lunch{
+  background: grey;
+}
+.dinner{
+  background: grey;
+}
+.robot{
+  background: grey;
+}
+.plant{
+  background: grey;
 }
 
 button{
@@ -93,11 +126,50 @@ button:hover{
 }
 .top{
   top: 0%;
-  right: 50%;
+  right: 45%;
 }
 .bottom{
   bottom: 0%;
-  right: 50%;
+  right: 45%;
+}
+
+#cycling{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+}
+
+#breakfast{
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+#lunch{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 45%;
+}
+#dinner{
+  margin: 0;
+  position: absolute;
+  top: 70%;
+  left: 45%;
+}
+
+#robot{
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+}
+#plant{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 45%;
 }
 
 #content{
@@ -117,3 +189,76 @@ sussy{
   width:100px;
   background: red;
 }
+.center-content {
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%; }
+  .center-content:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+    /* Adjusts for spacing */ }
+  .center-content > * {
+    display: inline-block;
+    vertical-align: middle; }
+
+.wheel {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  background-color: lightgray;
+  position: relative; }
+  .wheel .handle {
+    -webkit-tap-highlight-color: transparent;
+    background-color: dodgerblue;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    height: 20px;
+    left: 50%;
+    margin: -10px 0 0 -10px;
+    outline: 0;
+    position: absolute;
+    top: 10px;
+    width: 20px; }
+  .wheel .center {
+    text-align: center;
+    white-space: nowrap;
+    background-color: white;
+    border-radius: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    height: 160px;
+    left: 20px;
+    position: relative;
+    top: 20px;
+    width: 160px; }
+    .wheel .center:before {
+      content: "";
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+      /* Adjusts for spacing */ }
+    .wheel .center > * {
+      display: inline-block;
+      vertical-align: middle; }
+  .wheel .progress {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .wheel .progress:after {
+      border-radius: 100px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) inset;
+      content: "";
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+  .wheel .progress-fill {
+    fill: #9ecfff; }

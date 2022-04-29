@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+7<!DOCTYPE html>
+
 <html>
 
 <head>
@@ -7,6 +8,10 @@
   <title>ISS</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="another_style.css" rel="stylesheet" type="text/css"/>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="script.js"></script>
+  
 </head>
 
 <body>
@@ -24,21 +29,96 @@
       <h1 class="roomname">Gym</h1>
       <h1 class="clock">12.00am</h1>
       <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`">Bedroom</button>
+      <button id="cycling" onclick="cycling.style.zIndex = `6`">ปั่น</button>
     </div>
+      <div class="minigame cycling">Minigame ปั่นจักรยาน
+        <button onclick="cycling.style.zIndex = `-5`">กลับ</button>
+
+
+    <div class="jquery-script-ads" align="center">
+        <script type="text/javascript">
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script></div>
+        <div class="center-content">
+            <div class="wheel">
+                <div class="progress"></div>
+                <div class="center">
+                    <span class="value"></span>
+                </div>
+                <a href="javascript:void(0)" class="handle"></a>
+            </div>
+        </div>
+        <script>
+            $(function () {
+                $(".wheel").wheel({
+                    min: 0,
+                    max: 360,
+                    step: 5,
+                    onChange: function (value) {
+                        $(".wheel .value").html(Math.round(value) + "&deg;");
+                    }
+                });
+            });
+        </script>
+        
+
+</script>
+        
+</div>
+<!-- <script id="rendered-js" >
+$("#slider1").roundSlider({
+  sliderType: "min-range",
+  value: 80,
+  svgMode: true });
+
+//# sourceURL=pen.js
+    </script> -->
+        
+   
+</script>
+      </div>
 
     <div class="room cafetaria">
       <h1 class="roomname">Cafetaria</h1>
       <h1 class="clock">15.00am</h1>
       <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
+      <button id="breakfast" onclick="breakfast.style.zIndex = `6`">ไข่</button>
+      <button id="lunch" onclick="lunch.style.zIndex = `6`">ทาโก้ยากิ</button>
+      <button id="dinner" onclick="location.href='open_can.html'">กระป๋อง</button>
     </div>
-
+    
+    <div class="minigame breakfast">Minigame ไข่
+        <button onclick="breakfast.style.zIndex = `-5`">กลับ</button>
+      </div>
+    <div class="minigame lunch">Minigame ทาโก้ยากิ
+        <button onclick="lunch.style.zIndex = `-5`">กลับ</button>
+      </div>
+    <div class="minigame dinner">Minigame กระป๋อง
+        <button onclick="dinner.style.zIndex = `-5`">กลับ</button>
+      </div>
+      
+      </div>
+    
     <div class="room lab">
       <h1 class="roomname">Laboratory</h1>
       <h1 class="clock">18.00am</h1>
       <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`">Bedroom</button>
+      <button id="robot" onclick="robot.style.zIndex = `6`">ประกอบหุ่นยนต์</button>
+      <button id="plant" onclick="plant.style.zIndex = `6`">ปลูกต้นไม้</button>
     </div>
-    
+    <div class="minigame robot">Minigame robot
+        <button onclick="robot.style.zIndex = `-5`">กลับ</button>
+      </div>
+    <div class="minigame plant">Minigame plant
+        <button onclick="plant.style.zIndex = `-5`">กลับ</button>
+      </div>
   </div>
   <script src="script.js"></script>
+
+
+<div class="newcan"></div>
+  
 </body>
 </html>
