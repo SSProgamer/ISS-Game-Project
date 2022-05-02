@@ -31,16 +31,11 @@
       <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`">Bedroom</button>
       <button id="cycling" onclick="cycling.style.zIndex = `6`">ปั่น</button>
     </div>
+    
       <div class="minigame cycling">Minigame ปั่นจักรยาน
         <button onclick="cycling.style.zIndex = `-5`">กลับ</button>
 
 
-    <div class="jquery-script-ads" align="center">
-        <script type="text/javascript">
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script></div>
         <div class="center-content">
             <div class="wheel">
                 <div class="progress"></div>
@@ -49,22 +44,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                 </div>
                 <a href="javascript:void(0)" class="handle"></a>
             </div>
-        </div>
-        <script>
-            $(function () {
-                $(".wheel").wheel({
-                    min: 0,
-                    max: 360,
-                    step: 5,
-                    onChange: function (value) {
-                        $(".wheel .value").html(Math.round(value) + "&deg;");
-                    }
-                });
-            });
-        </script>
-        
 
-</script>
+        </div>
+        <p id="demo"></p>
+        
         
 </div>
 <!-- <script id="rendered-js" >
@@ -75,10 +58,7 @@ $("#slider1").roundSlider({
 
 //# sourceURL=pen.js
     </script> -->
-        
-   
-</script>
-      </div>
+
 
     <div class="room cafetaria">
       <h1 class="roomname">Cafetaria</h1>
@@ -91,6 +71,8 @@ $("#slider1").roundSlider({
     
     <div class="minigame breakfast">Minigame ไข่
         <button onclick="breakfast.style.zIndex = `-5`">กลับ</button>
+      <div class="food_moing">
+        <img src="https://media.discordapp.net/attachments/956540195652661348/969866232868245514/egg1.png?width=522&height=676" alt="Paris" width="300" height="300"><div></div></div>
       </div>
     <div class="minigame lunch">Minigame ทาโก้ยากิ
         <button onclick="lunch.style.zIndex = `-5`">กลับ</button>
@@ -115,10 +97,11 @@ $("#slider1").roundSlider({
         <button onclick="plant.style.zIndex = `-5`">กลับ</button>
       </div>
   </div>
+  
   <script src="script.js"></script>
+  <script src="wheel.js"></script>
 
 
 <div class="newcan"></div>
-  
 </body>
 </html>

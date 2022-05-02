@@ -125,7 +125,7 @@ input.you:nth-of-type(1):checked ~ .options label.r, input.you:nth-of-type(2):ch
   font-size: 22px;
 }
 .game .go {
-  animation-duration: 0.02s;
+  animation-duration: 0.219s;
   animation-name: random;
   animation-iteration-count: infinite;
   display: flex;
@@ -147,7 +147,7 @@ input.skynet:checked ~ .game .go {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-240px);
+    transform: translateY(-200px);
   }
 }
 /**
