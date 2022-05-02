@@ -8,10 +8,16 @@ body {
   background: #010a2d;
   font-family: 'Slabo 27px', serif;
 }
+.yeet{
+  position: absolute;
+  top: 25%;
+}
 form {
+  transform: translate(110%);
   align-items: center;
   display: flex;
   justify-content: center;
+  
 }
 input {
   left: 50%;

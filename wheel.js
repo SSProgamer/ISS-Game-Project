@@ -140,7 +140,7 @@
       // แสดงค่ามีถึงจุดที่กำหนด
         if (self.oldvalue === 20){
           
-          document.getElementById("demo").innerHTML = "not bad but nanomachines son";
+          document.getElementById("upstar").innerHTML = "not bad but nanomachines son";
         }
         
         if (typeof self.options.onChange === "function") {

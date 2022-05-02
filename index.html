@@ -1,4 +1,4 @@
-7<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 
@@ -46,7 +46,7 @@
             </div>
 
         </div>
-        <p id="demo"></p>
+        <p id="upstar"></p>
         
         
 </div>
@@ -71,10 +71,24 @@ $("#slider1").roundSlider({
     
     <div class="minigame breakfast">Minigame ไข่
         <button onclick="breakfast.style.zIndex = `-5`">กลับ</button>
-      <div class="food_moing">
-        <img src="https://media.discordapp.net/attachments/956540195652661348/969866232868245514/egg1.png?width=522&height=676" alt="Paris" width="300" height="300"><div></div></div>
+        <img src="https://media.discordapp.net/attachments/956540195652661348/969866232868245514/egg1.png?width=522&height=676" alt="egg" width="300" height="300">
       </div>
     <div class="minigame lunch">Minigame ทาโก้ยากิ
+      <p id="showtaco">Chose ingredients for your taco.</p>
+      <div class="gridin">
+        <img id="vegetable" src="https://media.discordapp.net/attachments/956540195652661348/969254130856120420/tomato.png" width="20%" height="25%" onclick="tacoChange(1)">
+      <img id="vegetable" src="https://media.discordapp.net/attachments/956540195652661348/969259559925477426/lettuce.png" width="20%" height="40%" onclick="tacoChange(2)">
+      <img id="vegetable" src="https://media.discordapp.net/attachments/956540195652661348/969261842285334528/shallot.png" width="20%" height="25%" onclick="tacoChange(3)">
+      <p>ผักที่เลือก</p>
+      <img id="meat" src="https://media.discordapp.net/attachments/956540195652661348/969267208641454120/meat.png" width="20%" height="25%" onclick="tacoChange(4)">
+      <img id="meat" src="https://media.discordapp.net/attachments/956540195652661348/969268504870129674/chicken.png" width="20%" height="25%" onclick="tacoChange(5)">
+      <img id="meat" src="https://www.engdict.com/data/dict/media/images_public/cow-00085726_normal.png" width="100px" height="100px" >
+      <p>เนื้อที่เลือก</p>
+      <img id="sauce" src="https://media.discordapp.net/attachments/956540195652661348/969610737116925952/ketchup3.png?width=518&height=670" width="20%" height="40%" onclick="tacoChange(6)">
+      <img id="sauce" src="https://media.discordapp.net/attachments/956540195652661348/969611440552026252/mastard.png?width=518&height=670" width="20%" height="40%" onclick="tacoChange(7)">
+      <p></p>
+      <p>ซอสที่เลือก</p>
+        </div>
         <button onclick="lunch.style.zIndex = `-5`">กลับ</button>
       </div>
     <div class="minigame dinner">Minigame กระป๋อง
@@ -92,16 +106,98 @@ $("#slider1").roundSlider({
     </div>
     <div class="minigame robot">Minigame robot
         <button onclick="robot.style.zIndex = `-5`">กลับ</button>
+
+      <div id="dropZone">
+  <div
+    id="dropBox1"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>robots</p>
+  </div>
+  <div
+    id="dropBox2"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>Mouse</p>
+  </div>
+  <div
+    id="dropBox3"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>Cat</p>
+  </div>
+  <div
+    id="dropBox4"
+    ondrop="drop(event)"
+    ondragover="allowDrop(event)"
+  >
+    <p>Dog</p>
+  </div>
+</div>
+        <div id="robots" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <img id="robot1" src="https://cdn.discordapp.com/attachments/468800874924474369/970547381231845376/robot.png" draggable="true" ondragstart="drag(event)">
+          <img id="egg" src="https://cdn.discordapp.com/attachments/956540195652661348/970541731659542558/egg.png" draggable="true" ondragstart="drag(event)">
+      </div>
       </div>
     <div class="minigame plant">Minigame plant
         <button onclick="plant.style.zIndex = `-5`">กลับ</button>
+      <div class="box_02">
+        <p id="name"></p>
+        <div class="box_01">
+          <div class="row">
+            <div class="col-sm-3 col-xs-3 pad shape1" data-pad="1">
+              <audio preload="auto" class="sound1">
+					    <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg"/>
+				      </audio>
+            </div>
+            <div class="col-sm-3 col-xs-3 pad shape2" data-pad="2">
+              <audio preload="auto" class="sound2">
+					    <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"  type="audio/mpeg"/>
+				      </audio>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-3 col-xs-3 pad shape4" data-pad="4">
+              <audio preload="auto" class="sound4">
+					    <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg"/>
+				      </audio>
+            </div>
+            <div class="col-sm-3 col-xs-3 pad shape3" data-pad="3">
+              <audio preload="auto" class="sound3">
+					    <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mpeg"/>
+				      </audio>
+            </div>
+          </div>
+<!--         <div class="button_click" onmousedown="mDown_0(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_1(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_2(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_3(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_4(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_5(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_6(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_7(this)" onmouseup="mUp(this)">Click Me</div>
+        <div class="button_click" onmousedown="mDown_8(this)" onmouseup="mUp(this)">Click Me</div> -->
+        </div>
+        <button class="starto start btn btn-danger">start</button>
+        <div class="level text-center">
+			<h2>Level: 1</h2>
+		      </div>
+        <script src="simon.js"></script>
       </div>
-  </div>
+    </div>
   
   <script src="script.js"></script>
   <script src="wheel.js"></script>
 
 
 <div class="newcan"></div>
+<div id="messagebox">
+  <h1>ยินดีต้อนทรัพย์</h1>
+  <p id="message">อิอิ</p>
+  <button onclick="closebox()" class="bottom">ต่อไป</button>
+</div>
 </body>
 </html>

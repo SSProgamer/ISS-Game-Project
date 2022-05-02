@@ -16,6 +16,22 @@ h1 {
   color: white;
 }
 
+#messagebox{
+  position: absolute;
+  text-align: center;
+  background-color: skyblue;
+  color: white;
+  width: 32vw;
+  height: 32vh;
+  z-index: 10;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 30%;
+  border-radius: 16px;
+}
+
 .roomname{
   position: absolute;
   padding: 2vh;
@@ -38,6 +54,7 @@ h2{
   font-family: sans-serif;
   color: var(--text);
 }
+
 .room{
   margin: 6vw 20vw;
   padding: 10vh;
@@ -110,8 +127,8 @@ button{
   height: 64px;
   color: white;
   font-size: 16px;
-  border-radius: 16px;
-  border: solid 4px white;
+  border-radius: 8px;
+  box-shadow: 4px 4px white;
 }
 button:hover{
   cursor: pointer;
@@ -129,8 +146,23 @@ button:hover{
   right: 45%;
 }
 .bottom{
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
   bottom: 0%;
-  right: 45%;
+}
+/* .tacoinpic{
+  position: relative;
+} */
+
+
+img{
+/*   position: absolute; */
+/*   right: 0px; */
+/*   bottom: 0px; */
+  height: 8vh;
+  width: 8vw;
 }
 
 #cycling{
@@ -139,7 +171,6 @@ button:hover{
   top: 50%;
   left: 40%;
 }
-
 #breakfast{
   margin: 0;
   position: absolute;
@@ -158,7 +189,6 @@ button:hover{
   top: 70%;
   left: 45%;
 }
-
 #robot{
   margin: 0;
   position: absolute;
@@ -171,7 +201,6 @@ button:hover{
   top: 50%;
   left: 45%;
 }
-
 #content{
   text-align: center;
   margin-left: auto;
@@ -180,6 +209,29 @@ button:hover{
   height:150px;
   background:khaki;
 }
+#vegetable{
+/*   border: 3px solid red; */
+  height: 100px;
+  width: 100px;
+}
+#meat{
+/*   border: 3px solid red; */
+  height: 100px;
+  width: 100px;
+}
+#sauce{
+/*   border: 3px solid red; */
+  height: 100px;
+  width: 100px;
+}
+.gridin{
+  position: absolute;
+  left: 0px;
+  display: grid;
+  grid-template-columns: 8vw 8vw 8vw 8vw;
+  padding: 4vh;
+}
+
 sussy{
   position: fixed;
   display: block;
@@ -189,8 +241,6 @@ sussy{
   width:100px;
   background: red;
 }
-
-
 
 .center-content {
   text-align: center;
@@ -209,9 +259,9 @@ sussy{
     vertical-align: middle; }
 
 .wheel {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  width: 15vh;
+  height: 15vh;
+  border-radius: 15vh;
   background-color: lightgray;
   position: relative; }
   .wheel .handle {
@@ -265,7 +315,7 @@ sussy{
       top: 0;
       width: 100%; }
   .wheel .progress-fill {
-    fill: #9ecfff; }
+    fill: red; }
 .food_moing{
     height: 100px;
     left: -50px;
@@ -273,3 +323,99 @@ sussy{
     top: -150px;
     width: 100px; }
 }
+.box_02 {
+    height: 50vh;
+    width: 50vh;
+    left:50vh;
+    position: relative;
+
+}
+.box_01 {
+    padding: 1px;
+    height: 35vh;
+    width:35vh;
+    background-color: white;
+    z-index: 10;
+    left:50vh;
+    position: absolute;
+    margin:4vh auto;
+    display:flex;
+}
+
+.button_click{
+    background-color:#3498db;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 10vh;width: 10vh;
+    margin: 6px;
+    display: inline-block;
+}
+
+/* ประกอบหุ่นยนต์ */
+#dropZone,
+#robots {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+#dropBox1,
+#dropBox2,
+#dropBox3,
+#dropBox4 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  border: 1px solid #aaaaaa;
+  padding: 1rem;
+}
+img {
+  height: 200px;
+  object-fit: cover;
+  width: 200px;
+}
+/* ประกอบหุ่นยนต์ */
+
+
+/* ต้นไม้*/
+.shape1{
+	width: 17.6vh;
+	height: 17.6vh;
+	background: #fe0b0b;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.shape2{
+	width: 17.6vh;
+	height: 17.6vh;
+	background: #59ff00;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.shape3{
+	width: 17.6vh;
+	height: 17.6vh;
+	background: #0008ff;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.shape4{
+	width: 17.6vh;
+	height: 17.6vh;
+	background: #ffea00;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 20px;
+	border-radius: 20px;
+}
+.starto{
+  top:80%;
+  left:50%;
+}
+/* ต้นไม้*/
