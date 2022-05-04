@@ -8,15 +8,17 @@ body {
   background: #010a2d;
   font-family: 'Slabo 27px', serif;
 }
-.yeet{
+/* .yeet{
   position: absolute;
   top: 25%;
-}
+} */
 form {
-  transform: translate(110%);
+/*   transform: translate(110%); */
+/*   background: #000000; */
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-top: 10%;
   
 }
 input {

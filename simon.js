@@ -120,15 +120,17 @@ var game={
 				this.turn++;					
 
 			}
-
-		if(this.turn === this.genSequence.length){	
-			
+		if(this.turn === this.genSequence.length && this.level !== 6){	
 			this.level++;						
 			this.displayLevel();
 			this.active=false;
 			setTimeout(function(){
 				that.newLevel();},1000);
 		}
+    else{
+      
+    }
+    
 	},
 
 	displaySequence: function(){				

@@ -8,39 +8,69 @@ lunch = document.getElementsByClassName("minigame")[2]
 dinner = document.getElementsByClassName("minigame")[3]
 robot = document.getElementsByClassName("minigame")[4]
 plant = document.getElementsByClassName("minigame")[5]
+
 message1 = [
   "สวัสดีครับ",
   "ท่านสมาชิก"
 ]
 idx = 0
 
-function tacoChange(varval) {
-  var mysample = '';
-  mysample = varval;
-  if(mysample=='0'){
-  document.getElementById("showtaco").innerHTML = "Tortilla";
+tacoimg = {
+  "Tomato": "https://media.discordapp.net/attachments/956540195652661348/969254130856120420/tomato.png",
+  "Lettuce": "https://media.discordapp.net/attachments/956540195652661348/969259559925477426/lettuce.png",
+  "Onion": "https://media.discordapp.net/attachments/956540195652661348/969261842285334528/shallot.png",
+  "Pork": "https://media.discordapp.net/attachments/956540195652661348/969267208641454120/meat.png",
+  "Chicken": "https://media.discordapp.net/attachments/956540195652661348/969268504870129674/chicken.png",
+  "Beef": "https://www.engdict.com/data/dict/media/images_public/cow-00085726_normal.png",
+  "Kethcup": "https://media.discordapp.net/attachments/956540195652661348/969610737116925952/ketchup3.png?width=518&height=670",
+  "Mustard": "https://media.discordapp.net/attachments/956540195652661348/969611440552026252/mastard.png?width=518&height=670",
+}
+
+function tacoChange(name) {
+  // var mysample = '';
+  // mysample = varval;
+  // if(mysample=='0'){
+  // document.getElementById("showtaco").innerHTML = "Tortilla";
+  // }
+  // else if(mysample=='1'){
+  // document.getElementById("showtaco").innerHTML = "Tomato";
+  // }
+  // else if(mysample=='2'){
+  // document.getElementById("showtaco").innerHTML = "Lettuce";
+  // }
+  // else if(mysample=='3'){
+  // document.getElementById("showtaco").innerHTML = "Onion";
+  // }
+  // else if(mysample=='4'){
+  // document.getElementById("showtaco").innerHTML = "Pork";
+  // }
+  // else if(mysample=='5'){
+  // document.getElementById("showtaco").innerHTML = "Chiken";
+  // }
+  // else if(mysample=='6'){
+  // document.getElementById("showtaco").innerHTML = "Ketshup";
+  // }
+  // else if(mysample=='7'){
+  // document.getElementById("showtaco").innerHTML = "Mustard";
+  // }
+  document.getElementById("showtaco").innerHTML = name;
+  if (name == "Tomato" || name == "Lettuce" || name == "Onion"){
+    document.getElementById("vegetable").src = tacoimg[name];
+    document.getElementById("vegetable").name = name;
+  }else if (name == "Pork" || name == "Chicken" || name == "Beef"){
+    document.getElementById("meat").src = tacoimg[name];
+    document.getElementById("meat").name = name;
+  }else{
+    document.getElementById("sauce").src = tacoimg[name];
+    document.getElementById("sauce").name = name;
   }
-  else if(mysample=='1'){
-  document.getElementById("showtaco").innerHTML = "Tomato";
-  }
-  else if(mysample=='2'){
-  document.getElementById("showtaco").innerHTML = "Lettuce";
-  }
-  else if(mysample=='3'){
-  document.getElementById("showtaco").innerHTML = "Onion";
-  }
-  else if(mysample=='4'){
-  document.getElementById("showtaco").innerHTML = "Pork";
-  }
-  else if(mysample=='5'){
-  document.getElementById("showtaco").innerHTML = "Chiken";
-  }
-  else if(mysample=='6'){
-  document.getElementById("showtaco").innerHTML = "Ketshup";
-  }
-  else if(mysample=='7'){
-  document.getElementById("showtaco").innerHTML = "Mustard";
-  }
+}
+
+function serveTaco(){
+  vegetable = document.getElementById("vegetable").name
+  meat = document.getElementById("meat").name
+  sauce = document.getElementById("sauce").name
+  document.getElementById("showtaco").innerHTML = `<h2>This is ${vegetable}, ${meat}, and ${sauce} Taco!!</h2>`;
 }
 
 function closebox() {
@@ -58,59 +88,6 @@ function closebox() {
   
 }
 
-
-document.getElementById('change').onclick = changeColor;  
-    var value = 0
-function mDown_0(obj) {
-    document.getElementById("name").innerHTML += 1;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-
-function mUp(obj) {
-  obj.style.backgroundColor="#3498db";
-  obj.innerHTML="Click Me";
-}
-function mDown_1(obj) {
-    document.getElementById("name").innerHTML += 2;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_2(obj) {
-    document.getElementById("name").innerHTML += 3;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_3(obj) {
-    document.getElementById("name").innerHTML += 4;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_4(obj) {
-    document.getElementById("name").innerHTML += 5;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_5(obj) {
-    document.getElementById("name").innerHTML += 6;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_6(obj) {
-    document.getElementById("name").innerHTML += 7;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_7(obj) {
-    document.getElementById("name").innerHTML += 8;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
-function mDown_8(obj) {
-    document.getElementById("name").innerHTML += 9;
-  obj.style.backgroundColor = "#1ec5e5";
-  obj.innerHTML = "Release Me";
-}
 
 // ประกอบหุ่นยนต์
 function allowDrop(event) {

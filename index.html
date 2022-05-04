@@ -19,7 +19,7 @@
     
     <div class="room bed">
       <h1 class="roomname">Bedroom</h1><br>
-      <h1 class="clock">9.00am</h1>
+<!--       <h1 class="clock">9.00am</h1> -->
       <button class="right" onclick="cafetaria.style.zIndex = `5`;bedroom.style.zIndex = `1`">Cafetaria</button>
       <button class="left" onclick="gym.style.zIndex = `5`;bedroom.style.zIndex = `1`">Gym</button>
       <button class="top" onclick="lab.style.zIndex = `5`;bedroom.style.zIndex = `1`">Lab</button>
@@ -27,16 +27,34 @@
     
     <div class="room gym">
       <h1 class="roomname">Gym</h1>
-      <h1 class="clock">12.00am</h1>
+<!--       <h1 class="clock">12.00am</h1> -->
       <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`">Bedroom</button>
-      <button id="cycling" onclick="cycling.style.zIndex = `6`">ปั่น</button>
+      <button id="cycling " onclick="cycling.style.zIndex = `6`">ปั่น</button>
+      
     </div>
     
-      <div class="minigame cycling">Minigame ปั่นจักรยาน
-        <button onclick="cycling.style.zIndex = `-5`">กลับ</button>
+      <div class="minigame cycling">
+        <div class="cycling_part1">
+        <button class= "button_left"onclick="cycling.style.zIndex = `-5`">กลับ</button></div>
+       <div class="cycling_part3">
+      <div class="cycling_text"><h3>Minigame จักรยาน</h3></div>
+    <div class="cycling_text"><h3>แต้ม</h3>
+      
+    </div>
+    <div class="cycling_text"><h3>ดาว</h3> <p id="upstar"></p> </div>
+         <div class="cycling_text">
+           <button class= "button_box" id="startButton" onclick="cycling_roll.style.zIndex = `6`">Start</button>
+         </div>
+        <div class="cycling_text">
+    <h3>How many minutes?:</h3></div>
+        <!-- <input id="minutesInput" value="1" /> -->
+    <div class="cycling_text"><div id="counterDisplay"></div></div>
+         <button  onclick="reset()" >replay</button>
 
-
-        <div class="center-content">
+</div> 
+<div class="cycling_part2">
+  <div id="cycling_roll">
+<div class="center-content">
             <div class="wheel">
                 <div class="progress"></div>
                 <div class="center">
@@ -44,10 +62,11 @@
                 </div>
                 <a href="javascript:void(0)" class="handle"></a>
             </div>
-
         </div>
-        <p id="upstar"></p>
-        
+  </div>
+</div>
+  
+
         
 </div>
 <!-- <script id="rendered-js" >
@@ -62,7 +81,7 @@ $("#slider1").roundSlider({
 
     <div class="room cafetaria">
       <h1 class="roomname">Cafetaria</h1>
-      <h1 class="clock">15.00am</h1>
+<!--       <h1 class="clock">15.00am</h1> -->
       <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
       <button id="breakfast" onclick="breakfast.style.zIndex = `6`">ไข่</button>
       <button id="lunch" onclick="lunch.style.zIndex = `6`">ทาโก้ยากิ</button>
@@ -76,20 +95,21 @@ $("#slider1").roundSlider({
     <div class="minigame lunch">Minigame ทาโก้ยากิ
       <p id="showtaco">Chose ingredients for your taco.</p>
       <div class="gridin">
-        <img id="vegetable" src="https://media.discordapp.net/attachments/956540195652661348/969254130856120420/tomato.png" width="20%" height="25%" onclick="tacoChange(1)">
-      <img id="vegetable" src="https://media.discordapp.net/attachments/956540195652661348/969259559925477426/lettuce.png" width="20%" height="40%" onclick="tacoChange(2)">
-      <img id="vegetable" src="https://media.discordapp.net/attachments/956540195652661348/969261842285334528/shallot.png" width="20%" height="25%" onclick="tacoChange(3)">
-      <p>ผักที่เลือก</p>
-      <img id="meat" src="https://media.discordapp.net/attachments/956540195652661348/969267208641454120/meat.png" width="20%" height="25%" onclick="tacoChange(4)">
-      <img id="meat" src="https://media.discordapp.net/attachments/956540195652661348/969268504870129674/chicken.png" width="20%" height="25%" onclick="tacoChange(5)">
-      <img id="meat" src="https://www.engdict.com/data/dict/media/images_public/cow-00085726_normal.png" width="100px" height="100px" >
-      <p>เนื้อที่เลือก</p>
-      <img id="sauce" src="https://media.discordapp.net/attachments/956540195652661348/969610737116925952/ketchup3.png?width=518&height=670" width="20%" height="40%" onclick="tacoChange(6)">
-      <img id="sauce" src="https://media.discordapp.net/attachments/956540195652661348/969611440552026252/mastard.png?width=518&height=670" width="20%" height="40%" onclick="tacoChange(7)">
+        <img name="Tomato" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969254130856120420/tomato.png" onclick="tacoChange(this.name)">
+      <img name="Lettuce" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969259559925477426/lettuce.png" onclick="tacoChange(this.name)">
+      <img name="Onion" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969261842285334528/shallot.png" onclick="tacoChange(this.name)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="vegetable" name="something vegetable">
+      <img name="Pork" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969267208641454120/meat.png" onclick="tacoChange(this.name)">
+      <img name="Chicken" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969268504870129674/chicken.png" onclick="tacoChange(this.name)">
+      <img name="Beef" class="tacoicon" src="https://www.engdict.com/data/dict/media/images_public/cow-00085726_normal.png" onclick="tacoChange(this.name)">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="meat" name="something meat">
+      <img name="Kethcup" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969610737116925952/ketchup3.png?width=518&height=670" onclick="tacoChange(this.name)">
+      <img name="Mustard" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969611440552026252/mastard.png?width=518&height=670" onclick="tacoChange(this.name)">
       <p></p>
-      <p>ซอสที่เลือก</p>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon"  id="sauce" name="something sauce">
         </div>
-        <button onclick="lunch.style.zIndex = `-5`">กลับ</button>
+      <button class="right" onclick="serveTaco()">Serve!</button>
+<!--         <button onclick="lunch.style.zIndex = `-5`">กลับ</button> -->
       </div>
     <div class="minigame dinner">Minigame กระป๋อง
         <button onclick="dinner.style.zIndex = `-5`">กลับ</button>
@@ -99,7 +119,7 @@ $("#slider1").roundSlider({
     
     <div class="room lab">
       <h1 class="roomname">Laboratory</h1>
-      <h1 class="clock">18.00am</h1>
+<!--       <h1 class="clock">18.00am</h1> -->
       <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`">Bedroom</button>
       <button id="robot" onclick="robot.style.zIndex = `6`">ประกอบหุ่นยนต์</button>
       <button id="plant" onclick="plant.style.zIndex = `6`">ปลูกต้นไม้</button>
@@ -191,7 +211,7 @@ $("#slider1").roundSlider({
   
   <script src="script.js"></script>
   <script src="wheel.js"></script>
-
+   <script src="time.js"></script>
 
 <div class="newcan"></div>
 <div id="messagebox">
