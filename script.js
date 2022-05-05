@@ -15,46 +15,62 @@ message1 = [
 ]
 idx = 0
 
+//taco
 tacoimg = {
-  "Tomato": "https://media.discordapp.net/attachments/956540195652661348/969254130856120420/tomato.png",
-  "Lettuce": "https://media.discordapp.net/attachments/956540195652661348/969259559925477426/lettuce.png",
-  "Onion": "https://media.discordapp.net/attachments/956540195652661348/969261842285334528/shallot.png",
-  "Pork": "https://media.discordapp.net/attachments/956540195652661348/969267208641454120/meat.png",
-  "Chicken": "https://media.discordapp.net/attachments/956540195652661348/969268504870129674/chicken.png",
-  "Beef": "https://www.engdict.com/data/dict/media/images_public/cow-00085726_normal.png",
-  "Kethcup": "https://media.discordapp.net/attachments/956540195652661348/969610737116925952/ketchup3.png?width=518&height=670",
-  "Mustard": "https://media.discordapp.net/attachments/956540195652661348/969611440552026252/mastard.png?width=518&height=670",
+  "Tomato": "images\\taco\\tomato.png",
+  "Lettuce": "images\\taco\\lettuce.png",
+  "Shallot": "images\\taco\\shallot.png",
+  "Pork": "images\\taco\\pork.png",
+  "Chicken": "images\\taco\\chicken.png",
+  "Beef": "images\\taco\\beef.png",
+  "Kethcup": "images\\taco\\ketchup.png",
+  "Mustard": "images\\taco\\mustard.png",
+}
+
+var wantvegetable = ""
+var wantmeat = ""
+var wnatsauce = ""
+
+function tacoRandom(){
+  ranvegetable = Math.floor(Math.random() * 3);
+  ranmeat = Math.floor(Math.random() * 3);
+  ransauce = Math.floor(Math.random() * 2);
+  switch (ranvegetable) {
+    case 0:
+      wantvegetable = "Tomato";
+      break;
+    case 1:
+      wantvegetable = "Lettuce";
+      break;
+    case 2:
+      wantvegetable = "Shallot";
+      break;
+  }
+  switch (ranmeat) {
+    case 0:
+      wantmeat = "Pork";
+      break;
+    case 1:
+      wantmeat = "Chicken";
+      break;
+    case 2:
+      wantmeat = "Beef";
+      break;
+  }
+  switch (ransauce) {
+    case 0:
+      wantsauce = "Kethcup";
+      break;
+    case 1:
+      wantsauce = "Mustard";
+      break;
+  }
+  document.getElementById("showwanttaco").innerHTML = `<h2>We want ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h2>`;
 }
 
 function tacoChange(name) {
-  // var mysample = '';
-  // mysample = varval;
-  // if(mysample=='0'){
-  // document.getElementById("showtaco").innerHTML = "Tortilla";
-  // }
-  // else if(mysample=='1'){
-  // document.getElementById("showtaco").innerHTML = "Tomato";
-  // }
-  // else if(mysample=='2'){
-  // document.getElementById("showtaco").innerHTML = "Lettuce";
-  // }
-  // else if(mysample=='3'){
-  // document.getElementById("showtaco").innerHTML = "Onion";
-  // }
-  // else if(mysample=='4'){
-  // document.getElementById("showtaco").innerHTML = "Pork";
-  // }
-  // else if(mysample=='5'){
-  // document.getElementById("showtaco").innerHTML = "Chiken";
-  // }
-  // else if(mysample=='6'){
-  // document.getElementById("showtaco").innerHTML = "Ketshup";
-  // }
-  // else if(mysample=='7'){
-  // document.getElementById("showtaco").innerHTML = "Mustard";
-  // }
   document.getElementById("showtaco").innerHTML = name;
-  if (name == "Tomato" || name == "Lettuce" || name == "Onion"){
+  if (name == "Tomato" || name == "Lettuce" || name == "Shallot"){
     document.getElementById("vegetable").src = tacoimg[name];
     document.getElementById("vegetable").name = name;
   }else if (name == "Pork" || name == "Chicken" || name == "Beef"){
@@ -70,8 +86,21 @@ function serveTaco(){
   vegetable = document.getElementById("vegetable").name
   meat = document.getElementById("meat").name
   sauce = document.getElementById("sauce").name
-  document.getElementById("showtaco").innerHTML = `<h2>This is ${vegetable}, ${meat}, and ${sauce} Taco!!</h2>`;
+  if ( (vegetable == wantvegetable && meat == wantmeat) || (meat == wantmeat && sauce == wantsauce) || (vegetable == wantvegetable && sauce == wantsauce) ){
+    document.getElementById("startaco").innerHTML = `Star : 2`;
+  }
+  else if ( vegetable == wantvegetable || meat == wantmeat || sauce == wantsauce ){
+    document.getElementById("startaco").innerHTML = `Star : 1`;
+  }
+  if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
+  document.getElementById("showtaco").innerHTML = `<h2>Yes, this is what we want.<h2>`;
+  document.getElementById("startaco").innerHTML = `Star : 3`;
+  }
+  else{
+    document.getElementById("showtaco").innerHTML = `<h2>No, this is not our taco.<h2>`;
+  }
 }
+//taco
 
 function closebox() {
   var x = document.getElementById("messagebox");

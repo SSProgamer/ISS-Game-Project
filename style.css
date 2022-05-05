@@ -168,6 +168,116 @@ background: grey;
 .breakfast{
   background: grey;
 }
+.breakfast_part1{
+            background-color: aqua;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin:0px;
+    padding:0px;
+    top: 80%;
+    left:0;
+    display: inline-block;
+        }
+        .breakfast_part2{
+            background-color: yellowgreen;
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    margin:0px;
+    padding:0px;
+    top: 60%;
+    left:0;
+    display: inline-block;
+        }
+    .breakfast_bar{
+            background-color: red;
+    width: 80%;
+    height: 40%;
+    position: relative;
+    margin:0px;
+    padding:0px;
+    top: 40%;
+    left:10%;
+        }
+    #breakfast_bar_win{
+            background-color: pink;
+    width: 10%;
+    height: 40%;
+    position: absolute;
+    margin:0px;
+    padding:0px;
+    top: 40%;
+    left:50%;
+        }
+#breakfast_bar_win_win{
+  background-color: purple;
+    width: 3%;
+    height: 40%;
+    position: absolute;
+    margin:0px;
+    padding:0px;
+    top: 40%;
+    left:55%;
+        }
+    #breakfast_oval {
+      width: 1%;
+      height: 40%;
+      background: blue;
+      position: relative;
+      top: 0%;
+      left:10%;
+    animation: 2.5s moving 0.5s linear infinite alternate;
+    }
+  #triangle-up {
+      width: 0;
+      height: 0;
+      border-left: 50px solid transparent;
+      border-right: 50px solid transparent;
+      border-bottom: 100px solid blue;
+    position: relative;
+    top: -60%;
+    left:10%;
+    }
+    .breakfast_img{
+            background-color: yellowgreen;
+    width: 25%;
+    height: 25%;
+    position: absolute;
+    margin:0px;
+    padding:0px;
+    top: 20%;
+    left: 40%;
+    display: inline-block;
+        }
+    .breakfast_part3{
+            background-color: rgb(205, 50, 97);
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    margin:0px;
+    padding:0px;
+    top: 50%;
+    left:0;
+    display: inline-block;
+    text-align: center;
+        }
+#breakfast_button_1{
+    margin: 0;
+  position: absolute;
+  position: absolute;
+    z-index: 5;
+}
+#breakfast_button_2{
+  position: absolute;
+    margin: 0;
+  position: absolute;
+    z-index: 1;
+}
+ @keyframes moving {
+	from { left:10%; top:0%; }
+	to { left:90%; top:0%; }
+}
 .lunch{
   background: grey;
 }
@@ -384,7 +494,7 @@ sussy{
     position: relative;
     top: -150px;
     width: 100px; }
-}
+
 .box_02 {
     height: 50vh;
     width: 50vh;
@@ -398,7 +508,7 @@ sussy{
     width:35vh;
     background-color: white;
     z-index: 10;
-    left:50vh;
+    left:15vh;
     position: absolute;
     margin:4vh auto;
     display:flex;
@@ -419,8 +529,8 @@ sussy{
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  min-height: 200px;
-  margin-bottom: 20px;
+  min-height: 100px;
+  margin-bottom: 5px;
 }
 #dropBox1,
 #dropBox2,
@@ -430,7 +540,7 @@ sussy{
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  height: 250px;
+  height: 200px;
   width: 250px;
   border: 1px solid #aaaaaa;
   padding: 1rem;
@@ -451,6 +561,7 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
+  opacity: 0.5;
 }
 .shape2{
 	width: 17.6vh;
@@ -459,6 +570,7 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
+  opacity: 0.5;
 }
 .shape3{
 	width: 17.6vh;
@@ -467,6 +579,7 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
+  opacity: 0.5;
 }
 .shape4{
 	width: 17.6vh;
@@ -475,9 +588,34 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
+  opacity: 0.5;
 }
 .starto{
   top:80%;
   left:50%;
 }
 /* ต้นไม้*/
+
+#startaco {
+  position: absolute;
+  top: 0%;
+  left: 5%;
+  color: #fcf923;
+}
+
+/*ปุ่มกลับสำหรับมินิเกมอาหาร*/
+button.bck_bf{
+  position: relative;
+  left: 40%;
+  bottom: 10%;
+}
+button.bck_l{
+  position: relative;
+  left: 43%;
+  bottom: 43%;
+}
+button.bck_dn{
+  position: relative;
+  left: 37%;
+  bottom: 15%;
+}

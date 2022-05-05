@@ -1,10 +1,12 @@
 var game={ 
 	level: 1, 
 	turn: 0, 
+  score: 0,
 	active: false, 
 	handler: false, 
 	shape: '.shape', 
-	genSequence: [], 
+	genSequence1: [[1],[1,3],[1,3,4],[1,3,4,4],[1,3,4,4,2],[1,3,4,4,2,1],[1,3,4,4,2,1,1]], 
+  genSequence: [],
 	plaSequence: [], 
 	
 	init: function(){				
@@ -42,6 +44,7 @@ var game={
 		this.score=0;
 		this.newLevel();
 		this.displayLevel();
+    this.displayScore();
 
 	},
 
@@ -52,7 +55,6 @@ var game={
 		this.pos=0;
 		this.turn=0;
 		this.active=true;
-		
 		this.randomizePad(this.level); 
 		this.displaySequence(); 
 
@@ -62,12 +64,12 @@ var game={
 
 		var that = this;					
 
-		if(times > 0){						
+		if(times > 0){
 			that.playSound(pad);				
 			element.stop().animate({opacity: '1'}, {		
 				duration: 50,
 				complete: function(){
-				element.stop().animate({opacity: '0.6'}, 200);
+				element.stop().animate({opacity: '0.5'}, 200);
 				}
 			});											
 
@@ -91,12 +93,10 @@ var game={
 
 	},
 
-	randomizePad: function(passes){			 
-
-		for(i=0;i<passes;i++){
-			
-			this.genSequence.push(Math.floor(Math.random() * 4) + 1);
-		}
+	randomizePad: function(passes){
+    for(i=0;i<passes;i++){
+			this.genSequence.push(this.genSequence1[passes][i]);
+    }
 	},
 
 	logPlayerSequence: function(pad){		
@@ -115,18 +115,32 @@ var game={
 				
 				this.incorrectSequence();
 
-			}else{									
-							
-				this.turn++;					
-
 			}
-		if(this.turn === this.genSequence.length && this.level !== 6){	
-			this.level++;						
+    else{									
+				this.turn++;					
+			}
+		if(this.turn === this.genSequence.length){
+			this.level++;
 			this.displayLevel();
 			this.active=false;
-			setTimeout(function(){
-				that.newLevel();},1000);
-		}
+      if(this.level === 3){
+        this.score++;
+        this.displayScore();
+      }
+      else if(this.level ===5){
+        this.score++;
+        this.displayScore();
+      }
+      else if(this.level === 7){
+        this.score++;
+        this.displayScore();
+        this.incorrectSequence();
+      }
+      if(this.level !==7){
+        setTimeout(function(){
+				  that.newLevel();},1000);
+        }
+      }
     else{
       
     }
@@ -152,6 +166,11 @@ var game={
 		$('.level h2').text('Level: '+this.level);
 
 	},
+  displayScore: function(){						
+		
+		$('.score h2').text('Star: '+this.score);
+
+	},
 	
 	incorrectSequence: function(){						
 
@@ -164,8 +183,8 @@ var game={
 		setTimeout(function(){						
 			that.flash($(that.shape+corPad),4,300,corPad);
 		},500);
-
-		$('.start').show();							
+    $('.level h2').text('Level: END');
+		$('.start').show();				
 	
 
 	}
@@ -175,7 +194,9 @@ $(document).ready(function(){
 
 	$('.start').on('mouseup', function(){			
 		$(this).hide();
-		game.init();
+    setTimeout(function(){
+      game.init();
+    }, 500); 
 
 	});
 

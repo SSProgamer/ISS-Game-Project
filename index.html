@@ -11,7 +11,7 @@
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
   <script src="script.js"></script>
-  
+  <link href="open_can.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -49,7 +49,7 @@
     <h3>How many minutes?:</h3></div>
         <!-- <input id="minutesInput" value="1" /> -->
     <div class="cycling_text"><div id="counterDisplay"></div></div>
-         <button  onclick="reset()" >replay</button>
+<!--          <button  onclick="reset()" >replay</button> -->
 
 </div> 
 <div class="cycling_part2">
@@ -84,35 +84,93 @@ $("#slider1").roundSlider({
 <!--       <h1 class="clock">15.00am</h1> -->
       <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
       <button id="breakfast" onclick="breakfast.style.zIndex = `6`">ไข่</button>
-      <button id="lunch" onclick="lunch.style.zIndex = `6`">ทาโก้ยากิ</button>
-      <button id="dinner" onclick="location.href='open_can.html'">กระป๋อง</button>
+      <button id="lunch" onclick="lunch.style.zIndex = `6`; tacoRandom();">ทาโก้ยากิ</button>
+      <button id="dinner" onclick="dinner.style.zIndex='6'">กระป๋อง</button>
     </div>
     
     <div class="minigame breakfast">Minigame ไข่
-        <button onclick="breakfast.style.zIndex = `-5`">กลับ</button>
-        <img src="https://media.discordapp.net/attachments/956540195652661348/969866232868245514/egg1.png?width=522&height=676" alt="egg" width="300" height="300">
+        <button class="bck_bf" onclick="breakfast.style.zIndex = `-5`">กลับ</button>
+        <div class="breakfast_part1">
+          <div id="breakfast_button_1">
+            <button id="play" onclick="breakfast_button_2.style.zIndex = `10`">Play</button>
+          </div>
+          <div id="breakfast_button_2">
+            <button id="pause" onclick="breakfast_button_2.style.zIndex = `-5`" >Pause</button>
+          </div>
+
+    </div>
+    <div class="breakfast_part2">
+        <div class="breakfast_bar"></div>
+        <div id="breakfast_bar_win"></div>
+      <div id="breakfast_bar_win_win"></div>
+        <div id="breakfast_oval"></div>
+      <div id="triangle-up"></div>
+    </div>
+    <div class="breakfast_img"></div>
+    <div class="breakfast_part3">
+        <p id="breakfast_win_text"></p>
+    </div>
       </div>
     <div class="minigame lunch">Minigame ทาโก้ยากิ
+      <p id="startaco">Star : 0</p>
+      <p id="showwanttaco"></p>
       <p id="showtaco">Chose ingredients for your taco.</p>
       <div class="gridin">
-        <img name="Tomato" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969254130856120420/tomato.png" onclick="tacoChange(this.name)">
-      <img name="Lettuce" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969259559925477426/lettuce.png" onclick="tacoChange(this.name)">
-      <img name="Onion" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969261842285334528/shallot.png" onclick="tacoChange(this.name)">
+        <img name="Tomato" class="tacoicon" src="images\\taco\\tomato.png" onclick="tacoChange(this.name)">
+      <img name="Lettuce" class="tacoicon" src="images\\taco\\lettuce.png" onclick="tacoChange(this.name)">
+      <img name="Shallot" class="tacoicon" src="images\\taco\\shallot.png" onclick="tacoChange(this.name)">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="vegetable" name="something vegetable">
-      <img name="Pork" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969267208641454120/meat.png" onclick="tacoChange(this.name)">
-      <img name="Chicken" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969268504870129674/chicken.png" onclick="tacoChange(this.name)">
-      <img name="Beef" class="tacoicon" src="https://www.engdict.com/data/dict/media/images_public/cow-00085726_normal.png" onclick="tacoChange(this.name)">
+      <img name="Pork" class="tacoicon" src="images\\taco\\pork.png" onclick="tacoChange(this.name)">
+      <img name="Chicken" class="tacoicon" src="images\\taco\\chicken.png" onclick="tacoChange(this.name)">
+      <img name="Beef" class="tacoicon" src="images\\taco\\beef.png" onclick="tacoChange(this.name)">
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="meat" name="something meat">
-      <img name="Kethcup" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969610737116925952/ketchup3.png?width=518&height=670" onclick="tacoChange(this.name)">
-      <img name="Mustard" class="tacoicon" src="https://media.discordapp.net/attachments/956540195652661348/969611440552026252/mastard.png?width=518&height=670" onclick="tacoChange(this.name)">
+      <img name="Kethcup" class="tacoicon" src="images\\taco\\ketchup.png" onclick="tacoChange(this.name)">
+      <img name="Mustard" class="tacoicon" src="images\\taco\\mustard.png" onclick="tacoChange(this.name)">
       <p></p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon"  id="sauce" name="something sauce">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="sauce" name="something sauce">
         </div>
       <button class="right" onclick="serveTaco()">Serve!</button>
-<!--         <button onclick="lunch.style.zIndex = `-5`">กลับ</button> -->
+         <button class="bck_l" onclick="lunch.style.zIndex = `-5`">กลับ</button>
       </div>
     <div class="minigame dinner">Minigame กระป๋อง
-        <button onclick="dinner.style.zIndex = `-5`">กลับ</button>
+        <button class="bck_dn" onclick="dinner.style.zIndex = `-5`">กลับ</button>
+      <p>กระป๋องที่ปิดอยู่จะมีโอกาสเจอมากกว่าถุงเลย์ และถุงเลย์มีโอกาสเจอมากกว่ากระป๋องที่เปิดแล้ว</p>
+      <div class="yeet">
+  <form>
+  <input class="you" id="you-1" name="you" type="radio" />
+  <input class="you" id="you-2" name="you" type="radio" />
+  <input class="you" id="you-3" name="you" type="radio" />
+  <input class="skynet" id="skynet-1" name="skynet" type="radio" />
+  <input class="skynet" id="skynet-2" name="skynet" type="radio" />
+  <input class="skynet" id="skynet-3" name="skynet" type="radio" />
+  <div class="options">
+    <label class="r" for="you-1">
+    </label><label class="p" for="you-2">
+    </label><label class="s" for="you-3">
+    </label></div>
+  <div class="game">
+    <div class="go">
+      <<label for="skynet-1">
+      </label><label for="skynet-2">
+      </label><label for="skynet-3">
+      </label></div>
+  </div>
+  <div class="it">
+    <div class="r">
+    </div>
+    <div class="p">
+    </div>
+    <div class="s">
+    </div>
+  </div>
+  <div class="results">
+    <div class="win">Got it!</div>
+    <div class="lose">Try again.</div>
+    <div class="tie">Try again.</div>
+    <button type="reset">Again</button>
+  </div>
+</form>
+    </div>
       </div>
       
       </div>
@@ -133,33 +191,33 @@ $("#slider1").roundSlider({
     ondrop="drop(event)"
     ondragover="allowDrop(event)"
   >
-    <p>robots</p>
+    <p>robot part 1</p>
   </div>
   <div
     id="dropBox2"
     ondrop="drop(event)"
     ondragover="allowDrop(event)"
   >
-    <p>Mouse</p>
+    <p>robot part 2</p>
   </div>
   <div
     id="dropBox3"
     ondrop="drop(event)"
     ondragover="allowDrop(event)"
   >
-    <p>Cat</p>
+    <p>robot part 3</p>
   </div>
   <div
     id="dropBox4"
     ondrop="drop(event)"
     ondragover="allowDrop(event)"
   >
-    <p>Dog</p>
+    <p>robot part 4</p>
   </div>
 </div>
         <div id="robots" ondrop="drop(event)" ondragover="allowDrop(event)">
           <img id="robot1" src="https://cdn.discordapp.com/attachments/468800874924474369/970547381231845376/robot.png" draggable="true" ondragstart="drag(event)">
-          <img id="egg" src="https://cdn.discordapp.com/attachments/956540195652661348/970541731659542558/egg.png" draggable="true" ondragstart="drag(event)">
+          <img id="robot2" src="https://cdn.discordapp.com/attachments/956540195652661348/970541731659542558/egg.png" draggable="true" ondragstart="drag(event)">
       </div>
       </div>
     <div class="minigame plant">Minigame plant
@@ -191,19 +249,13 @@ $("#slider1").roundSlider({
 				      </audio>
             </div>
           </div>
-<!--         <div class="button_click" onmousedown="mDown_0(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_1(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_2(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_3(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_4(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_5(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_6(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_7(this)" onmouseup="mUp(this)">Click Me</div>
-        <div class="button_click" onmousedown="mDown_8(this)" onmouseup="mUp(this)">Click Me</div> -->
         </div>
         <button class="starto start btn btn-danger">start</button>
         <div class="level text-center">
 			<h2>Level: 1</h2>
+		      </div>
+        <div class="score text-center">
+			<h2>Star: 0</h2>
 		      </div>
         <script src="simon.js"></script>
       </div>
@@ -212,6 +264,7 @@ $("#slider1").roundSlider({
   <script src="script.js"></script>
   <script src="wheel.js"></script>
    <script src="time.js"></script>
+  <script src="egg.js"></script>
 
 <div class="newcan"></div>
 <div id="messagebox">
