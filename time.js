@@ -3,7 +3,6 @@
           startButton = document.getElementById("startButton"),
           counterDiv = document.getElementById("counterDisplay");
           
-    console.log(startButton);
     // Adds listeners and declares global variables
     startButton.addEventListener('click', start);
     let totalSeconds; // global variable to count down total seconds
@@ -39,15 +38,24 @@
     }
     
     function tick(){
-      if(totalSeconds > 0){
+      console.log(totalSeconds);
+       if (totalSeconds == 1){
+         totalSeconds--; // Decreases total seconds by one
+        counterDiv.innerHTML = getMinutes(totalSeconds) + ":" + getSeconds(totalSeconds); // Updates display
+        alert("END TIME!!");
+         
+        }
+      else if(totalSeconds > 0){
         totalSeconds--; // Decreases total seconds by one
         counterDiv.innerHTML = getMinutes(totalSeconds) + ":" + getSeconds(totalSeconds); // Updates display
-        console.log(totalSeconds);
+        
       }
+     
       else{
         // The timer has reached zero. Let the user start again. 
          enable(startButton);
         document.getElementById("cycling_roll").style.zIndex = `-10`
+        
       }
     }
     

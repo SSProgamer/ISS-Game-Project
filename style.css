@@ -20,6 +20,10 @@ h1 {
   width: 64px;
   height: 64px;
 }
+.roboticon {
+  width: 60px;
+  height: 60px;
+}
 
 #messagebox{
   position: absolute;
@@ -74,20 +78,20 @@ h2{
   
 }
 .bed{
- /* background-image: url("images\\Roomresting.jpg");*/
+  background-image: url("images\\RoomresCartoon.jpg");
   z-index:3;
   
 }
 .gym{
-  /*background-image: url("images\\Gym.png");*/
+  background-image: url("images\\GymCartoon.jpg");
   z-index:2;
 }
 .cafetaria{
- /* background-image: url("images\\Cafetaria.png");*/
+ background-image: url("images\\CafetariaCartoon.jpg");
   z-index:2;
 }
 .lab{
- /* background-image: url("images\\lab.png"); */
+ background-image: url("images\\LabCartoon.jpg");
   z-index:2;
 }
 
@@ -136,7 +140,7 @@ background: grey;
   margin:0px;
   padding:0px;
   display: inline-block;
-  top: 0;
+  top: 32%;
   left: 70%;
 }
 #cycling_roll{
@@ -169,7 +173,7 @@ background: grey;
   background: grey;
 }
 .breakfast_part1{
-            background-color: aqua;
+    background: grey;
     width: 100%;
     height: 20%;
     position: absolute;
@@ -180,7 +184,7 @@ background: grey;
     display: inline-block;
         }
         .breakfast_part2{
-            background-color: yellowgreen;
+    background: grey;
     width: 100%;
     height: 20%;
     position: absolute;
@@ -229,16 +233,7 @@ background: grey;
       left:10%;
     animation: 2.5s moving 0.5s linear infinite alternate;
     }
-  #triangle-up {
-      width: 0;
-      height: 0;
-      border-left: 50px solid transparent;
-      border-right: 50px solid transparent;
-      border-bottom: 100px solid blue;
-    position: relative;
-    top: -60%;
-    left:10%;
-    }
+  
     .breakfast_img{
             background-color: yellowgreen;
     width: 25%;
@@ -251,7 +246,7 @@ background: grey;
     display: inline-block;
         }
     .breakfast_part3{
-            background-color: rgb(205, 50, 97);
+    background: grey;
     width: 100%;
     height: 10%;
     position: absolute;
@@ -286,6 +281,63 @@ background: grey;
 }
 .robot{
   background: grey;
+}
+.robot_track{
+  background:purple;
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  display: grid;
+  grid-template-columns: 12vw 11vw 11vw 11vw 12vw;
+  padding: 3vh;
+}
+.robot_show{
+  background:red;
+  position: absolute;
+  left: 30%;
+  top: 5%;
+  width: 30%;
+  height: 40%;
+}
+#robot_part1{
+  background:#432d2d;
+  position: absolute;
+  left: 40%;
+  top: 5%;
+  width: 25%;
+  height: 25%;
+}
+#robot_part2{
+  background:#432d2d;
+  position: absolute;
+  left: 15%;
+  top: 35%;
+  width: 20%;
+  height: 20%;
+}
+#robot_part3{
+  background:#432d2d;
+  position: absolute;
+  left: 70%;
+  top: 35%;
+  width: 20%;
+  height: 20%;
+}
+#robot_part4{
+  background:#432d2d;
+  position: absolute;
+  left: 15%;
+  top: 75%;
+  width: 20%;
+  height: 20%;
+}
+#robot_part5{
+  background:#432d2d;
+  position: absolute;
+  left: 70%;
+  top: 75%;
+  width: 20%;
+  height: 20%;
 }
 .plant{
   background: grey;
@@ -436,7 +488,7 @@ sussy{
   border-radius: 10vh;
   background-color: lightgray;
   position: relative; }
-  .wheel .handle {
+  .wheel #handle {
     -webkit-tap-highlight-color: transparent;
     background-color: dodgerblue;
     border-radius: 10px;
@@ -458,7 +510,7 @@ sussy{
     height: 40px;
     left: 470%;
     position: relative;
-    top: -440%;
+    top: -300%;
     width: 160px; }
     .wheel .center:before {
       content: "";
@@ -498,7 +550,7 @@ sussy{
 .box_02 {
     height: 50vh;
     width: 50vh;
-    left:50vh;
+    left:45vh;
     position: relative;
 
 }
@@ -508,7 +560,7 @@ sussy{
     width:35vh;
     background-color: white;
     z-index: 10;
-    left:15vh;
+    left:12vh;
     position: absolute;
     margin:4vh auto;
     display:flex;
@@ -594,6 +646,7 @@ img {
   top:80%;
   left:50%;
 }
+.
 /* ต้นไม้*/
 
 #startaco {
@@ -601,6 +654,9 @@ img {
   top: 0%;
   left: 5%;
   color: #fcf923;
+  height: 1px;
+  width: auto; 
+  max-height: 100%; 
 }
 
 /*ปุ่มกลับสำหรับมินิเกมอาหาร*/
@@ -612,10 +668,37 @@ button.bck_bf{
 button.bck_l{
   position: relative;
   left: 43%;
-  bottom: 43%;
+  bottom: 37%;
 }
 button.bck_dn{
   position: relative;
-  left: 37%;
+  left: -10%;
+  bottom: 75%;
+}
+
+button.bck_ro{
+  position: relative;
+  left: 75%;
   bottom: 15%;
 }
+
+button.bck_tree{
+  position: relative;
+  left: 75%;
+  bottom: 15%;
+}
+
+#startaco{
+  width: 200px;
+    height: 120px;
+}
+
+#startaco img {
+    width: 20%;
+    height: auto;
+}
+/* button.bck_ro{
+  position: relative;
+  left: 37%;
+  bottom: 15%;
+} */

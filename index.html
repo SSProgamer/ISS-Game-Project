@@ -15,7 +15,7 @@
 </head>
 
 <body>
-  <div id="content">
+<!--   <div id="content"> -->
     
     <div class="room bed">
       <h1 class="roomname">Bedroom</h1><br>
@@ -41,7 +41,7 @@
     <div class="cycling_text"><h3>แต้ม</h3>
       
     </div>
-    <div class="cycling_text"><h3>ดาว</h3> <p id="upstar"></p> </div>
+    <div class="cycling_text"><h3>ดาว</h3> <p id="cycling_star"></p> </div>
          <div class="cycling_text">
            <button class= "button_box" id="startButton" onclick="cycling_roll.style.zIndex = `6`">Start</button>
          </div>
@@ -60,7 +60,7 @@
                 <div class="center">
                     <span class="value"></span>
                 </div>
-                <a href="javascript:void(0)" class="handle"></a>
+                <a href="javascript:void(0)" id="handle"></a>
             </div>
         </div>
   </div>
@@ -104,7 +104,6 @@ $("#slider1").roundSlider({
         <div id="breakfast_bar_win"></div>
       <div id="breakfast_bar_win_win"></div>
         <div id="breakfast_oval"></div>
-      <div id="triangle-up"></div>
     </div>
     <div class="breakfast_img"></div>
     <div class="breakfast_part3">
@@ -112,7 +111,7 @@ $("#slider1").roundSlider({
     </div>
       </div>
     <div class="minigame lunch">Minigame ทาโก้ยากิ
-      <p id="startaco">Star : 0</p>
+      <p id="startaco"></p>
       <p id="showwanttaco"></p>
       <p id="showtaco">Chose ingredients for your taco.</p>
       <div class="gridin">
@@ -133,27 +132,20 @@ $("#slider1").roundSlider({
          <button class="bck_l" onclick="lunch.style.zIndex = `-5`">กลับ</button>
       </div>
     <div class="minigame dinner">Minigame กระป๋อง
-        <button class="bck_dn" onclick="dinner.style.zIndex = `-5`">กลับ</button>
-      <p>กระป๋องที่ปิดอยู่จะมีโอกาสเจอมากกว่าถุงเลย์ และถุงเลย์มีโอกาสเจอมากกว่ากระป๋องที่เปิดแล้ว</p>
-      <div class="yeet">
-  <form>
-  <input class="you" id="you-1" name="you" type="radio" />
-  <input class="you" id="you-2" name="you" type="radio" />
-  <input class="you" id="you-3" name="you" type="radio" />
-  <input class="skynet" id="skynet-1" name="skynet" type="radio" />
-  <input class="skynet" id="skynet-2" name="skynet" type="radio" />
-  <input class="skynet" id="skynet-3" name="skynet" type="radio" />
-  <div class="options">
-    <label class="r" for="you-1">
-    </label><label class="p" for="you-2">
-    </label><label class="s" for="you-3">
-    </label></div>
-  <div class="game">
-    <div class="go">
-      <<label for="skynet-1">
-      </label><label for="skynet-2">
-      </label><label for="skynet-3">
-      </label></div>
+      <button class="bck_dn" onclick="dinner.style.zIndex = `-5`">กลับ</button>
+        <svg width="500" height="500" transform="rotate(0)" transform-origin="center">
+        <g id="maze" transform-origin="center">
+            <circle cx="250" cy="250" r="200" fill="yellow" onmouseover="console.log(`Collided!`);"/>
+            <rect x="250" y="250" width="200" height="20" fill="red" />
+            <circle cx="250" cy="250" r="175" fill="red" />
+            <circle cx="250" cy="250" r="50" fill="green" onmouseover="console.log(`YES!`);"/>
+        </g>
+        <!-- <rect x="250" y="270" width="200" height="20" fill="yellow" onmouseover="console.log(`Collided!`);"/> -->
+        <!-- <circle cx="360" cy="310" r="10" fill="green" onmouseover="console.log(`Yes!`);"/> -->
+        <use href="#maze" transform="scale(0.75) rotate(180)" transform-origin="center"></use>
+        <use href="#maze" transform="scale(0.5) rotate(-45)" transform-origin="center"></use>
+    </svg>
+              
   </div>
   <div class="it">
     <div class="r">
@@ -183,45 +175,43 @@ $("#slider1").roundSlider({
       <button id="plant" onclick="plant.style.zIndex = `6`">ปลูกต้นไม้</button>
     </div>
     <div class="minigame robot">Minigame robot
-        <button onclick="robot.style.zIndex = `-5`">กลับ</button>
-
-      <div id="dropZone">
-  <div
-    id="dropBox1"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>robot part 1</p>
+        <button class="bck_ro" onclick="robot.style.zIndex = `-5`">กลับ</button>
+      <p id="showrobot">Chose ingredients for your robot.</p>
+<div class="robot_show">
+  <div id="robot_part1">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_0" name="something robot_hand">
   </div>
-  <div
-    id="dropBox2"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>robot part 2</p>
+  <div id="robot_part2">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_1" name="something robot_hand">
   </div>
-  <div
-    id="dropBox3"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>robot part 3</p>
+  <div id="robot_part3">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_2" name="something robot_hand">
   </div>
-  <div
-    id="dropBox4"
-    ondrop="drop(event)"
-    ondragover="allowDrop(event)"
-  >
-    <p>robot part 4</p>
+  <div id="robot_part4">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_3" name="something robot_hand">
   </div>
+  <div id="robot_part5">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_4" name="something robot_hand">
+  </div>
+  
 </div>
-        <div id="robots" ondrop="drop(event)" ondragover="allowDrop(event)">
-          <img id="robot1" src="https://cdn.discordapp.com/attachments/468800874924474369/970547381231845376/robot.png" draggable="true" ondragstart="drag(event)">
-          <img id="robot2" src="https://cdn.discordapp.com/attachments/956540195652661348/970541731659542558/egg.png" draggable="true" ondragstart="drag(event)">
-      </div>
+      <div class="robot_track">
+        <img name="robot_part_1" class="roboticon" src="images\\taco\\tomato.png" onclick="robotChange(this.name)">
+      <img name="robot_part_2" class="roboticon" src="images\\taco\\lettuce.png" onclick="robotChange(this.name)">
+      <img name="robot_part_3" class="roboticon" src="images\\taco\\shallot.png" onclick="robotChange(this.name)">
+      <img name="robot_part_4" class="roboticon" src="images\\taco\\lettuce.png" onclick="robotChange(this.name)">
+      <img name="robot_part_5" class="roboticon" src="images\\taco\\shallot.png" onclick="robotChange(this.name)">
+      <img name="robot_part_6" class="roboticon" src="images\\taco\\pork.png" onclick="robotChange(this.name)">
+      <img name="robot_part_7" class="roboticon" src="images\\taco\\chicken.png" onclick="robotChange(this.name)">
+      <img name="robot_part_8" class="roboticon" src="images\\taco\\beef.png" onclick="robotChange(this.name)">
+<img name="robot_part_9" class="roboticon" src="images\\taco\\chicken.png" onclick="robotChange(this.name)">
+      <img name="robot_part_10" class="roboticon" src="images\\taco\\beef.png" onclick="robotChange(this.name)">
+        </div>
+      
+      
       </div>
     <div class="minigame plant">Minigame plant
-        <button onclick="plant.style.zIndex = `-5`">กลับ</button>
+        <button class="bck_tree" onclick="plant.style.zIndex = `-5`">กลับ</button>
       <div class="box_02">
         <p id="name"></p>
         <div class="box_01">
@@ -251,10 +241,10 @@ $("#slider1").roundSlider({
           </div>
         </div>
         <button class="starto start btn btn-danger">start</button>
-        <div class="level text-center">
+        <div class="level">
 			<h2>Level: 1</h2>
 		      </div>
-        <div class="score text-center">
+        <div class="score">
 			<h2>Star: 0</h2>
 		      </div>
         <script src="simon.js"></script>

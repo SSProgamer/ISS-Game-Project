@@ -90,17 +90,57 @@ function serveTaco(){
     document.getElementById("startaco").innerHTML = `Star : 2`;
   }
   else if ( vegetable == wantvegetable || meat == wantmeat || sauce == wantsauce ){
-    document.getElementById("startaco").innerHTML = `Star : 1`;
+    var img = document.createElement("img");
+    img.src = "images\\Star.png";
+    var src = document.getElementById("startaco");
+    src.appendChild(img);
   }
   if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
   document.getElementById("showtaco").innerHTML = `<h2>Yes, this is what we want.<h2>`;
-  document.getElementById("startaco").innerHTML = `Star : 3`;
+  var img = document.createElement("img");
+  img.src = "images\\Star3.png";
+  var src = document.getElementById("startaco");
+  src.appendChild(img);
+  // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
   else{
     document.getElementById("showtaco").innerHTML = `<h2>No, this is not our taco.<h2>`;
   }
 }
 //taco
+
+
+// ประกอบหุ่นยนต์
+
+ro = 0; // เพิ่มตัวเลขเพื่อตำแหน่งที่แสดง
+function robotChange(name) {
+  document.getElementById("showrobot").innerHTML = name;
+  name_robot = ("robot_hand_"+ro);// เพิ่มตัวเลขและตำแหน่งที่แสดงจะเปลี่ยน
+  ro++;
+  if (name == "robot_part_1" || name == "robot_part_2" || name == "robot_part_3"){
+    document.getElementById(name_robot).src = robotcoimg[name];
+    document.getElementById(name_robot).name = name;
+  }else if (name == "robot_part_4" || name == "robot_part_5" || name == "robot_part_6"){
+    document.getElementById(name_robot).src = robotcoimg[name];
+    document.getElementById(name_robot).name = name;
+  }else{
+    document.getElementById(name_robot).src = robotcoimg[name];
+    document.getElementById(name_robot).name = name;
+  }
+}
+robotcoimg = {
+  "robot_part_1": "images\\taco\\tomato.png",
+  "robot_part_2": "images\\taco\\lettuce.png",
+  "robot_part_3": "images\\taco\\shallot.png",
+  "robot_part_4": "images\\taco\\pork.png",
+  "robot_part_5": "images\\taco\\chicken.png",
+  "robot_part_6": "images\\taco\\beef.png",
+  "robot_part_7": "images\\taco\\ketchup.png",
+  "robot_part_8": "images\\taco\\mustard.png",
+  "robot_part_9": "images\\taco\\ketchup.png",
+  "robot_part_10": "images\\taco\\mustard.png",
+}
+// ประกอบหุ่นยนต์
 
 function closebox() {
   var x = document.getElementById("messagebox");
@@ -117,7 +157,6 @@ function closebox() {
   
 }
 
-
 // ประกอบหุ่นยนต์
 function allowDrop(event) {
   event.preventDefault();
@@ -130,4 +169,5 @@ function drop(event) {
   var data = event.dataTransfer.getData("text");
   event.target.appendChild(document.getElementById(data));
 }
+// 
 // ประกอบหุ่นยนต์

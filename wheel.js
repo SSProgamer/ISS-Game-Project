@@ -1,4 +1,4 @@
-; (function($, d3, window, document, undefined) {
+; (function wheel($, d3, window, document, undefined) {
 
   var pluginName = "wheel",
     defaults = {
@@ -15,7 +15,7 @@
     this.oldvalue = 0;
     this.chenk = 0;
     this.element = element;
-    this.handle = element.querySelector(".handle");
+    this.handle = element.querySelector("#handle");
     this.progress = element.querySelector(".progress");
     this.options = $.extend({}, defaults, options);
     this.progressFill;
@@ -141,16 +141,14 @@
     }
     // แสดงค่ามีถึงจุดที่กำหนด
     if (self.oldvalue === 20) {
-      alert(self.oldvalue+"score");
-      document.getElementById("upstar").innerHTML = "not bad but nanomachines son";
-      self.oldvalue = 0;
-      self.chenk = 0;
-      self.value = 0;
-      self.deg = 0;
-      
-
-      clearInterval(interval);
-
+      document.getElementById("cycling_star").innerHTML = "1 star";
+    }
+    else if (self.oldvalue === 50) {
+      document.getElementById("cycling_star").innerHTML = "2 star";
+    }
+    else if (self.oldvalue === 70) {
+      document.getElementById("cycling_star").innerHTML = "3 star";
+        
     }
 
     if (typeof self.options.onChange === "function") {
