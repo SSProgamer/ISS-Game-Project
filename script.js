@@ -15,6 +15,11 @@ message1 = [
 ]
 idx = 0
 
+function delbut(idbut) {
+  const element = document.getElementById(idbut);
+  element.remove();
+}
+
 //taco
 tacoimg = {
   "Tomato": "images\\taco\\tomato.png",
@@ -86,8 +91,14 @@ function serveTaco(){
   vegetable = document.getElementById("vegetable").name
   meat = document.getElementById("meat").name
   sauce = document.getElementById("sauce").name
+  
   if ( (vegetable == wantvegetable && meat == wantmeat) || (meat == wantmeat && sauce == wantsauce) || (vegetable == wantvegetable && sauce == wantsauce) ){
-    document.getElementById("startaco").innerHTML = `Star : 2`;
+    for (let i = 0; i < 2; i++) {
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("startaco");
+      src.appendChild(img);
+    }
   }
   else if ( vegetable == wantvegetable || meat == wantmeat || sauce == wantsauce ){
     var img = document.createElement("img");
@@ -98,7 +109,7 @@ function serveTaco(){
   if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
   document.getElementById("showtaco").innerHTML = `<h2>Yes, this is what we want.<h2>`;
   var img = document.createElement("img");
-  img.src = "images\\Star3.png";
+  img.src = "images\\Star.png";
   var src = document.getElementById("startaco");
   src.appendChild(img);
   // document.getElementById("startaco").innerHTML = `Star : 3`;
@@ -113,10 +124,32 @@ function serveTaco(){
 // ประกอบหุ่นยนต์
 
 ro = 0; // เพิ่มตัวเลขเพื่อตำแหน่งที่แสดง
+var wantpart_1 = "robot_part_1"
+var wantpart_2 = "robot_part_2"
+var wantpart_3 = "robot_part_3"
+var wantpart_4 = "robot_part_4"
+var wantpart_5 = "robot_part_5"
 function robotChange(name) {
-  document.getElementById("showrobot").innerHTML = name;
   name_robot = ("robot_hand_"+ro);// เพิ่มตัวเลขและตำแหน่งที่แสดงจะเปลี่ยน
   ro++;
+  if(ro > 5){
+    ro = 5;
+  }
+  if(ro == 0){
+    document.getElementById("showrobot").innerHTML = "ISS robot head";
+  }
+  else if(ro == 1){
+    document.getElementById("showrobot").innerHTML = "ISS arm head left";
+  }
+  else if(ro == 2){
+    document.getElementById("showrobot").innerHTML = "ISS arm head right";
+  }
+  else if(ro == 3){
+    document.getElementById("showrobot").innerHTML = "ISS robot body";
+  }
+  else if(ro == 4){
+    document.getElementById("showrobot").innerHTML = "ISS leg head right";
+  }
   if (name == "robot_part_1" || name == "robot_part_2" || name == "robot_part_3"){
     document.getElementById(name_robot).src = robotcoimg[name];
     document.getElementById(name_robot).name = name;
@@ -129,17 +162,61 @@ function robotChange(name) {
   }
 }
 robotcoimg = {
-  "robot_part_1": "images\\taco\\tomato.png",
-  "robot_part_2": "images\\taco\\lettuce.png",
-  "robot_part_3": "images\\taco\\shallot.png",
-  "robot_part_4": "images\\taco\\pork.png",
-  "robot_part_5": "images\\taco\\chicken.png",
-  "robot_part_6": "images\\taco\\beef.png",
-  "robot_part_7": "images\\taco\\ketchup.png",
-  "robot_part_8": "images\\taco\\mustard.png",
-  "robot_part_9": "images\\taco\\ketchup.png",
-  "robot_part_10": "images\\taco\\mustard.png",
+  "robot_part_1": "images\\robot\\robot_part_1.png",
+  "robot_part_21": "images\\robot\\fakepart_2.png",
+  "robot_part_31": "images\\robot\\fakepart_4.png",
+  "robot_part_3": "images\\robot\\robot_part_4.png",
+  "robot_part_4": "images\\robot\\robot_part_3.png",
+  "robot_part_61": "images\\robot\\fakepart_1.png",
+  "robot_part_5": "images\\robot\\robot_part_5.png",
+  "robot_part_81": "images\\robot\\fakepart_5.png",
+  "robot_part_2": "images\\robot\\robot_part_2.png",
+  "robot_part_10": "images\\robot\\fakepart_3.png",
 }
+function serverobot(){
+  check_robot_1 = document.getElementById("robot_hand_0").name;
+  check_robot_2 = document.getElementById("robot_hand_1").name;
+  check_robot_3 = document.getElementById("robot_hand_2").name;
+  check_robot_4 = document.getElementById("robot_hand_3").name;
+  check_robot_5 = document.getElementById("robot_hand_4").name;
+  console.log(check_robot_1);
+  console.log(check_robot_2);
+  console.log(check_robot_3);
+  console.log(check_robot_4);
+  console.log(check_robot_5);
+  
+  if ( check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5){
+  document.getElementById("showrobotsum").innerHTML = `<h2>This perfect ISS robot<h2>`;
+  for (let i = 0; i < 3; i++) {
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("starrobot");
+      src.appendChild(img);
+    }
+  // document.getElementById("startaco").innerHTML = `Star : 3`;
+  }
+    else if ( (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_4 == wantpart_4) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_5 == wantpart_5) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_5 == wantpart_5)|| (check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5)){
+    document.getElementById("showrobotsum").innerHTML = `<h2>This same like ISS robot<h2>`;
+    var img = document.createElement("img");
+    img.src = "images\\Star.png";
+    var src = document.getElementById("starrobot");
+    src.appendChild(img);
+  }
+  else if ( check_robot_1 == wantpart_1 || check_robot_2 == wantpart_2 || check_robot_3 == wantpart_3 || check_robot_4 == wantpart_4|| check_robot_5 == wantpart_5){
+    document.getElementById("showrobotsum").innerHTML = `<h2>This like ISS robot<h2>`;
+    for (let i = 0; i < 2; i++) {
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("starrobot");
+      src.appendChild(img);
+    }
+  }
+  
+  else{
+    document.getElementById("showrobotsum").innerHTML = `<h2>No, this is not ISS robot<h2>`;
+  }
+}
+
 // ประกอบหุ่นยนต์
 
 function closebox() {
@@ -171,3 +248,27 @@ function drop(event) {
 }
 // 
 // ประกอบหุ่นยนต์
+
+dinnerstar = 3
+function decstar(){
+  console.log("Collide!");
+  if (dinnerstar > 1){
+    dinnerstar -= 1
+    document.getElementById("dinnerstar").innerHTML = `Star: ${dinnerstar}`;
+  }else{
+    document.getElementById("dinnerstar").innerHTML = `YOU LOSE!`;
+  }
+}
+
+// //reset
+// const reloadtButton = document.querySelector("#reload");
+// // Reload everything:
+// function reload() {
+//     reload = location.reload();
+// }
+// // Event listeners for reload
+// reloadButton.addEventListener("click", reload, false);
+
+function fun(){  
+   document.getElementByClass("minigame lunch").reset();  
+ }   

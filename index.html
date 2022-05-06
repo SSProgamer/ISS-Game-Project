@@ -15,8 +15,8 @@
 </head>
 
 <body>
+    <img id="wallpaper" src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg">
 <!--   <div id="content"> -->
-    
     <div class="room bed">
       <h1 class="roomname">Bedroom</h1><br>
 <!--       <h1 class="clock">9.00am</h1> -->
@@ -84,7 +84,7 @@ $("#slider1").roundSlider({
 <!--       <h1 class="clock">15.00am</h1> -->
       <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
       <button id="breakfast" onclick="breakfast.style.zIndex = `6`">ไข่</button>
-      <button id="lunch" onclick="lunch.style.zIndex = `6`; tacoRandom();">ทาโก้ยากิ</button>
+      <button id="lunch" onclick="lunch.style.zIndex = `6`; tacoRandom();">ทาโก้</button>
       <button id="dinner" onclick="dinner.style.zIndex='6'">กระป๋อง</button>
     </div>
     
@@ -105,12 +105,23 @@ $("#slider1").roundSlider({
       <div id="breakfast_bar_win_win"></div>
         <div id="breakfast_oval"></div>
     </div>
-    <div class="breakfast_img"></div>
+    <div id="breakfast_img">
+      <img src="images\\question2.png"  name="microwave">
+    </div>
+      <div id="breakfast_img_welldone">
+      <img src="images\\egg1.png"  name="egg">
+    </div>
+      <div id="breakfast_img_burn">
+      <img src="images\\egg.png"  name="egg">
+    </div>
+      <div id="breakfast_img_raw">
+      <img src="images\\egg2.png"  name="egg">
+    </div>
     <div class="breakfast_part3">
         <p id="breakfast_win_text"></p>
     </div>
       </div>
-    <div class="minigame lunch">Minigame ทาโก้ยากิ
+    <div class="minigame lunch">
       <p id="startaco"></p>
       <p id="showwanttaco"></p>
       <p id="showtaco">Chose ingredients for your taco.</p>
@@ -128,22 +139,25 @@ $("#slider1").roundSlider({
       <p></p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="sauce" name="something sauce">
         </div>
-      <button class="right" onclick="serveTaco()">Serve!</button>
+      <button id="tacoserve" onclick="serveTaco(); delbut(this.id)">Serve!</button>
          <button class="bck_l" onclick="lunch.style.zIndex = `-5`">กลับ</button>
+      
       </div>
     <div class="minigame dinner">Minigame กระป๋อง
+      <div id="dinnerstar">Star: 3</div>
       <button class="bck_dn" onclick="dinner.style.zIndex = `-5`">กลับ</button>
         <svg width="500" height="500" transform="rotate(0)" transform-origin="center">
+        <g transform-origin="center">
         <g id="maze" transform-origin="center">
-            <circle cx="250" cy="250" r="200" fill="yellow" onmouseover="console.log(`Collided!`);"/>
-            <rect x="250" y="250" width="200" height="20" fill="red" />
+            <circle cx="250" cy="250" r="200" fill="yellow" onmouseover="decstar();"/>
+            <rect x="250" y="250" width="200" height="40" fill="red" />
             <circle cx="250" cy="250" r="175" fill="red" />
-            <circle cx="250" cy="250" r="50" fill="green" onmouseover="console.log(`YES!`);"/>
+            <circle cx="250" cy="250" r="25" fill="green" onmouseover="dinner.style.zIndex = `-5`"/>
         </g>
-        <!-- <rect x="250" y="270" width="200" height="20" fill="yellow" onmouseover="console.log(`Collided!`);"/> -->
-        <!-- <circle cx="360" cy="310" r="10" fill="green" onmouseover="console.log(`Yes!`);"/> -->
         <use href="#maze" transform="scale(0.75) rotate(180)" transform-origin="center"></use>
         <use href="#maze" transform="scale(0.5) rotate(-45)" transform-origin="center"></use>
+        <use href="#maze" transform="scale(0.25) rotate(90)" transform-origin="center"></use>
+        </g>
     </svg>
               
   </div>
@@ -176,49 +190,55 @@ $("#slider1").roundSlider({
     </div>
     <div class="minigame robot">Minigame robot
         <button class="bck_ro" onclick="robot.style.zIndex = `-5`">กลับ</button>
-      <p id="showrobot">Chose ingredients for your robot.</p>
+      <div id="robot_box_star">
+      <p id="starrobot"></p>
+      <p id="showrobot">We need the</p>
+      <p id="showrobot">robot head</p>
+      <p id="showrobotsum"></p></div>
+      <button id="robotserve" onclick="serverobot()">Build!</button>
 <div class="robot_show">
   <div id="robot_part1">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_0" name="something robot_hand">
+    <img src="images\\question2.png" class="questionicon" id="robot_hand_0" name="something robot_hand">
   </div>
   <div id="robot_part2">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_1" name="something robot_hand">
+    <img src="images\\question2.png" class="questionicon" id="robot_hand_1" name="something robot_hand">
   </div>
   <div id="robot_part3">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_2" name="something robot_hand">
+    <img src="images\\question2.png" class="questionicon" id="robot_hand_2" name="something robot_hand">
   </div>
   <div id="robot_part4">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_3" name="something robot_hand">
+    <img src="images\\question2.png" class="questionicon" id="robot_hand_3" name="something robot_hand">
   </div>
   <div id="robot_part5">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="robot_hand_4" name="something robot_hand">
+    <img src="images\\question2.png" class="questionicon" id="robot_hand_4" name="something robot_hand">
   </div>
   
 </div>
       <div class="robot_track">
-        <img name="robot_part_1" class="roboticon" src="images\\taco\\tomato.png" onclick="robotChange(this.name)">
-      <img name="robot_part_2" class="roboticon" src="images\\taco\\lettuce.png" onclick="robotChange(this.name)">
-      <img name="robot_part_3" class="roboticon" src="images\\taco\\shallot.png" onclick="robotChange(this.name)">
-      <img name="robot_part_4" class="roboticon" src="images\\taco\\lettuce.png" onclick="robotChange(this.name)">
-      <img name="robot_part_5" class="roboticon" src="images\\taco\\shallot.png" onclick="robotChange(this.name)">
-      <img name="robot_part_6" class="roboticon" src="images\\taco\\pork.png" onclick="robotChange(this.name)">
-      <img name="robot_part_7" class="roboticon" src="images\\taco\\chicken.png" onclick="robotChange(this.name)">
-      <img name="robot_part_8" class="roboticon" src="images\\taco\\beef.png" onclick="robotChange(this.name)">
-<img name="robot_part_9" class="roboticon" src="images\\taco\\chicken.png" onclick="robotChange(this.name)">
-      <img name="robot_part_10" class="roboticon" src="images\\taco\\beef.png" onclick="robotChange(this.name)">
+        <img name="robot_part_1" class="roboticon" src="images\\robot\\robot_part_1.png" onclick="robotChange(this.name)">
+      <img name="robot_part_21" class="roboticon" src="images\\robot\\fakepart_2.png" onclick="robotChange(this.name)">
+      <img name="robot_part_31" class="roboticon" src="images\\robot\\fakepart_4.png" onclick="robotChange(this.name)">
+      <img name="robot_part_4" class="roboticon" src="images\\robot\\robot_part_3.png" onclick="robotChange(this.name)">
+      <img name="robot_part_3" class="roboticon" src="images\\robot\\robot_part_4.png" onclick="robotChange(this.name)">
+      <img name="robot_part_61" class="roboticon" src="images\\robot\\fakepart_1.png" onclick="robotChange(this.name)">
+      <img name="robot_part_5" class="roboticon" src="images\\robot\\robot_part_5.png" onclick="robotChange(this.name)">
+      <img name="robot_part_81" class="roboticon" src="images\\robot\\fakepart_5.png" onclick="robotChange(this.name)">
+      <img name="robot_part_2" class="roboticon" src="images\\robot\\robot_part_2.png" onclick="robotChange(this.name)">
+      <img name="robot_part_10" class="roboticon" src="images\\robot\\fakepart_3.png" onclick="robotChange(this.name)">
         </div>
       
       
       </div>
     <div class="minigame plant">Minigame plant
         <button class="bck_tree" onclick="plant.style.zIndex = `-5`">กลับ</button>
+      
       <div class="box_02">
         <p id="name"></p>
         <div class="box_01">
           <div class="row">
             <div class="col-sm-3 col-xs-3 pad shape1" data-pad="1">
               <audio preload="auto" class="sound1">
-					    <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg"/>
+					    <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg"/>  
 				      </audio>
             </div>
             <div class="col-sm-3 col-xs-3 pad shape2" data-pad="2">
@@ -245,7 +265,7 @@ $("#slider1").roundSlider({
 			<h2>Level: 1</h2>
 		      </div>
         <div class="score">
-			<h2>Star: 0</h2>
+			<h2>Star: </h2><p id="starplant"> </p>
 		      </div>
         <script src="simon.js"></script>
       </div>
@@ -257,10 +277,13 @@ $("#slider1").roundSlider({
   <script src="egg.js"></script>
 
 <div class="newcan"></div>
-<div id="messagebox">
+<!-- <div id="messagebox">
   <h1>ยินดีต้อนทรัพย์</h1>
   <p id="message">อิอิ</p>
   <button onclick="closebox()" class="bottom">ต่อไป</button>
-</div>
+</div> -->
+<button id="re" value = "Reset data" onClick = "fun()"/>vbvb
+<button onClick="window.location.reload();">Refresh Page</button>
+
 </body>
 </html>

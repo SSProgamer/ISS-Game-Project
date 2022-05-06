@@ -166,9 +166,15 @@ var game={
 		$('.level h2').text('Level: '+this.level);
 
 	},
-  displayScore: function(){						
-		
-		$('.score h2').text('Star: '+this.score);
+  displayScore: function(){
+    
+      document.getElementById("starplant").innerHTML = "";
+      for (let i = 0; i < this.score; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("starplant");
+        src.appendChild(img);
+      }
 
 	},
 	

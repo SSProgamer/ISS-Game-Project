@@ -53,7 +53,7 @@
      
       else{
         // The timer has reached zero. Let the user start again. 
-         enable(startButton);
+         disable(startButton);
         document.getElementById("cycling_roll").style.zIndex = `-10`
         
       }

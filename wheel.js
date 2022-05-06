@@ -141,13 +141,29 @@
     }
     // แสดงค่ามีถึงจุดที่กำหนด
     if (self.oldvalue === 20) {
-      document.getElementById("cycling_star").innerHTML = "1 star";
+      document.getElementById("cycling_star").innerHTML = "";
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("cycling_star");
+      src.appendChild(img)
     }
     else if (self.oldvalue === 50) {
-      document.getElementById("cycling_star").innerHTML = "2 star";
+      document.getElementById("cycling_star").innerHTML = "";
+      for (let i = 0; i < 2; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }
     }
     else if (self.oldvalue === 70) {
-      document.getElementById("cycling_star").innerHTML = "3 star";
+      document.getElementById("cycling_star").innerHTML = "";
+      for (let i = 0; i < 3; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }
         
     }
 

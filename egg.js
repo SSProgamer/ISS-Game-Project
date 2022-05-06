@@ -1,4 +1,3 @@
-
 var elem = document.getElementById("breakfast_oval");   
   var pos = 0;
        // pause animation
@@ -8,14 +7,34 @@ document.querySelector("#pause").addEventListener('click', function() {
   const el3 = document.getElementById('breakfast_bar_win_win');
 	document.querySelector("#breakfast_oval").style.animationPlayState = 'paused';
   if (elementsOverlap(el1, el3)){
-        document.getElementById("breakfast_win_text").innerHTML = "3 star";
+      document.getElementById("breakfast_win_text").innerHTML = "";
+      for (let i = 0; i < 3; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
+      }
+    document.getElementById("breakfast_img_welldone").style.zIndex = `10`;
     }
     else if (elementsOverlap(el1, el2)){
-        document.getElementById("breakfast_win_text").innerHTML = "2 star";
+        document.getElementById("breakfast_win_text").innerHTML = "";
+      for (let i = 0; i < 2; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
+      }
+      document.getElementById("breakfast_img_raw").style.zIndex = `10`;
     }
     else{
-        document.getElementById("breakfast_win_text").innerHTML = "1 star";
+      document.getElementById("breakfast_win_text").innerHTML = "";
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("breakfast_win_text");
+      src.appendChild(img);
+      document.getElementById("breakfast_img_burn").style.zIndex = `10`;
     }
+    
 });
 
 // play animation
