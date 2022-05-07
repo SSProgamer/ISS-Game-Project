@@ -19,6 +19,7 @@
 <!--   <div id="content"> -->
     <div class="room bed">
       <h1 class="roomname">Bedroom</h1><br>
+  <a href="Web\\index.html">กดดิ๊</a>
 <!--       <h1 class="clock">9.00am</h1> -->
       <button class="right" onclick="cafetaria.style.zIndex = `5`;bedroom.style.zIndex = `1`">Cafetaria</button>
       <button class="left" onclick="gym.style.zIndex = `5`;bedroom.style.zIndex = `1`">Gym</button>
@@ -195,7 +196,7 @@ $("#slider1").roundSlider({
       <p id="showrobot">We need the</p>
       <p id="showrobot">robot head</p>
       <p id="showrobotsum"></p></div>
-      <button id="robotserve" onclick="serverobot()">Build!</button>
+      <button id="robotserve" onclick="serverobot(); delbut(this.id)">Build!</button>
 <div class="robot_show">
   <div id="robot_part1">
     <img src="images\\question2.png" class="questionicon" id="robot_hand_0" name="something robot_hand">
@@ -231,7 +232,7 @@ $("#slider1").roundSlider({
       </div>
     <div class="minigame plant">Minigame plant
         <button class="bck_tree" onclick="plant.style.zIndex = `-5`">กลับ</button>
-      
+      <div id="plantback">ทดลองเปลี่ยนสีตอนกดปุ่ม</div>
       <div class="box_02">
         <p id="name"></p>
         <div class="box_01">
@@ -284,6 +285,7 @@ $("#slider1").roundSlider({
 </div> -->
 <button id="re" value = "Reset data" onClick = "fun()"/>vbvb
 <button onClick="window.location.reload();">Refresh Page</button>
+  
 
 </body>
 </html>

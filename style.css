@@ -154,8 +154,8 @@ background: grey;
   margin:0px;
   padding:0px;
   display: inline-block;
-  top: 32%;
-  left: 70%;
+  top: 20%;
+  left: 67.5%;
 }
 #cycling_roll{
   background:red;
@@ -164,12 +164,13 @@ background: grey;
   position: absolute;
   margin:0px;
   padding:0px;
-  top: 40%;
-  left: 20%;
+  top: 37.5%;
+  left: 33.5%;
   z-index: -10;
 }
 .cycling_text{
   text-align: center;
+  top: 50%;
   width: 100%;
   height: 10%;
   display:auto;
@@ -180,8 +181,8 @@ background: grey;
   left:0;
 }
 .button_box{
-  
   position: relative;
+  top: -20%;
 }
 .breakfast{
   background: grey;
@@ -421,6 +422,7 @@ background: grey;
 }
 #plantback{
   background:#432d2d;
+  opacity:0.4;
   position: absolute;
   left: 0%;
   top: 30%;
@@ -530,7 +532,8 @@ button:hover{
 }
 .gridin{
   position: absolute;
-  left: 0px;
+  left: 30%;
+  top: 30%;
   display: grid;
   grid-template-columns: 8vw 8vw 8vw 8vw;
   padding: 4vh;
@@ -550,17 +553,20 @@ sussy{
   text-align: center;
   white-space: nowrap;
   width: 100%;
-  height: 100%; }
+  height: 100%; 
+}
   .center-content:before {
     content: "";
     display: inline-block;
     height: 100%;
     vertical-align: middle;
     margin-right: -0.25em;
-    /* Adjusts for spacing */ }
+    /* Adjusts for spacing */ 
+  }
   .center-content > * {
     display: inline-block;
-    vertical-align: middle; }
+    vertical-align: middle; 
+  }
 
 .wheel {
   width: 10vh;
@@ -588,9 +594,9 @@ sussy{
     border-radius: 80px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     height: 40px;
-    left: 680%;
+    right: -525%;
     position: relative;
-    top: -40%;
+    top: -100%;
     width: 160px; }
     .wheel .center:before {
       content: "";
@@ -749,12 +755,13 @@ img {
   top:10%;
   left:50%;
 }
+
 /* ต้นไม้*/
 
 #startaco {
   position: absolute;
   top: 0%;
-  left: 5%;
+  left: 45%;
   color: #fcf923;
   height: 1px;
   width: auto; 
@@ -764,13 +771,13 @@ img {
 /*ปุ่มกลับสำหรับมินิเกมอาหาร*/
 button.bck_bf{
   position: absolute;
-/*   bottom: 8vh;
-  right: 8vw; */
+/*   bottom: 5vh;
+  right: 4vw; */
 }
 button.bck_l{
   position: absolute;
   bottom: 8vh;
-  right: 8vw;
+  right: 4vw;
 }
 button.bck_dn{
   position: absolute;
@@ -780,8 +787,8 @@ button.bck_dn{
 
 button.bck_ro{
   position: absolute;
-  bottom: 8vh;
-  right: 8vw;
+  bottom: 5vh;
+  right: 4vw;
 }
 
 button.bck_tree{
@@ -795,7 +802,7 @@ button.bck_tree{
     height: 120px;
   position: absolute;
   top: 20%;
-  left: 23%;
+  left: 25%;
 }
 
 #cycling_star img {
@@ -840,7 +847,8 @@ button.bck_tree{
 
 #tacoserve{
   position: absolute;
-  left: 80%;
+  right: 4vw;
+  top: 25%;
 }
 /* button.bck_ro{
   position: relative;
@@ -849,7 +857,8 @@ button.bck_tree{
 } */
 #robotserve{
   position: absolute;
-  left: 80%;
+  right: 4vw;
+  top: 25%; 
 }
 #starrobot{
   position: absolute;
@@ -877,5 +886,13 @@ button.bck_tree{
 }
 
 #showtaco{
+  position: absolute;
   font-family: sans-serif;
+  left: 30%;
+  top: 20%;
+}
+#showwanttaco{
+  position: absolute;
+  left: 30%;
+  top: 10%;
 }

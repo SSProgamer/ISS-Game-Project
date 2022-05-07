@@ -144,7 +144,18 @@ var game={
     else{
       
     }
-    
+    if(pad == 1){
+        document.getElementById("plantback").style.backgroundColor = "red";
+      }
+      else if(pad == 4){
+        document.getElementById("plantback").style.backgroundColor = "yellow";
+      }
+    else if(pad == 3){
+        document.getElementById("plantback").style.backgroundColor = "blue";
+      }
+    else if(pad == 2){
+        document.getElementById("plantback").style.backgroundColor = "green";
+      }
 	},
 
 	displaySequence: function(){				
