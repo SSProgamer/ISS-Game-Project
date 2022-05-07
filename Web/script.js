@@ -2,12 +2,14 @@ let picp1 = document.getElementById('picp1');
 let picp2 = document.getElementById('picp2');
 let picp4 = document.getElementById('picp4');
 let oneday = document.getElementById('day');
+let qp2 = document.getElementById('qoute2');
 
     window.addEventListener('scroll', function(){
       let value = window.scrollY;
       picp1.style.left = value * -0.25 + 'px';
       picp1.style.top = value * 0.25 + 'px';
       picp2.style.top = value * 0.35 + 'px';
+      qp2.style.top = value * 0.3 + 'px';
       picp4.style.top = value * 0.33 - 900 + 'px';
     })
 
