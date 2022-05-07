@@ -25,7 +25,7 @@
     
     // Defines functions that manipulate the countdown
     function start(){
-      totalSeconds = 1 * 60; // Sets initial value of totalSeconds based on user input
+      totalSeconds = 0.25 * 60; // Sets initial value of totalSeconds based on user input
       counterDiv.innerHTML = getMinutes(totalSeconds) + ":" + getSeconds(totalSeconds); // Initializes display
       //disable(minutesInput);  // Toggles buttons
       disable(startButton);
@@ -53,7 +53,7 @@
      
       else{
         // The timer has reached zero. Let the user start again. 
-         disable(startButton);
+         enable(startButton);
         document.getElementById("cycling_roll").style.zIndex = `-10`
         
       }

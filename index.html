@@ -12,6 +12,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
   <script src="script.js"></script>
   <link href="open_can.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -20,6 +23,7 @@
     <div class="room bed">
       <h1 class="roomname">Bedroom</h1><br>
   <a href="Web\\index.html">กดดิ๊</a>
+      <h1 id="showallstar">0</h1>
 <!--       <h1 class="clock">9.00am</h1> -->
       <button class="right" onclick="cafetaria.style.zIndex = `5`;bedroom.style.zIndex = `1`">Cafetaria</button>
       <button class="left" onclick="gym.style.zIndex = `5`;bedroom.style.zIndex = `1`">Gym</button>
@@ -30,45 +34,37 @@
       <h1 class="roomname">Gym</h1>
 <!--       <h1 class="clock">12.00am</h1> -->
       <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`">Bedroom</button>
-      <button id="cycling " onclick="cycling.style.zIndex = `6`">ปั่น</button>
+      <button id="cycling " onclick="cycling.style.zIndex = `6`">ออกกำลังกาย (ปั่นจักรยาน)</button>
       
     </div>
     
-      <div class="minigame cycling">
-        <div class="cycling_part1">
-        <button class= "button_left"onclick="cycling.style.zIndex = `-5`">กลับ</button></div>
-       <div class="cycling_part3">
-      <div class="cycling_text"><h3>Minigame จักรยาน</h3></div>
-    <div class="cycling_text"><h3>แต้ม</h3>
-      
-    </div>
-    <div class="cycling_text"><h3>ดาว</h3> <p id="cycling_star"></p> </div>
-         <div class="cycling_text">
-           <button class= "button_box" id="startButton" onclick="cycling_roll.style.zIndex = `6`">Start</button>
-         </div>
-        <div class="cycling_text">
-    <h3>How many minutes?:</h3></div>
-        <!-- <input id="minutesInput" value="1" /> -->
-    <div class="cycling_text"><div id="counterDisplay"></div></div>
-<!--          <button  onclick="reset()" >replay</button> -->
-
-</div> 
-<div class="cycling_part2">
+      <div class="minigame cycling"> 
+<div id="gamecontent">
+  <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
   <div id="cycling_roll">
 <div class="center-content">
             <div class="wheel">
                 <div class="progress"></div>
                 <div class="center">
-                    <span class="value"></span>
+                   <!-- <span class="value"></span>-->
                 </div>
                 <a href="javascript:void(0)" id="handle"></a>
             </div>
         </div>
   </div>
+  <div id="gamecol">
+    <h1>ปั่นจักรยาน</h1>
+    <p>เมื่อคุณกดปุ่ม Start จะมีกงล้อโผล่ขึ้นมา<br>คุณจะต้องหมุนกงล้อให้ได้อย่างน้อย X ครั้ง<br>ภายในเวลา Y วินาที เพื่อให้ได้ 3 ดาว</p>
+    <hr>
+    <div id="value_cycling" style="text-align: center;">0</div>
+    <hr>
+    <div class="cycling_text"><div id="counterDisplay"></div></div>
+    <hr>
+    <button id="startButton" class="gamebutton" onclick="cycling_roll.style.zIndex = `6`">Start</button>
+    <hr>
+    <button class="gamebutton" onclick="cycling.style.zIndex = `-5`">กลับ</button>
+  </div>
 </div>
-  
-
-        
 </div>
 <!-- <script id="rendered-js" >
 $("#slider1").roundSlider({
@@ -84,69 +80,96 @@ $("#slider1").roundSlider({
       <h1 class="roomname">Cafetaria</h1>
 <!--       <h1 class="clock">15.00am</h1> -->
       <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
-      <button id="breakfast" onclick="breakfast.style.zIndex = `6`">ไข่</button>
-      <button id="lunch" onclick="lunch.style.zIndex = `6`; tacoRandom();">ทาโก้</button>
-      <button id="dinner" onclick="dinner.style.zIndex='6'">กระป๋อง</button>
+      <button id="breakfast" onclick="breakfast.style.zIndex = `6`">อาหารเช้า (ไข่)</button>
+      <button id="lunch" onclick="lunch.style.zIndex = `6`; tacoRandom();">อาหารเที่ยง (ทาโก้)</button>
+      <button id="dinner" onclick="dinner.style.zIndex='6'">อาหารเย็น (อาหารกระป๋อง)</button>
     </div>
     
-    <div class="minigame breakfast">Minigame ไข่
-        <button class="bck_bf" onclick="breakfast.style.zIndex = `-5`">กลับ</button>
-        <div class="breakfast_part1">
-          <div id="breakfast_button_1">
+    <div class="minigame breakfast">
+      <div id="gamecontent">
+  <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
+        <div class="breakfast_part2">
+          <div class="breakfast_bar"></div>
+        <div id="breakfast_bar_win"></div>
+      <div id="breakfast_bar_win_win"></div>
+          <div id="breakfast_oval"></div>
+          
+        </div>
+        <!--
+
+  <div id="breakfast_part3">
+        </div>
+        
+    
+        
+    <div id="breakfast_img">
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"  name="microwave">
+    </div>
+      <div id="breakfast_img_welldone">
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/egg1.png"  name="egg">
+    </div>
+      <div id="breakfast_img_burn">
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/egg.png"  name="egg">
+    </div>
+      <div id="breakfast_img_raw">
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/egg2.png"  name="egg">
+    </div>
+          </div>
+    <div class="breakfast_part3">
+        <p id="breakfast_win_text"></p>
+    </div>-->
+        <div id="gamecol">
+    <h1>ปั่นไข่</h1>
+    <p>คุณจะต้องทำการอบไข่ให้สุขได้ที่<br>โดยการเริ่มกดปุ่ม Cook ! แล้วแถบจะเริ่มเดิน<br>หากคุณกด Stop ได้ตรงกับตำแหน่งที่ถูกต้อง<br>จะได้รับไข่ที่สุขอย่างพอดี</p>
+    <hr>
+    <div id="breakfast_button_1">
             <button id="play" onclick="breakfast_button_2.style.zIndex = `10`">Play</button>
           </div>
           <div id="breakfast_button_2">
             <button id="pause" onclick="breakfast_button_2.style.zIndex = `-5`" >Pause</button>
           </div>
-
-    </div>
-    <div class="breakfast_part2">
-        <div class="breakfast_bar"></div>
-        <div id="breakfast_bar_win"></div>
-      <div id="breakfast_bar_win_win"></div>
-        <div id="breakfast_oval"></div>
-    </div>
-    <div id="breakfast_img">
-      <img src="images\\question2.png"  name="microwave">
-    </div>
-      <div id="breakfast_img_welldone">
-      <img src="images\\egg1.png"  name="egg">
-    </div>
-      <div id="breakfast_img_burn">
-      <img src="images\\egg.png"  name="egg">
-    </div>
-      <div id="breakfast_img_raw">
-      <img src="images\\egg2.png"  name="egg">
-    </div>
-    <div class="breakfast_part3">
-        <p id="breakfast_win_text"></p>
-    </div>
-      </div>
-    <div class="minigame lunch">
-      <p id="startaco"></p>
-      <p id="showwanttaco"></p>
-      <p id="showtaco">Chose ingredients for your taco.</p>
-      <div class="gridin">
-        <img name="Tomato" class="tacoicon" src="images\\taco\\tomato.png" onclick="tacoChange(this.name)">
-      <img name="Lettuce" class="tacoicon" src="images\\taco\\lettuce.png" onclick="tacoChange(this.name)">
-      <img name="Shallot" class="tacoicon" src="images\\taco\\shallot.png" onclick="tacoChange(this.name)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="vegetable" name="something vegetable">
-      <img name="Pork" class="tacoicon" src="images\\taco\\pork.png" onclick="tacoChange(this.name)">
-      <img name="Chicken" class="tacoicon" src="images\\taco\\chicken.png" onclick="tacoChange(this.name)">
-      <img name="Beef" class="tacoicon" src="images\\taco\\beef.png" onclick="tacoChange(this.name)">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="meat" name="something meat">
-      <img name="Kethcup" class="tacoicon" src="images\\taco\\ketchup.png" onclick="tacoChange(this.name)">
-      <img name="Mustard" class="tacoicon" src="images\\taco\\mustard.png" onclick="tacoChange(this.name)">
-      <p></p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/2048px-Noun_Project_question_mark_icon_1101884_cc.svg.png" class="tacoicon" id="sauce" name="something sauce">
+    <hr>
+    <button class="gamebutton" onclick="breakfast.style.zIndex = `-5`">กลับ</button>
+  </div>
         </div>
-      <button id="tacoserve" onclick="serveTaco(); delbut(this.id)">Serve!</button>
-         <button class="bck_l" onclick="lunch.style.zIndex = `-5`">กลับ</button>
       
       </div>
-    <div class="minigame dinner">Minigame กระป๋อง
-      <div id="dinnerstar">Star: 3</div>
-      <button class="bck_dn" onclick="dinner.style.zIndex = `-5`">กลับ</button>
+    <div class="minigame lunch">
+      <div id="gamecontent"> 
+  <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
+  <div class="gridin">
+        <img name="Tomato" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png" onclick="tacoChange(this.name)">
+      <img name="Lettuce" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/lettuce.png" onclick="tacoChange(this.name)">
+      <img name="Shallot" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/shallot.png" onclick="tacoChange(this.name)">
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="tacoicon" id="vegetable" name="something vegetable">
+      <img name="Pork" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/pork.png" onclick="tacoChange(this.name)">
+      <img name="Chicken" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/chicken.png" onclick="tacoChange(this.name)">
+      <img name="Beef" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/beef.png" onclick="tacoChange(this.name)">
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="tacoicon" id="meat" name="something meat">
+      <img name="Ketchup" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/ketchup.png" onclick="tacoChange(this.name)">
+      <img name="Mustard" class="tacoicon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/mustard.png" onclick="tacoChange(this.name)">
+      <p></p>
+      <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="tacoicon" id="sauce" name="something sauce">
+        </div>
+  <div id="gamecol">
+    <h1>ทำทาโก้</h1>
+    <p>คุณจะต้องเลือกส่วนผสมของทาโก้<br>ให้ถูกต้องตามที่กำหนดไว้ทั้ง 3 อย่าง<br>เมื่อมั่นใจว่าถูกต้องให้กด Serve เพื่อดูผลลัพธ์</p>
+    <hr>
+    <p id="startaco"></p>
+    <p id="showwanttaco"></p>
+    <hr>
+    <h3 id="showtaco">Choose ingredients for your taco.</h3>
+    <hr>
+    <button class="gamebutton" onclick="serveTaco(); delbut(this.id)">Serve!</button>
+    <hr>
+    <button class="gamebutton" onclick="lunch.style.zIndex = `-5`">กลับ</button>
+  </div>
+</div>
+
+      
+      </div>
+    <div class="minigame dinner">
+      <div id="gamecontent">
         <svg width="500" height="500" transform="rotate(0)" transform-origin="center">
         <g transform-origin="center">
         <g id="maze" transform-origin="center">
@@ -160,7 +183,14 @@ $("#slider1").roundSlider({
         <use href="#maze" transform="scale(0.25) rotate(90)" transform-origin="center"></use>
         </g>
     </svg>
-              
+        <div id="gamecol">
+    <h1>ปั่นทาโก้</h1>
+    <p>คุณจะต้องลากเมาส์เข้าช่องสีแดงไปให้ถึงจุดข้างในสุดอย่างระมัดระวัง<br>โดยพยายามอย่าให้โดนกำแพงสีเหลือง<br>โดยมีโอกาสพลาดได้ 3 ครั้ง</p>
+    <hr>
+      <div id="dinnerstar">Star: 3</div>
+    <hr>
+    <button class="gamebutton" onclick="dinner.style.zIndex = `-5`">กลับ</button>
+    </div>
   </div>
   <div class="it">
     <div class="r">
@@ -186,53 +216,53 @@ $("#slider1").roundSlider({
       <h1 class="roomname">Laboratory</h1>
 <!--       <h1 class="clock">18.00am</h1> -->
       <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`">Bedroom</button>
-      <button id="robot" onclick="robot.style.zIndex = `6`">ประกอบหุ่นยนต์</button>
-      <button id="plant" onclick="plant.style.zIndex = `6`">ปลูกต้นไม้</button>
+      <button id="robot" onclick="robot.style.zIndex = `6`">การทดลอง 1 (ประกอบหุ่นยนต์)</button>
+      <button id="plant" onclick="plant.style.zIndex = `6`">การทดลอง 2 (ปลูกต้นไม้)</button>
     </div>
     <div class="minigame robot">Minigame robot
         <button class="bck_ro" onclick="robot.style.zIndex = `-5`">กลับ</button>
       <div id="robot_box_star">
       <p id="starrobot"></p>
-      <p id="showrobot">We need the</p>
+      <p class="we">We need the</p>
       <p id="showrobot">robot head</p>
       <p id="showrobotsum"></p></div>
       <button id="robotserve" onclick="serverobot(); delbut(this.id)">Build!</button>
 <div class="robot_show">
   <div id="robot_part1">
-    <img src="images\\question2.png" class="questionicon" id="robot_hand_0" name="something robot_hand">
+    <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="questionicon" id="robot_hand_0" name="something robot_hand">
   </div>
   <div id="robot_part2">
-    <img src="images\\question2.png" class="questionicon" id="robot_hand_1" name="something robot_hand">
+    <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="questionicon" id="robot_hand_1" name="something robot_hand">
   </div>
   <div id="robot_part3">
-    <img src="images\\question2.png" class="questionicon" id="robot_hand_2" name="something robot_hand">
+    <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="questionicon" id="robot_hand_2" name="something robot_hand">
   </div>
   <div id="robot_part4">
-    <img src="images\\question2.png" class="questionicon" id="robot_hand_3" name="something robot_hand">
+    <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="questionicon" id="robot_hand_3" name="something robot_hand">
   </div>
   <div id="robot_part5">
-    <img src="images\\question2.png" class="questionicon" id="robot_hand_4" name="something robot_hand">
+    <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png" class="questionicon" id="robot_hand_4" name="something robot_hand">
   </div>
   
 </div>
       <div class="robot_track">
-        <img name="robot_part_1" class="roboticon" src="images\\robot\\robot_part_1.png" onclick="robotChange(this.name)">
-      <img name="robot_part_21" class="roboticon" src="images\\robot\\fakepart_2.png" onclick="robotChange(this.name)">
-      <img name="robot_part_31" class="roboticon" src="images\\robot\\fakepart_4.png" onclick="robotChange(this.name)">
-      <img name="robot_part_4" class="roboticon" src="images\\robot\\robot_part_3.png" onclick="robotChange(this.name)">
-      <img name="robot_part_3" class="roboticon" src="images\\robot\\robot_part_4.png" onclick="robotChange(this.name)">
-      <img name="robot_part_61" class="roboticon" src="images\\robot\\fakepart_1.png" onclick="robotChange(this.name)">
-      <img name="robot_part_5" class="roboticon" src="images\\robot\\robot_part_5.png" onclick="robotChange(this.name)">
-      <img name="robot_part_81" class="roboticon" src="images\\robot\\fakepart_5.png" onclick="robotChange(this.name)">
-      <img name="robot_part_2" class="roboticon" src="images\\robot\\robot_part_2.png" onclick="robotChange(this.name)">
-      <img name="robot_part_10" class="roboticon" src="images\\robot\\fakepart_3.png" onclick="robotChange(this.name)">
+        <img name="robot_part_1" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_1.png" onclick="robotChange(this.name)">
+      <img name="robot_fakepart_2" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_2.png" onclick="robotChange(this.name)">
+      <img name="robot_fakepart_4" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_4.png" onclick="robotChange(this.name)">
+      <img name="robot_part_4" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_3.png" onclick="robotChange(this.name)">
+      <img name="robot_part_3" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_4.png" onclick="robotChange(this.name)">
+      <img name="robot_fakepart_1" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_1.png" onclick="robotChange(this.name)">
+      <img name="robot_part_5" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_5.png" onclick="robotChange(this.name)">
+      <img name="robot_fakepart_5" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_5.png" onclick="robotChange(this.name)">
+      <img name="robot_part_2" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_2.png" onclick="robotChange(this.name)">
+      <img name="robot_fakepart_3" class="roboticon" src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_3.png" onclick="robotChange(this.name)">
         </div>
       
       
       </div>
-    <div class="minigame plant">Minigame plant
-        <button class="bck_tree" onclick="plant.style.zIndex = `-5`">กลับ</button>
-      <div id="plantback">ทดลองเปลี่ยนสีตอนกดปุ่ม</div>
+    <div class="minigame plant">
+      <div id="gamecontent">
+        <div id="plantback">ทดลองเปลี่ยนสีตอนกดปุ่ม</div>
       <div class="box_02">
         <p id="name"></p>
         <div class="box_01">
@@ -262,17 +292,24 @@ $("#slider1").roundSlider({
           </div>
         </div>
         <button class="starto start btn btn-danger">start</button>
-        <div class="level">
-			<h2>Level: 1</h2>
-		      </div>
         <div class="score">
 			<h2>Star: </h2><p id="starplant"> </p>
 		      </div>
-        <script src="simon.js"></script>
+        <script src="script.js"></script>
       </div>
+        <div id="gamecol">
+    <h1>ปั่นปลูกต้นไม้</h1>
+    <p>เมื่อกดเริ่มต้น แถบปุ่มจะส่งเสียงแล้วสว่างขึ้นมา<br>ให้คุณกดตามลำดับของปุ่มที่สว่างขึ้นมาจนครบ 6 รอบ</p>
+    <hr>
+      <div class="level">
+			<h2>Level: 1</h2>
+		      </div>
+    <hr>
+    <button class="gamebutton" onclick="plant.style.zIndex = `-5`">กลับ</button>
+    </div>
     </div>
   
-  <script src="script.js"></script>
+  <script src="simon.js"></script>
   <script src="wheel.js"></script>
    <script src="time.js"></script>
   <script src="egg.js"></script>

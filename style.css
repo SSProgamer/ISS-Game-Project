@@ -4,13 +4,28 @@
   --text: #784284;
   --button: #1a2653;
 }
-
-.wow {
-  width: 100px;
+*{
+  font-family: 'Noto Sans Thai', sans-serif;
 }
+#showallstar {
+  width: 10px;
+  height: 10px;
+}
+
+#gamecontent{
+  background: #1a2754;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  height: 84vh;
+}
+#gamecol{
+  background: #2d3685;
+}
+
 body {
   background-color: var(--bgcolor);
   overflow: hidden;
+  
 }
 h1 {
   background-color: black;
@@ -88,20 +103,20 @@ h2{
   
 }
 .bed{
-  background-image: url("images\\RoomresCartoon.jpg");
+  background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/RoomresCartoon.jpg");
   z-index:3;
   
 }
 .gym{
-  background-image: url("images\\GymCartoon.jpg");
+  background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/GymCartoon.jpg");
   z-index:2;
 }
 .cafetaria{
- background-image: url("images\\CafetariaCartoon.jpg");
+ background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/CafetariaCartoon.jpg");
   z-index:2;
 }
 .lab{
- background-image: url("images\\LabCartoon.jpg");
+ background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/LabCartoon.jpg");
   z-index:2;
 }
 
@@ -137,7 +152,7 @@ background: grey;
   display: inline-block;
 }
 .cycling_part2{
-  background:grey;
+  /*background:grey;*/
   width: 50%;
   height: 100%;
   position: absolute;
@@ -158,10 +173,10 @@ background: grey;
   left: 67.5%;
 }
 #cycling_roll{
-  background:red;
-  width: 50%;
+  /*background:red;*/
+  width: 20%;
   height: 20%;
-  position: absolute;
+  position: relative;
   margin:0px;
   padding:0px;
   top: 37.5%;
@@ -188,7 +203,7 @@ background: grey;
   background: grey;
 }
 .breakfast_part1{
-    background: grey;
+    /*background: grey;*/
     width: 100%;
     height: 20%;
     position: absolute;
@@ -198,21 +213,19 @@ background: grey;
     left:0;
     display: inline-block;
         }
-        .breakfast_part2{
-    background: grey;
+.breakfast_part2{
+    /*background: red;*/
     width: 100%;
-    height: 20%;
-    position: absolute;
-    margin:0px;
-    padding:0px;
-    top: 60%;
+    height: 100%;
+    position: relative;
+    top: 0;
     left:0;
     display: inline-block;
         }
-    .breakfast_bar{
-            background-color: red;
+.breakfast_bar{
+   background-color: red;
     width: 80%;
-    height: 40%;
+    height: 10%;
     position: relative;
     margin:0px;
     padding:0px;
@@ -220,9 +233,9 @@ background: grey;
     left:10%;
         }
     #breakfast_bar_win{
-            background-color: pink;
+  background-color: pink;
     width: 10%;
-    height: 40%;
+    height: 10%;
     position: absolute;
     margin:0px;
     padding:0px;
@@ -232,7 +245,7 @@ background: grey;
 #breakfast_bar_win_win{
   background-color: purple;
     width: 3%;
-    height: 40%;
+    height: 10%;
     position: absolute;
     margin:0px;
     padding:0px;
@@ -241,7 +254,7 @@ background: grey;
         }
     #breakfast_oval {
       width: 1%;
-      height: 40%;
+      height: 10%;
       background: blue;
       position: relative;
       top: 0%;
@@ -302,7 +315,7 @@ background: grey;
     text-align:center;
   z-index: -5;
 }
-    .breakfast_part3{
+.breakfast_part3{
     background: grey;
     width: 100%;
     height: 10%;
@@ -317,13 +330,13 @@ background: grey;
 #breakfast_button_1{
     margin: 0;
   position: absolute;
-  position: absolute;
+  
     z-index: 5;
 }
 #breakfast_button_2{
   position: absolute;
     margin: 0;
-  position: absolute;
+  
     z-index: 1;
 }
  @keyframes moving {
@@ -337,12 +350,12 @@ background: grey;
   background: grey;
 }
 .robot{
-  background: grey;
+  background: #2d3685;
 }
 .robot_track{
-  background:purple;
+  background:#794284;
   position: absolute;
-  left: 13.5%;
+  left: 20.5%;
   top: 55%;
   display: grid;
   grid-template-columns: 12vw 11vw 11vw 11vw 12vw;
@@ -351,7 +364,7 @@ background: grey;
   justify-items: center;
 }
 .robot_show{
-  background:red;
+ /* background:red;*/
   position: absolute;
   left: 35%;
   top: 5%;
@@ -359,16 +372,16 @@ background: grey;
   height: 40%;
 }
 #robot_part1{
-  background:#432d2d;
+ 
   position: absolute;
   left: 40%;
-  top: 5%;
+  top: 10%;
   width: 20%;
   height: 20%;
   text-align: center;
 }
 #robot_part2{
-  background:#432d2d;
+  
   position: absolute;
   left: 10%;
   top: 35%;
@@ -377,7 +390,7 @@ background: grey;
   text-align: center;
 }
 #robot_part3{
-  background:#432d2d;
+  
   position: absolute;
   left: 70%;
   top: 35%;
@@ -386,34 +399,36 @@ background: grey;
   text-align: center;
 }
 #robot_part4{
-  background:#432d2d;
+  
   position: absolute;
-  left: 10%;
-  top: 75%;
+  left: 40%;
+  top: 35%;
   width: 20%;
   height: 20%;
   text-align: center;
 }
 #robot_part5{
-  background:#432d2d;
+  
   position: absolute;
-  left: 70%;
+  left: 40%;
   top: 75%;
   width: 20%;
   height: 20%;
   text-align: center;
 }
 #robot_box_star{
-  background:#432d2d;
+   background:#01092d;
   position: absolute;
   left: 5%;
   top: 10%;
   width: 20%;
   height: 30%;
-  margin: 1vh;
+  margin: 2vh;
 }
 #showrobot{
 /*   margin: 1vh; */
+  color: white;
+  font-size: 25px;
   justify-content: center;
   text-align: center;
 }
@@ -513,7 +528,7 @@ button:hover{
   margin-right: auto;
   position: absolute;  
   height:150px;
-  background:khaki;
+  background: #2d3685;
 }
 #vegetable{
 /*   border: 3px solid red; */
@@ -531,9 +546,9 @@ button:hover{
   width: 100px;
 }
 .gridin{
-  position: absolute;
-  left: 30%;
-  top: 30%;
+  position: relative;
+/*   left: 30%;
+  top: 30%; */
   display: grid;
   grid-template-columns: 8vw 8vw 8vw 8vw;
   padding: 4vh;
@@ -590,9 +605,9 @@ sussy{
   .wheel .center {
     text-align: center;
     white-space: nowrap;
-    background-color: white;
+    
     border-radius: 80px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);*/
     height: 40px;
     right: -525%;
     position: relative;
@@ -769,20 +784,18 @@ img {
 }
 
 /*ปุ่มกลับสำหรับมินิเกมอาหาร*/
-button.bck_bf{
+/* button.bck_bf{
   position: absolute;
-/*   bottom: 5vh;
-  right: 4vw; */
-}
-button.bck_l{
-  position: absolute;
+} */
+/* button.bck_l{
+  position: relative;
   bottom: 8vh;
   right: 4vw;
-}
+} */
 button.bck_dn{
   position: absolute;
-  bottom: 8vh;
-  right: 8vw;
+  bottom: 0vh;
+  right: 0vw;
 }
 
 button.bck_ro{
@@ -845,11 +858,11 @@ button.bck_tree{
     height: auto;
 }
 
-#tacoserve{
+/* #tacoserve{
   position: absolute;
   right: 4vw;
   top: 25%;
-}
+} */
 /* button.bck_ro{
   position: relative;
   left: 37%;
@@ -862,8 +875,8 @@ button.bck_tree{
 }
 #starrobot{
   position: absolute;
-  top: 40%;
-  left: 10%;
+  top: 60%;
+  left: 20%;
   color: #fcf923;
   height: 1px;
   width: auto; 
@@ -886,13 +899,22 @@ button.bck_tree{
 }
 
 #showtaco{
-  position: absolute;
+  position: relative;
   font-family: sans-serif;
-  left: 30%;
-  top: 20%;
+  left: 0%;
+  top: 0%;
 }
 #showwanttaco{
-  position: absolute;
-  left: 30%;
-  top: 10%;
+  position: relative;
+  left: 0%;
+  top: 0%;
+}
+
+.gamebutton{
+  position: relative;
+}
+
+.we{
+  left:5%;
+  color: white;
 }

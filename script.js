@@ -14,6 +14,12 @@ message1 = [
   "ท่านสมาชิก"
 ]
 idx = 0
+var allstar = 0
+
+function addstar(star){
+  allstar = allstar + star;
+  document.getElementById("showallstar").innerHTML = allstar;
+}
 
 function delbut(idbut) {
   const element = document.getElementById(idbut);
@@ -22,14 +28,14 @@ function delbut(idbut) {
 
 //taco
 tacoimg = {
-  "Tomato": "images\\taco\\tomato.png",
-  "Lettuce": "images\\taco\\lettuce.png",
-  "Shallot": "images\\taco\\shallot.png",
-  "Pork": "images\\taco\\pork.png",
-  "Chicken": "images\\taco\\chicken.png",
-  "Beef": "images\\taco\\beef.png",
-  "Kethcup": "images\\taco\\ketchup.png",
-  "Mustard": "images\\taco\\mustard.png",
+  "Tomato": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png",
+  "Lettuce": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/lettuce.png",
+  "Shallot": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/shallot.png",
+  "Pork": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/pork.png",
+  "Chicken": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/chicken.png",
+  "Beef": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/beef.png",
+  "Ketchup": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/ketchup.png",
+  "Mustard": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/mustard.png",
 }
 
 var wantvegetable = ""
@@ -64,13 +70,13 @@ function tacoRandom(){
   }
   switch (ransauce) {
     case 0:
-      wantsauce = "Kethcup";
+      wantsauce = "Ketchup";
       break;
     case 1:
       wantsauce = "Mustard";
       break;
   }
-  document.getElementById("showwanttaco").innerHTML = `<h2>We want ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h2>`;
+  document.getElementById("showwanttaco").innerHTML = `<h2>เราต้องการ ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h2>`;
 }
 
 function tacoChange(name) {
@@ -93,6 +99,7 @@ function serveTaco(){
   sauce = document.getElementById("sauce").name
   
   if ( (vegetable == wantvegetable && meat == wantmeat) || (meat == wantmeat && sauce == wantsauce) || (vegetable == wantvegetable && sauce == wantsauce) ){
+    addstar(2);
     for (let i = 0; i < 2; i++) {
       var img = document.createElement("img");
       img.src = "images\\Star.png";
@@ -101,13 +108,15 @@ function serveTaco(){
     }
   }
   else if ( vegetable == wantvegetable || meat == wantmeat || sauce == wantsauce ){
+    addstar(1);
     var img = document.createElement("img");
     img.src = "images\\Star.png";
     var src = document.getElementById("startaco");
     src.appendChild(img);
   }
   if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
-  document.getElementById("showtaco").innerHTML = `<h2>Yes, this is what we want.<h2>`;
+    addstar(1);
+  document.getElementById("showtaco").innerHTML = `<h2>ใช่! นั้นแหละทาโก้ที่เราต้องการ ( ͡° ͜ʖ ͡°)<h2>`;
   var img = document.createElement("img");
   img.src = "images\\Star.png";
   var src = document.getElementById("startaco");
@@ -115,7 +124,7 @@ function serveTaco(){
   // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
   else{
-    document.getElementById("showtaco").innerHTML = `<h2>No, this is not our taco.<h2>`;
+    document.getElementById("showtaco").innerHTML = `<h2>ไม่ใช่ทาโก้แบบนั้นสิ!!!<h2>`;
   }
 }
 //taco
@@ -162,16 +171,16 @@ function robotChange(name) {
   }
 }
 robotcoimg = {
-  "robot_part_1": "images\\robot\\robot_part_1.png",
-  "robot_part_21": "images\\robot\\fakepart_2.png",
-  "robot_part_31": "images\\robot\\fakepart_4.png",
-  "robot_part_3": "images\\robot\\robot_part_4.png",
-  "robot_part_4": "images\\robot\\robot_part_3.png",
-  "robot_part_61": "images\\robot\\fakepart_1.png",
+  "robot_part_1": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_1.png",
+  "robot_fakepart_2": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_2.png",
+  "robot_fakepart_4": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_4.png",
+  "robot_part_3": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_4.png",
+  "robot_part_4": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_3.png",
+  "robot_fakepart_1": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_1.png",
   "robot_part_5": "images\\robot\\robot_part_5.png",
-  "robot_part_81": "images\\robot\\fakepart_5.png",
-  "robot_part_2": "images\\robot\\robot_part_2.png",
-  "robot_part_10": "images\\robot\\fakepart_3.png",
+  "robot_fakepart_5": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_5.png",
+  "robot_part_2": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_2.png",
+  "robot_fakepart_3": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_3.png",
 }
 function serverobot(){
   check_robot_1 = document.getElementById("robot_hand_0").name;
@@ -186,6 +195,7 @@ function serverobot(){
   console.log(check_robot_5);
   
   if ( check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5){
+    addstar(3);
   document.getElementById("showrobotsum").innerHTML = `<h2>This perfect ISS robot<h2>`;
   for (let i = 0; i < 3; i++) {
       var img = document.createElement("img");
@@ -196,20 +206,23 @@ function serverobot(){
   // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
     else if ( (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_4 == wantpart_4) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_5 == wantpart_5) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_5 == wantpart_5)|| (check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5)){
-    document.getElementById("showrobotsum").innerHTML = `<h2>This same like ISS robot<h2>`;
-    var img = document.createElement("img");
-    img.src = "images\\Star.png";
-    var src = document.getElementById("starrobot");
-    src.appendChild(img);
-  }
-  else if ( check_robot_1 == wantpart_1 || check_robot_2 == wantpart_2 || check_robot_3 == wantpart_3 || check_robot_4 == wantpart_4|| check_robot_5 == wantpart_5){
-    document.getElementById("showrobotsum").innerHTML = `<h2>This like ISS robot<h2>`;
+      addstar(2);
+      document.getElementById("showrobotsum").innerHTML = `<h2>This like ISS robot<h2>`;
     for (let i = 0; i < 2; i++) {
       var img = document.createElement("img");
       img.src = "images\\Star.png";
       var src = document.getElementById("starrobot");
       src.appendChild(img);
     }
+    
+  }
+  else if ( check_robot_1 == wantpart_1 || check_robot_2 == wantpart_2 || check_robot_3 == wantpart_3 || check_robot_4 == wantpart_4|| check_robot_5 == wantpart_5){
+    addstar(1);
+    document.getElementById("showrobotsum").innerHTML = `<h2>This same like ISS robot<h2>`;
+    var img = document.createElement("img");
+    img.src = "images\\Star.png";
+    var src = document.getElementById("starrobot");
+    src.appendChild(img);
   }
   
   else{
@@ -271,4 +284,5 @@ function decstar(){
 
 function fun(){  
    document.getElementByClass("minigame lunch").reset();  
- }   
+ }
+

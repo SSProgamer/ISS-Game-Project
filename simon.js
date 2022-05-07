@@ -154,7 +154,7 @@ var game={
         document.getElementById("plantback").style.backgroundColor = "blue";
       }
     else if(pad == 2){
-        document.getElementById("plantback").style.backgroundColor = "green";
+        document.getElementById("plantback").style.backgroundColor = "#59ff00";
       }
 	},
 
@@ -181,6 +181,7 @@ var game={
     
       document.getElementById("starplant").innerHTML = "";
       for (let i = 0; i < this.score; i++) {
+        $.getScript("script.js", function(){addstar(i+1);});
         var img = document.createElement("img");
         img.src = "images\\Star.png";
         var src = document.getElementById("starplant");

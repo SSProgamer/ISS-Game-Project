@@ -233,7 +233,7 @@ $(function() {
     max: 360,
     step: 1,
     onChange: function(value) {
-      $(".wheel .value").html(Math.round(value));
+      $("#value_cycling").html(Math.round(value));
       ;
     }
   });

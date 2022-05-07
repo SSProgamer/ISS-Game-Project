@@ -8,6 +8,8 @@ document.querySelector("#pause").addEventListener('click', function() {
 	document.querySelector("#breakfast_oval").style.animationPlayState = 'paused';
   if (elementsOverlap(el1, el3)){
       document.getElementById("breakfast_win_text").innerHTML = "";
+      $.getScript("script.js", function(){addstar(3);});
+      //document.getElementById("showallstar").stepUp();
       for (let i = 0; i < 3; i++) {
         var img = document.createElement("img");
         img.src = "images\\Star.png";
@@ -18,6 +20,8 @@ document.querySelector("#pause").addEventListener('click', function() {
     }
     else if (elementsOverlap(el1, el2)){
         document.getElementById("breakfast_win_text").innerHTML = "";
+      $.getScript("script.js", function(){addstar(2);});
+      //document.getElementById("showallstar").stepUp();
       for (let i = 0; i < 2; i++) {
         var img = document.createElement("img");
         img.src = "images\\Star.png";
@@ -28,6 +32,8 @@ document.querySelector("#pause").addEventListener('click', function() {
     }
     else{
       document.getElementById("breakfast_win_text").innerHTML = "";
+      $.getScript("script.js", function(){addstar(1);});
+      //document.getElementById("showallstar").stepUp();
       var img = document.createElement("img");
       img.src = "images\\Star.png";
       var src = document.getElementById("breakfast_win_text");
