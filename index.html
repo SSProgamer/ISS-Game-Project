@@ -92,8 +92,8 @@ $("#slider1").roundSlider({
     <img id="lunch" src="https://cdn.discordapp.com/attachments/956540195652661348/972549918277398668/lunch.png"
       onclick="lunch.style.zIndex = `6`; tacoRandom();" style="cursor: pointer" </img>
     <img id="dinner" src="https://cdn.discordapp.com/attachments/956540195652661348/972554950557204560/Untitled-7.png"
-      onclick="dinner.style.zIndex='6'" style="cursor: pointer"></img>
-  </div>
+      onclick="dinner.style.zIndex='6'; addstardin()" style="cursor: pointer"></img>
+  </div><!-- อาหารเย็น-->
 
   <div class="minigame breakfast">
     <div id="gamecontent">
@@ -205,12 +205,12 @@ $("#slider1").roundSlider({
         </g>
       </svg>
       <div id="gamecol">
-        <h1>ปั่นกระป๋อง</h1>
+        <h1>เปิดกระป๋อง</h1>
         <p>
           คุณจะต้องลากเมาส์เข้าช่องสีแดงไปให้ถึงจุดข้างในสุดอย่างระมัดระวัง<br>โดยพยายามอย่าให้โดนกำแพงสีเหลือง<br>โดยมีโอกาสพลาดได้
           3 ครั้ง</p>
         <hr>
-        <div id="dinnerstar">Star: 3</div>
+        <div id="dinnerstar"></div>
         <hr>
         <button class="gamebutton" onclick="dinner.style.zIndex = `-5`">กลับ</button>
       </div>
@@ -240,7 +240,7 @@ $("#slider1").roundSlider({
     <!--       <h1 class="clock">18.00am</h1> -->
     <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`">Bedroom</button>
     <img id="robot" src="https://cdn.discordapp.com/attachments/956540195652661348/972554032285646911/robot.png"
-      onclick="robot.style.zIndex = `6`" style="cursor: pointer">การทดลอง 1 (ประกอบหุ่นยนต์)</img>
+      onclick="robot.style.zIndex = `6`" style="cursor: pointer"></img>
     <img id="plant" src="https://cdn.discordapp.com/attachments/956540195652661348/972556092460654672/Untitled-8.png"
       onclick="plant.style.zIndex = `6`" style="cursor: pointer">การทดลอง 2 (ปลูกต้นไม้)</img>
   </div>

@@ -30,6 +30,15 @@ function delbut(idbut) {
   element.remove();
 }
 
+function addstardin(){
+  for (let i = 0; i < 3; i++) {
+    var img = document.createElement("img");
+    img.src = "images\\Star.png";
+    var src = document.getElementById("dinnerstar");
+    src.appendChild(img);
+  }
+}
+
 //taco
 tacoimg = {
   "Tomato": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png",
@@ -152,7 +161,7 @@ function robotChange(name) {
     document.getElementById("showrobot").innerHTML = "หัวหุ่น ISS";
   }
   else if(ro == 1){
-    document.getElementById("showrobot").innerHTML = "แขนซวาของหุ่น ISS";
+    document.getElementById("showrobot").innerHTML = "แขนขวาของหุ่น ISS";
   }
   else if(ro == 2){
     document.getElementById("showrobot").innerHTML = "แขนซ้ายของหุ่น ISS";
@@ -271,9 +280,16 @@ function decstar(){
   console.log("Collide!");
   if (dinnerstar > 1){
     dinnerstar -= 1
-    document.getElementById("dinnerstar").innerHTML = `Star: ${dinnerstar}`;
+    document.getElementById("dinnerstar").innerHTML = "";
+    for (let i = 0; i < dinnerstar; i++) {
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("dinnerstar");
+      src.appendChild(img);
+    }
   }else{
-    document.getElementById("dinnerstar").innerHTML = `YOU LOSE!`;
+    dinnerstar = 0
+    document.getElementById("dinnerstar").innerHTML = ``;
   }
 }
 
