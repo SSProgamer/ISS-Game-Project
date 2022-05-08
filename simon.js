@@ -181,7 +181,6 @@ var game={
     
       document.getElementById("starplant").innerHTML = "";
       for (let i = 0; i < this.score; i++) {
-        $.getScript("script.js", function(){addstar(i+1);});
         var img = document.createElement("img");
         img.src = "images\\Star.png";
         var src = document.getElementById("starplant");
@@ -189,8 +188,8 @@ var game={
       }
 
 	},
-	
-	incorrectSequence: function(){						
+
+	incorrectSequence: function(){		
 
 		var corPad = this.genSequence[this.turn],		
 			
@@ -201,6 +200,18 @@ var game={
 		setTimeout(function(){						
 			that.flash($(that.shape+corPad),4,300,corPad);
 		},500);
+    if (this.score === 1){
+      $.getScript("script.js", function(){addstar(1);});
+    }
+    else if (this.score === 2){
+      $.getScript("script.js", function(){addstar(2);});
+    }
+    else if (this.score ===3){
+      $.getScript("script.js", function(){addstar(3);});
+    }
+    else{
+      $.getScript("script.js", function(){addstar(0);});
+    }
     $('.level h2').text('Level: END');
 		$('.start').show();				
 	

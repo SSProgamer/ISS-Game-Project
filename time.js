@@ -38,11 +38,12 @@
     }
     
     function tick(){
-      console.log(totalSeconds);
+      //console.log(totalSeconds);
        if (totalSeconds == 1){
          totalSeconds--; // Decreases total seconds by one
         counterDiv.innerHTML = getMinutes(totalSeconds) + ":" + getSeconds(totalSeconds); // Updates display
         alert("END TIME!!");
+         
          
         }
       else if(totalSeconds > 0){

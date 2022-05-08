@@ -7,9 +7,27 @@
 *{
   font-family: 'Noto Sans Thai', sans-serif;
 }
+
+#gotoweb {
+  position: absolute;
+  top: 95%;
+  left: 41%;
+  border-radius: 16px;
+  text-align: center;
+  background-color: skyblue;
+  color: black;
+  width: 15vw;
+  height: 2vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #showallstar {
-  width: 10px;
-  height: 10px;
+  background-color: #1a2754;
+  position: absolute;
+  width: 15vw;
+  height: 5vh;
+  text-align: center;
 }
 
 #gamecontent{
@@ -20,6 +38,7 @@
 }
 #gamecol{
   background: #2d3685;
+  
 }
 
 body {
@@ -80,6 +99,7 @@ h1 {
   border: solid 4px white;
 }
 h2{
+  position: relative;
   font-family: sans-serif;
   color: var(--text);
 }
@@ -257,64 +277,25 @@ background: grey;
       height: 10%;
       background: blue;
       position: relative;
-      top: 0%;
+      top: 30%;
       left:10%;
     animation: 2.5s moving 0.5s linear infinite alternate;
     }
   
 #breakfast_img{
-    background-color: grey;
+    /*background-color: grey;*/
     width: 15%;
-    height: 30%;
+    height: 15%;
     position: absolute;
     margin:0px;
     padding:0px;
-    top: 20%;
-    left: 44%;
+    top: 10%;
+    left: 30%;
     display: inline-block;
 /*     justify-content: center; */
     text-align:center;
   z-index: 5;
     }
-#breakfast_img_welldone{
-  background-color: grey;
-    width: 15%;
-    height: 30%;
-    position: absolute;
-    margin:0px;
-    padding:0px;
-    top: 20%;
-    left: 44%;
-    display: inline-block;
-    text-align:center;
-  z-index: -5;
-}
-#breakfast_img_burn{
-  background-color: grey;
-    width: 15%;
-    height: 30%;
-    position: absolute;
-    margin:0px;
-    padding:0px;
-    top: 20%;
-    left: 44%;
-    display: inline-block;
-    text-align:center;
-  z-index: -5;
-}
-#breakfast_img_raw{
-  background-color: grey;
-    width: 15%;
-    height: 30%;
-    position: absolute;
-    margin:0px;
-    padding:0px;
-    top: 20%;
-    left: 44%;
-    display: inline-block;
-    text-align:center;
-  z-index: -5;
-}
 .breakfast_part3{
     background: grey;
     width: 100%;
@@ -328,20 +309,16 @@ background: grey;
     text-align: center;
         }
 #breakfast_button_1{
-    margin: 0;
-  position: absolute;
-  
+  position: relative;
     z-index: 5;
 }
 #breakfast_button_2{
   position: absolute;
-    margin: 0;
-  
     z-index: 1;
 }
  @keyframes moving {
-	from { left:10%; top:0%; }
-	to { left:90%; top:0%; }
+	from { left:10%; }
+	to { left:90%; }
 }
 .lunch{
   background: grey;
@@ -352,10 +329,16 @@ background: grey;
 .robot{
   background: #2d3685;
 }
+.robot_home{
+  background:#794284;
+  position: relative;
+  width:100%;
+  height:100%;
+}
 .robot_track{
   background:#794284;
-  position: absolute;
-  left: 20.5%;
+  position: relative;
+  left: 0%;
   top: 55%;
   display: grid;
   grid-template-columns: 12vw 11vw 11vw 11vw 12vw;
@@ -436,14 +419,21 @@ background: grey;
   background: grey;
 }
 #plantback{
-  background:#432d2d;
   opacity:0.4;
   position: absolute;
   left: 0%;
   top: 30%;
   width: 20%;
   height: 30%;
-  margin: 1vh;
+}
+
+#plantimg{
+  
+  position: absolute;
+  left: 0%;
+  top: 30%;
+  width: 20%;
+  height: 30%;
 }
 
 button{
@@ -495,32 +485,32 @@ button:hover{
 #breakfast{
   margin: 0;
   position: absolute;
-  top: 30%;
+  top: 20%;
   left: 45%;
 }
 #lunch{
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 45%;
 }
 #dinner{
   margin: 0;
   position: absolute;
-  top: 70%;
+  top: 60%;
   left: 45%;
 }
 #robot{
   margin: 0;
   position: absolute;
-  top: 30%;
-  left: 45%;
+  top: 25%;
+  left: 42.5%;
 }
 #plant{
   margin: 0;
   position: absolute;
   top: 50%;
-  left: 45%;
+  left: 42.5%;
 }
 #content{
   text-align: center;
@@ -651,7 +641,7 @@ sussy{
 .box_02 {
     height: 50vh;
     width: 50vh;
-    left:45vh;
+    left: 20vw;
     position: relative;
 
 }
@@ -659,11 +649,11 @@ sussy{
     padding: 1px;
     height: 35vh;
     width:35vh;
-    background-color: white;
+/*     background-color: white; */
     z-index: 10;
     top:10vh;
-    left:20vh;
-    position: absolute;
+    left:5vh;
+    position: relative;
     margin:4vh auto;
     display:flex;
 }
@@ -721,8 +711,9 @@ img {
 
 /* ต้นไม้*/
 .shape1{
-	width: 17.6vh;
-	height: 17.6vh;
+  position: relative;
+	width: 10.6vw;
+	height: 10.6vw;
 	background: #fe0b0b;
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
@@ -730,8 +721,9 @@ img {
   opacity: 0.5;
 }
 .shape2{
-	width: 17.6vh;
-	height: 17.6vh;
+  position: relative;
+	width: 10.6vw;
+	height: 10.6vw;
 	background: #59ff00;
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
@@ -739,8 +731,9 @@ img {
   opacity: 0.5;
 }
 .shape3{
-	width: 17.6vh;
-	height: 17.6vh;
+  position: relative;
+	width: 10.6vw;
+	height: 10.6vw;
 	background: #0008ff;
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
@@ -748,8 +741,9 @@ img {
   opacity: 0.5;
 }
 .shape4{
-	width: 17.6vh;
-	height: 17.6vh;
+  position: relative;
+	width: 10.6vw;
+  height: 10.6vw;
 	background: #ffea00;
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
@@ -757,13 +751,13 @@ img {
   opacity: 0.5;
 }
 .starto{
-  top:98%;
-  left:52%;
+  top: 31vw;
+  left: 11vw;
 }
 .level{
-  position: absolute;
-  top:2%;
-  left:66%;
+  position: relative;
+/*   top:2%;
+  left:66%; */
 }
 .score{
   position: absolute;
@@ -774,9 +768,9 @@ img {
 /* ต้นไม้*/
 
 #startaco {
-  position: absolute;
-  top: 0%;
-  left: 45%;
+  position: relative;
+  top: 0;
+  left: 0;
   color: #fcf923;
   height: 1px;
   width: auto; 
@@ -812,10 +806,8 @@ button.bck_tree{
 
 #cycling_star{
   width: 200px;
-    height: 120px;
-  position: absolute;
-  top: 20%;
-  left: 25%;
+  height: 120px;
+  position: relative;
 }
 
 #cycling_star img {
@@ -825,9 +817,8 @@ button.bck_tree{
 
 #breakfast_win_text{
   width: 200px;
-    height: 120px;
-  position: absolute;
-  left: 45%;
+  height: 120px;
+  position: relative;
 }
 
 #breakfast_win_text img {
@@ -868,15 +859,9 @@ button.bck_tree{
   left: 37%;
   bottom: 15%;
 } */
-#robotserve{
-  position: absolute;
-  right: 4vw;
-  top: 25%; 
-}
+
 #starrobot{
-  position: absolute;
-  top: 60%;
-  left: 20%;
+  position: relative;
   color: #fcf923;
   height: 1px;
   width: auto; 
@@ -884,7 +869,7 @@ button.bck_tree{
 }
 #starrobot{
   width: 200px;
-  height: 120px;
+  height: 40px;
 }
 
 #starrobot img {
@@ -912,6 +897,10 @@ button.bck_tree{
 
 .gamebutton{
   position: relative;
+}
+
+#buttonbot{
+  z-index: -20;
 }
 
 .we{

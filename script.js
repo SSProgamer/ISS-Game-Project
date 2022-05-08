@@ -14,12 +14,16 @@ message1 = [
   "ท่านสมาชิก"
 ]
 idx = 0
-var allstar = 0
+// var allstar = 0
+var allstar1={
+  x:0
+  };
 
 function addstar(star){
-  allstar = allstar + star;
-  document.getElementById("showallstar").innerHTML = allstar;
+  allstar1.x = allstar1.x + star;
+  document.getElementById("showallstar").innerHTML = `Total Star : ${allstar1.x}`;
 }
+
 
 function delbut(idbut) {
   const element = document.getElementById(idbut);
@@ -76,7 +80,7 @@ function tacoRandom(){
       wantsauce = "Mustard";
       break;
   }
-  document.getElementById("showwanttaco").innerHTML = `<h2>เราต้องการ ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h2>`;
+  document.getElementById("showwanttaco").innerHTML = `<h1>เราต้องการ ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h1>`;
 }
 
 function tacoChange(name) {
@@ -145,19 +149,19 @@ function robotChange(name) {
     ro = 5;
   }
   if(ro == 0){
-    document.getElementById("showrobot").innerHTML = "ISS robot head";
+    document.getElementById("showrobot").innerHTML = "หัวหุ่น ISS";
   }
   else if(ro == 1){
-    document.getElementById("showrobot").innerHTML = "ISS arm head left";
+    document.getElementById("showrobot").innerHTML = "แขนซวาของหุ่น ISS";
   }
   else if(ro == 2){
-    document.getElementById("showrobot").innerHTML = "ISS arm head right";
+    document.getElementById("showrobot").innerHTML = "แขนซ้ายของหุ่น ISS";
   }
   else if(ro == 3){
-    document.getElementById("showrobot").innerHTML = "ISS robot body";
+    document.getElementById("showrobot").innerHTML = "ลำตัวของหุ่น ISS";
   }
   else if(ro == 4){
-    document.getElementById("showrobot").innerHTML = "ISS leg head right";
+    document.getElementById("showrobot").innerHTML = "ขาของหุ่น ISS";
   }
   if (name == "robot_part_1" || name == "robot_part_2" || name == "robot_part_3"){
     document.getElementById(name_robot).src = robotcoimg[name];
@@ -177,7 +181,7 @@ robotcoimg = {
   "robot_part_3": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_4.png",
   "robot_part_4": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_3.png",
   "robot_fakepart_1": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_1.png",
-  "robot_part_5": "images\\robot\\robot_part_5.png",
+  "robot_part_5": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_5.png",
   "robot_fakepart_5": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_5.png",
   "robot_part_2": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_2.png",
   "robot_fakepart_3": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_3.png",
@@ -286,3 +290,571 @@ function fun(){
    document.getElementByClass("minigame lunch").reset();  
  }
 
+// simon
+var game={ 
+	level: 1, 
+	turn: 0, 
+  score: 0,
+	active: false, 
+	handler: false, 
+	shape: '.shape', 
+	genSequence1: [[1],[1,3],[1,3,4],[1,3,4,4],[1,3,4,4,2],[1,3,4,4,2,1],[1,3,4,4,2,1,1]],
+  genSequence: [],
+	plaSequence: [],
+	
+	init: function(){				
+		if(this.handler === false){		
+			this.initPadHandler();		
+		}
+		this.newGame();			
+
+	},
+
+	initPadHandler: function(){
+
+		that=this;
+
+		$('.pad').on('mouseup',function(){
+
+			if(that.active===true){
+
+				var pad=parseInt($(this).data('pad'),10);
+					
+				that.flash($(this),1,300, pad);
+
+				that.logPlayerSequence(pad);
+
+			}
+		});
+
+		this.handler=true;
+
+	},
+
+	newGame: function(){			
+
+		this.level=1;
+		this.score=0;
+		this.newLevel();
+		this.displayLevel();
+    this.displayScore();
+
+	},
+
+	newLevel: function(){
+		
+		this.genSequence.length=0;
+		this.plaSequence.length=0;
+		this.pos=0;
+		this.turn=0;
+		this.active=true;
+		this.randomizePad(this.level); 
+		this.displaySequence(); 
+
+	},
+	
+	flash: function(element, times, speed, pad){ 
+
+		var that = this;					
+
+		if(times > 0){
+			that.playSound(pad);				
+			element.stop().animate({opacity: '1'}, {		
+				duration: 50,
+				complete: function(){
+				element.stop().animate({opacity: '0.5'}, 200);
+				}
+			});											
+
+		}
+
+		if (times > 0) {									
+			setTimeout(function () {
+				that.flash(element, times, speed, pad);
+			}, speed);
+			times -= 1;						
+		}
+	},
+
+	playSound: function(clip){				
+
+
+		var sound= $('.sound'+clip)[0];
+		sound.currentTime=0;				
+		sound.play();					
+
+
+	},
+
+	randomizePad: function(passes){
+    for(i=0;i<passes;i++){
+			this.genSequence.push(this.genSequence1[passes][i]);
+    }
+	},
+
+	logPlayerSequence: function(pad){		
+
+		this.plaSequence.push(pad);
+		this.checkSequence(pad);
+		
+	
+	},
+
+	checkSequence: function(pad){			
+
+		that=this;
+
+		if(pad !== this.genSequence[this.turn]){	
+				
+				this.incorrectSequence();
+
+			}
+    else{									
+				this.turn++;					
+			}
+		if(this.turn === this.genSequence.length){
+			this.level++;
+			this.displayLevel();
+			this.active=false;
+      if(this.level === 3){
+        this.score++;
+        this.displayScore();
+        addstar(1);
+      }
+      else if(this.level ===5){
+        this.score++;
+        this.displayScore();
+        addstar(1);
+      }
+      else if(this.level === 7){
+        this.score++;
+        this.displayScore();
+        this.incorrectSequence();
+        addstar(1);
+      }
+      if(this.level !==7){
+        setTimeout(function(){
+				  that.newLevel();},1000);
+        }
+      }
+    else{
+      
+    }
+    if(pad == 1){
+        document.getElementById("plantback").style.backgroundColor = "red";
+      }
+      else if(pad == 4){
+        document.getElementById("plantback").style.backgroundColor = "yellow";
+      }
+    else if(pad == 3){
+        document.getElementById("plantback").style.backgroundColor = "blue";
+      }
+    else if(pad == 2){
+        document.getElementById("plantback").style.backgroundColor = "#59ff00";
+      }
+	},
+
+	displaySequence: function(){				
+		
+		var that=this;
+
+		$.each(this.genSequence, function(index, val) {		
+			
+			setTimeout(function(){
+				
+				that.flash($(that.shape+val),1,300,val);
+			
+			},500*index);		
+		});
+	},
+
+	displayLevel: function(){						
+		
+		$('.level h2').text('Level: '+this.level);
+
+	},
+  displayScore: function(){
+    
+      document.getElementById("starplant").innerHTML = "";
+      for (let i = 0; i < this.score; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("starplant");
+        src.appendChild(img);
+      }
+
+	},
+
+	incorrectSequence: function(){		
+
+		var corPad = this.genSequence[this.turn],		
+			
+			that = this;
+			this.active=false;
+			this.displayLevel();
+
+		setTimeout(function(){						
+			that.flash($(that.shape+corPad),4,300,corPad);
+		},500);
+    // if (this.score === 1){
+    //   $.getScript("script.js", function(){addstar(1);});
+    // }
+    // else if (this.score === 2){
+    //   $.getScript("script.js", function(){addstar(2);});
+    // }
+    // else if (this.score ===3){
+    //   $.getScript("script.js", function(){addstar(3);});
+    // }
+    // else{
+    //   $.getScript("script.js", function(){addstar(0);});
+    // }
+    $('.level h2').text('Level: END');
+		//$('.start').show();				
+	
+
+	}
+
+};
+$(document).ready(function(){							
+
+	$('.start').on('mouseup', function(){			
+		$(this).hide();
+    setTimeout(function(){
+      game.init();
+    }, 500); 
+
+	});
+
+
+});
+// ปุ่ม simon
+
+// egg
+egg_cook = {
+  "egg_welldone": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/egg1.png",
+  "egg_raw": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/egg2.png",
+  "egg_burn": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/egg.png",
+  
+}
+
+var elem = document.getElementById("breakfast_oval");   
+  var pos = 0;
+       // pause animation
+document.querySelector("#pause").addEventListener('click', function() {
+    const el1 = document.getElementById('breakfast_oval');
+    const el2 = document.getElementById('breakfast_bar_win');
+  const el3 = document.getElementById('breakfast_bar_win_win');
+	document.querySelector("#breakfast_oval").style.animationPlayState = 'paused';
+  if (elementsOverlap(el1, el3)){
+    document.getElementById("microwave").src = egg_cook["egg_welldone"];
+   // document.getElementById("breakfast_img_welldone").style.zIndex = `10`;
+      document.getElementById("breakfast_win_text").innerHTML = "";
+      addstar(3);
+      //document.getElementById("showallstar").stepUp();
+      for (let i = 0; i < 3; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
+      }
+    
+    }
+    else if (elementsOverlap(el1, el2)){
+      document.getElementById("microwave").src = egg_cook["egg_raw"];
+        document.getElementById("breakfast_win_text").innerHTML = "";
+      addstar(2);
+      //document.getElementById("showallstar").stepUp();
+      for (let i = 0; i < 2; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
+      }
+      
+    }
+    else{
+      document.getElementById("microwave").src = egg_cook["egg_burn"];
+      document.getElementById("breakfast_win_text").innerHTML = "";
+      addstar(1);
+      //document.getElementById("showallstar").stepUp();
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("breakfast_win_text");
+      src.appendChild(img);
+      
+    }
+    
+});
+
+// play animation
+document.querySelector("#play").addEventListener('click', function() {
+	document.querySelector("#breakfast_oval").style.animationPlayState = 'running';
+});
+function elementsOverlap(el1, el2) {
+        const domRect1 = el1.getBoundingClientRect();
+        const domRect2 = el2.getBoundingClientRect();
+      
+        return !(
+          domRect1.top > domRect2.bottom ||
+          domRect1.right < domRect2.left ||
+          domRect1.bottom < domRect2.top ||
+          domRect1.left > domRect2.right
+        );
+      }
+document.querySelector("#breakfast_oval").style.animationPlayState = 'paused';
+// egg
+
+// whell
+; (function wheel($, d3, window, document, undefined) {
+
+  var pluginName = "wheel",
+    defaults = {
+      min: 0,
+      max: 1,
+      step: 0.1
+    };
+
+  function Plugin(element, options) {
+    this._defaults = defaults;
+    this._name = pluginName;
+    this.arc;
+    this.deg = 0;
+    this.oldvalue = 0;
+    this.chenk = 0;
+    this.element = element;
+    this.handle = element.querySelector("#handle");
+    this.progress = element.querySelector(".progress");
+    this.options = $.extend({}, defaults, options);
+    this.progressFill;
+    this.rad = -Math.PI / 2;
+    this.svg;
+    this.value;
+    
+
+
+    this.init();
+  }
+
+  Plugin.prototype.startDrag = function(event) {
+    var self = this;
+
+    $(window).on("mousemove touchmove", function(event) {
+      event.preventDefault();
+      self.drag(event);
+    }).on("mouseup touchend", function(event) {
+      event.preventDefault();
+      self.stopDrag(event);
+    });
+  };
+
+  Plugin.prototype.drag = function(event) {
+    var self = this;
+    var $element = $(self.element);
+
+    var pageX = event.pageX;
+    var pageY = event.pageY;
+    var touches = event.originalEvent.touches;
+
+    // Touch device
+    if (touches && touches.length === 1) {
+      pageX = touches[0].pageX;
+      pageY = touches[0].pageY;
+    }
+
+    var offset = $element.offset();
+
+    var deltaX = pageX - (offset.left + $element.width() / 2);
+    var deltaY = pageY - (offset.top + $element.height() / 2);
+
+    self.rad = Math.atan2(deltaY, deltaX);
+    self.deg = self.rad * (180 / Math.PI);
+
+    // Convert radians to degrees relative to positive y-axis
+    if (self.deg <= 0 && self.deg >= -90) {
+      self.deg = 90 + self.deg;
+
+    } else if (self.deg < -90) {
+      self.deg = 270 + 180 + self.deg;
+    }
+    else {
+      self.deg += 90;
+    }
+    this.update();
+  };
+  Plugin.prototype.stopDrag = function() {
+    $(window).off("mousemove mouseup");
+    this.update();
+  };
+
+  Plugin.prototype.keyDown = function(event) {
+    var self = this;
+    var step = self.options.step || 1;
+
+    switch (event.keyCode) {
+      case 38:
+        self.deg += step;
+        if (self.deg > 360) {
+          self.deg -= 360;
+
+        }
+        break;
+      case 40:
+        self.deg -= step;
+        if (self.deg < 0) {
+          self.deg += 360;
+
+        }
+        break;
+      default:
+        break;
+    }
+
+    // Convert degrees to radians relative to positive x-axis
+    if (self.deg >= 0 && self.deg <= 270) {
+      self.rad = (self.deg - 90) * (Math.PI / 180);
+
+    } else {
+      self.rad = (self.deg - 360 - 90) * (Math.PI / 180);
+
+    }
+
+    self.update();
+  };
+var chenk_sro1 = 1;
+var chenk_sro2 = 1;
+var chenk_sro3 = 1;
+  Plugin.prototype.update = function() {
+
+    var self = this;
+    var $element = $(self.element);
+    var $handle = $(self.handle);
+    var progress = self.deg / 360;
+    var radius = $element.width() / 2 - $handle.width() / 2;
+
+    var left = Math.cos(self.rad) * radius + $element.width() / 2;
+    var top = Math.sin(self.rad) * radius + $element.height() / 2;
+
+    $handle.css({
+      left: left,
+      top: top
+    });
+
+    //deg text center
+    self.value = ((self.options.max - self.options.min) / 360 * self.deg);
+
+    if (180 >= self.value && self.value >= 150) {
+      self.chenk = 1;
+    }
+    if ((50 >= self.value || self.value >= 300) && self.chenk == 1) {
+      self.oldvalue += 1;
+      self.chenk = 0;
+    }
+    // แสดงค่ามีถึงจุดที่กำหนด
+    if (self.oldvalue == 10 && chenk_sro1 == 1) {
+      chenk_sro1 = 0;
+      addstar(1);
+      document.getElementById("cycling_star").innerHTML = "";
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("cycling_star");
+      src.appendChild(img);
+    }
+    else if (self.oldvalue == 25 && chenk_sro2 == 1) {
+      //alert("Hello! I am an tum!");
+      addstar(1);
+      chenk_sro2 = 0;
+      document.getElementById("cycling_star").innerHTML = "";
+      for (let i = 0; i < 2; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }
+    }
+    else if (self.oldvalue == 40 && chenk_sro3 == 1) {
+      //alert("Hello! I am an wow!");
+      chenk_sro3 = 0;
+      addstar(1);
+      document.getElementById("cycling_star").innerHTML = "";
+      for (let i = 0; i < 3; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }
+        
+    }
+
+    if (typeof self.options.onChange === "function") {
+
+      self.options.onChange(self.oldvalue);
+
+    }
+
+    // Draw progress bar
+    //self.progressFill.attr("d", self.arc.endAngle(2 * Math.PI * progress));
+  };
+
+  Plugin.prototype.init = function() {
+    // Place initialization logic here
+    // You already have access to the DOM element and
+    // the options via the instance, e.g. this.element 
+    // and this.options
+    var self = this;
+    var $element = $(self.element);
+    var $handle = $(self.handle);
+    var width = $element.width();
+    var height = $element.height();
+
+    $handle.on("mousedown touchstart", function(event) {
+      event.preventDefault();
+      self.startDrag(event);
+      $(this).focus();
+    }).keydown(function(event) {
+      event.preventDefault();
+      self.keyDown(event);
+    });
+
+    self.arc = d3.svg.arc()
+      .startAngle(0)
+      .innerRadius(width / 2 - 20)
+      .outerRadius(width / 2);
+
+    self.svg = d3.select(this.progress)
+      .append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .append("g")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    self.progressFill = self.svg.append("path")
+      .attr("class", "progress-fill");
+
+    self.update();
+  };
+
+  // A really lightweight plugin wrapper around the constructor, 
+  // preventing against multiple instantiations
+  $.fn[pluginName] = function(options) {
+    return this.each(function() {
+      if (!$.data(this, "plugin_" + pluginName)) {
+        $.data(this, "plugin_" + pluginName,
+          new Plugin(this, options));
+      }
+    });
+  };
+
+})(jQuery, d3, window, document);
+$(function() {
+  $(".wheel").wheel({
+    min: 0,
+    max: 360,
+    step: 1,
+    onChange: function(value) {
+      $("#value_cycling").html(Math.round(value));
+      ;
+    }
+  });
+});
+
+//wheel
