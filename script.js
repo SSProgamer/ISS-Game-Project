@@ -30,12 +30,16 @@ function delbut(idbut) {
   element.remove();
 }
 
+var checkdinstar = 1;
 function addstardin(){
-  for (let i = 0; i < 3; i++) {
-    var img = document.createElement("img");
-    img.src = "images\\Star.png";
-    var src = document.getElementById("dinnerstar");
-    src.appendChild(img);
+  if(checkdinstar == 1){
+    for (let i = 0; i < 3; i++) {
+      var img = document.createElement("img");
+      img.src = "images\\Star.png";
+      var src = document.getElementById("dinnerstar");
+      src.appendChild(img);
+    }
+    checkdinstar = 0;
   }
 }
 
