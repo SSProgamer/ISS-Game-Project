@@ -83,7 +83,9 @@
 }
 
 #picp1 {
-  background-image:     url('https://ecdn5.wn.com/ph/img/bc/46/c4e212cdd80a5aa3b3b7617ee078-large.jpg');
+  background-image: url('https://ecdn5.wn.com/ph/img/bc/46/c4e212cdd80a5aa3b3b7617ee078-large.jpg');
+/*   https://smd-prod.s3.amazonaws.com/ciencia-pink/s3fs-public/styles/background_image_file_size/public/thumbnails/image/3_50884177063_1e7a6c8d39_o.jpg?itok=wOARvrnD */
+/*   https://newscdn2.weigelbroadcasting.com/BVcS7-1615723826-189831-blog-hypatia-h_d7e24a2753e512f532ba839426c9a943-h_d3f9f78803a0340f18795a8af332f4c4.jpg */
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -363,7 +365,7 @@
   position: absolute;
   text-align:left;
   width: 40%;
-  height: 80%;
+  height: 50%;
   left: 60%;
   top: 45%;
 /*   border: 1px solid red; */
