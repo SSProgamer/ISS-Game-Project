@@ -1,37 +1,100 @@
+
 :root{
   --bgcolor: #010a2d;
   --labelcolor: #2d3585;
   --text: #784284;
   --button: #1a2653;
 }
-*{
-  font-family: 'Noto Sans Thai', sans-serif;
+/**{*/
+  /*font-family: 'Noto Sans Thai', sans-serif;*/
 /*   font-family: "SAO", ssao; */
+/*}*/
+.Thai{
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+.Eng{
+  font-family: 'Rubik', sans-serif;
 }
 
 p {
   color: white;
+  font-size: 1en;
 }
 
+h3 {
+  color: white;
+}
+
+#backmid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: auto;
+  height: 100%;
+}
+
+.topfirstpage {
+  font-size: 25px;
+  letter-spacing: 10px;
+  color: white;
+  position: absolute;
+  top: 25.8%;
+  right: 39.2%;
+}
+.mainfirstpage {
+  font-size: 128px;
+  font-weight: 900;
+  color: white;
+  position: absolute;
+  top: 40%;
+  right: 28%;
+}
+.infofirstpage {
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 63%;
+  right: 40%;
+  width: 300px;
+}
 .firstpage {
   position: absolute;
-  height: 85px;
+/*   height: 85px;
   width: 85px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  display: inline-block; */
   left: 51.6%;
-  top: 71.9%;
+  top: 71%;
+  width: 85px;
+  height: auto;
 }
 .towebfirstpage {
   position: absolute;
-  height: 85px;
+/*   height: 85px;
   width: 85px;
   background-color: #bbb;
   border-radius: 50%;
-  display: inline-block;
+  display: inline-block; */
   left: 42.9%;
-  top: 71.9%;
+  top: 71%;
+  width: 85px;
+  height: auto;
+}
+
+#roommid {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: auto;
+  height: 80%;
 }
 
 #setbreakfast{
@@ -40,26 +103,23 @@ p {
   height: auto;
 }
 
-#gotoweb {
+#showallstar {
+  color: white;
+  font-size: 60px;
+  font-weight: bold;
   position: absolute;
-  top: 95%;
-  left: 41%;
-  border-radius: 16px;
-  text-align: center;
-  background-color: skyblue;
-  color: black;
-  width: 15vw;
-  height: 2vh;
-  margin-left: auto;
-  margin-right: auto;
+  left: 17.5%;
+  top: 7%;
+  
 }
 
-#showallstar {
-  background-color: #1a2754;
+#showallstarend {
+  color: white;
+  font-size: 52px;
+  font-weight: bold;
   position: absolute;
-  width: 15vw;
-  height: 5vh;
-  text-align: center;
+  left: 53%;
+  top: 42.5%;
 }
 
 #gamecontent{
@@ -70,19 +130,25 @@ p {
 }
 #gamecol{
   background: #2d3685;
+  background-image: url('https://cdn.discordapp.com/attachments/956540195652661348/977853969453973554/minigame_crop_2.png');
   
+  background-size: 100% 100%;
 }
 
 body {
   background-color: var(--bgcolor);
   background-image: url('https://cdn.pixabay.com/photo/2012/12/27/19/40/night-72871_960_720.jpg');
   overflow: hidden;
+  transition: all .5s;
+  
   
 }
 h1 {
-  padding-left: 80px;
-  background-color: black;
+  /*padding-left: 80px;
+  background-color: black;*/
   color: white;
+  margin: auto;
+  padding: 40px 0;
 }
 
 .tacoicon {
@@ -94,8 +160,8 @@ h1 {
   height: 60px;
 }
 .questionicon {
-  width: 60px;
-  height: 60px;
+  width: 128px;
+  height: 128px;
 }
 
 #messagebox{
@@ -134,9 +200,10 @@ h1 {
 }
 h2{
   position: relative;
-  /*font-family: ssao;*/
+  
   font-family: sans-serif;
-  color: var(--text);
+  color: white;
+  font-size: 1.25en;
 }
 
 .room{
@@ -158,34 +225,58 @@ h2{
   
 }
 .bed{
-  background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/RoomresCartoon.jpg");
+  background: var(--bgcolor);
+  background-image:url("https://media.discordapp.net/attachments/956540195652661348/977637197979218031/page_3_text_2.png?width=1191&height=670");
   z-index:3;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   
 }
 .gym{
-  background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/GymCartoon.jpg");
+  background: var(--bgcolor);
+/*   background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977637269022330930/gym.png?width=1335&height=670"); */
   z-index:2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .cafetaria{
- background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/CafetariaCartoon.jpg");
+  background: var(--bgcolor);
+/*   background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977931943704424468/CAFE_1.png"); */
   z-index:2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  
 }
 .lab{
- background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/LabCartoon.jpg");
+ background: var(--bgcolor);
+/*   background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977637247111270430/lab.png?width=1335&height=670"); */
   z-index:2;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .tutorial{
-  background: var(--labelcolor);
-  background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977235269814198282/how_to_play.jpg");
-  z-index:4;
-  background-size: 100% 100%;
+  background: var(--bgcolor);
+  background-image: url("https://media.discordapp.net/attachments/956540195652661348/977958112160006264/Multi_Design.png?width=1191&height=670");
+  z-index: 6;
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: all .5s;
 }
 .welcome{
- background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977616662201245756/Multi_Design.jpg");
-  z-index:5;
-  background-size: 100% 100%;
+ background-image: url("https://media.discordapp.net/attachments/956540195652661348/977971584763564143/welcome.png?width=1191&height=670");
+  z-index:7;
+  background-color: var(--bgcolor);
   background-repeat: no-repeat;
+/*   background-attachment: fixed;*/
+  background-size: contain;
+  background-position: center;
+  /*background-size: 100% 100%;
+  background-repeat: no-repeat;*/
 }
 
 .minigame{
@@ -291,44 +382,44 @@ background: grey;
     display: inline-block;
         }
 .breakfast_bar{
-   background-color: red;
+   background-color: OrangeRed;
     width: 80%;
     height: 10%;
     position: relative;
     margin:0px;
     padding:0px;
-    top: 40%;
+    top: 43%;
     left:10%;
         }
     #breakfast_bar_win{
-  background-color: pink;
+  background-color: Yellow;
     width: 10%;
     height: 10%;
     position: absolute;
     margin:0px;
     padding:0px;
-    top: 40%;
-    left:50%;
+    top: 43%;
+    left:44%;
         }
 #breakfast_bar_win_win{
-  background-color: purple;
+  background-color: MediumSeaGreen;
     width: 3%;
     height: 10%;
     position: absolute;
     margin:0px;
     padding:0px;
-    top: 40%;
-    left:55%;
+    top: 43%;
+    left:48%;
         }
-    #breakfast_oval {
-      width: 1%;
+#breakfast_oval {
+      width: 0.5%;
       height: 10%;
-      background: blue;
+      background: black;
       position: relative;
-      top: 30%;
+      top: 33%;
       left:10%;
-    animation: 2.5s moving 0.5s linear infinite alternate;
-    }
+    animation: 2.5s moving 0.9s linear infinite alternate;
+}
   
 #breakfast_img{
     /*background-color: grey;*/
@@ -338,7 +429,7 @@ background: grey;
     margin:0px;
     padding:0px;
     top: 10%;
-    left: 30%;
+    left: 39.5%;
     display: inline-block;
 /*     justify-content: center; */
     text-align:center;
@@ -363,6 +454,8 @@ background: grey;
 #breakfast_button_2{
   position: absolute;
   z-index: -1;
+  text-align: center;
+  left:30%;
 }
 #breakfast_button_3{
   
@@ -384,28 +477,32 @@ background: grey;
   background: #2d3685;
 }
 .robot_home{
-  background:#794284;
+  background: #1a2754;
   position: relative;
   width:100%;
   height:100%;
+  background-image: url('https://cdn.discordapp.com/attachments/956540195652661348/977847159833649162/minigame.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 #robot_track{
-  background:#794284;
+  /*background:#794284;*/
   position: relative;
   left: 0%;
   top: 55%;
   display: grid;
-  grid-template-columns: 12vw 11vw 11vw 11vw 12vw;
-  padding: 10px;
-  grid-gap: 5px;
+  grid-template-columns: 9vw 9vw 9vw 9vw 9vw;
+  padding: 12px;
+  grid-gap: 6px;
   justify-items: center;
+  justify-content: center;
   z-index: -5;
 }
 .robot_show{
  /* background:red;*/
   position: absolute;
-  left: 35%;
-  top: 5%;
+  left: 33%;
+  top: 8%;
   width: 30%;
   height: 40%;
 }
@@ -413,7 +510,7 @@ background: grey;
  
   position: absolute;
   left: 40%;
-  top: 10%;
+  top: 0%;
   width: 20%;
   height: 20%;
   text-align: center;
@@ -421,7 +518,7 @@ background: grey;
 #robot_part2{
   
   position: absolute;
-  left: 10%;
+  left: 5%;
   top: 35%;
   width: 20%;
   height: 20%;
@@ -430,7 +527,7 @@ background: grey;
 #robot_part3{
   
   position: absolute;
-  left: 70%;
+  left: 75%;
   top: 35%;
   width: 20%;
   height: 20%;
@@ -466,7 +563,6 @@ background: grey;
 #showrobot{
 /*   margin: 1vh; */
   color: white;
-  font-size: 25px;
   justify-content: center;
   text-align: center;
 }
@@ -486,8 +582,8 @@ background: grey;
 #plantimg{
   border: 15px solid #555;
   position: relative;
-  left: 35%;
-  top: 70%;
+  left: 36.5%;
+  top: 60%;
   width: 25%;
   height: 25%;
 }
@@ -497,19 +593,21 @@ button{
   margin: 1vh;
   padding: 1vh;
   position: absolute;
-/*   width: 10vw; */
-  height: 10vh;
+  width: 6vw; 
+  height: 6vh;
   color: white;
   font-size: 1.5vw;
   border-radius: 8px;
   box-shadow: 4px 4px white;
   transition: all .5s;
+  border: solid 0px black;
 }
 button:hover{
+  background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977637197312319488/button_in_minigame_2.png");
   transform: scale(1.1);
   cursor: pointer;
-  color: var(--text);
-  box-shadow: 8px 8px var(--text);
+/*   color: var(--text); */
+  box-shadow: 8px 8px;
   background: var(--labelcolor);
 
 }
@@ -525,23 +623,36 @@ button:hover{
 }
 .top{
   top: 2%;
-  right: 45%;
-  font-size: 2vw;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 256px;
 }
 .bottom{
-  /*margin-left: auto;
-  margin-right: auto;
-  
-  right: 0;*/
-  left: 45%;
   bottom: 2%;
+  top: 86%;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 256px;
+}
+.w{
+/*   background: red; */
+  width: 32vw;
+  height: 8vh;
+  position: absolute;
+  bottom: 16vh;
+  text-align: center;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
 }
 /* .tacoinpic{
   position: relative;
 } */
-
-
-
 
 #cycling{
   margin: 0;
@@ -589,18 +700,18 @@ button:hover{
 }
 #vegetable{
 /*   border: 3px solid red; */
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 85px;
 }
 #meat{
 /*   border: 3px solid red; */
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 85px;
 }
 #sauce{
 /*   border: 3px solid red; */
-  height: 100px;
-  width: 100px;
+  height: 85px;
+  width: 85px;
 }
 .gridin{
   position: relative;
@@ -609,6 +720,11 @@ button:hover{
   display: grid;
   grid-template-columns: 8vw 8vw 8vw 8vw;
   padding: 4vh;
+  top: 24.5%;
+  left: 9%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
 }
 
 sussy{
@@ -625,7 +741,10 @@ sussy{
   text-align: center;
   white-space: nowrap;
   width: 100%;
-  height: 100%; 
+  height: 100%;
+  position:absolute;
+  top: 50%;
+  left: 10%;
 }
   .center-content:before {
     content: "";
@@ -704,19 +823,12 @@ sussy{
     position: relative;
     top: -150px;
     width: 100px; }
-
-.box_02 {
-    height: 100%;
-    width: 100%;
-    left: 0%;
-    position: relative;
-}
 .box_01 {
-    height:30%;
-    width:20%;
+  height:30%;
+  width:20%;
   position: relative;
   display:flex;
-  left:30%;top:-15%;
+  left:32%;top:-20%;
 }
 
 .button_click{
@@ -752,19 +864,29 @@ sussy{
 }
 img {
   height: 200px;
-  object-fit: cover;
+/*   object-fit: cover; */
   width: 200px;
   transition: all .5s;
 }
-
-.img_buttom:hover{
-  transform:scale(1.1);
+#playandweb{
+  bottom: 20%;
+/*   scale: 0.9; */
+}
+#playandreload{
+  bottom: 13%;
+/*   scale: 0.9; */
 }
 
-.tt {
-  height: auto;
-  width: auto;
-  background: white;
+/* .img_button{
+  -webkit-filter: drop-shadow(5px 5px 5px white );
+  filter: drop-shadow(5px 5px 5px
+} */
+
+.img_button:hover{
+  transform:scale(1.1);
+  cursor: pointer;
+  -webkit-filter: drop-shadow(8px 8px 2px var(--text) );
+  filter: drop-shadow(8px 8px 2px var(--text));
 }
 
 #wallpaper{
@@ -790,7 +912,7 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .shape2{
   position: relative;
@@ -800,7 +922,7 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .shape3{
   position: relative;
@@ -810,7 +932,7 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .shape4{
   position: relative;
@@ -820,13 +942,9 @@ img {
 	-moz-border-radius: 20px;
 	-webkit-border-radius: 20px;
 	border-radius: 20px;
-  opacity: 0.5;
+  opacity: 0.7;
 }
-.starto{
-  position: relative;
-  top: 0;
-  left: 0;
-}
+
 .level{
   position: relative;
 /*   top:2%;
@@ -837,7 +955,10 @@ img {
   top:0%;
   left:0%;
 }
-
+.imgplantbot{
+  max-width: 100%;
+  max-height: 100%;
+}
 /* ต้นไม้*/
 
 #startaco {
@@ -879,57 +1000,77 @@ button.bck_tree{
 
 #cycling_star{
   width: 200px;
-  height: 120px;
+  height: auto;
   position: relative;
+  text-align: center;
+  left:30%;
+  
 }
 
 #cycling_star img {
     width: 20%;
-    height: auto;
+height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #breakfast_win_text{
   width: 200px;
-  height: 120px;
+  height:auto;
   position: relative;
+  left:30%;
 }
 
 #breakfast_win_text img {
     width: 20%;
     height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #startaco{
   width: 200px;
-  height: 120px;
+  height: auto;
+  position: relative;
+  text-align: center;
+  left:30%;
 }
 
 #startaco img {
     width: 20%;
     height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #dinnerstar{
   width: 200px;
-  height: 120px;
+  height: auto;
+  position: relative;
+  text-align: center;
+  left:30%;
 }
 
 #dinnerstar img {
     width: 20%;
     height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #starplant{
   width: 200px;
-  height: 120px;
-  position: absolute;
-  top: -2%;
-  left:10%;
+  height: auto;
+    position: relative;
+  text-align: center;
+  left:30%;
 }
 
 #starplant img {
     width: 17%;
     height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* #tacoserve{
@@ -944,20 +1085,18 @@ button.bck_tree{
 } */
 
 #starrobot{
-  position: relative;
-  color: #fcf923;
-  height: 1px;
-  width: auto; 
-  max-height: 100%; 
-}
-#starrobot{
   width: 200px;
-  height: 40px;
+  height: auto;
+  position: relative;
+  text-align: center;
+  left:30%;
 }
 
 #starrobot img {
     width: 20%;
     height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #re{
@@ -968,7 +1107,6 @@ button.bck_tree{
 
 #showtaco{
   position: relative;
-  font-family: sans-serif;
   left: 0%;
   top: 0%;
 }
@@ -979,7 +1117,12 @@ button.bck_tree{
 }
 
 .gamebutton{
+  background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977637197312319488/button_in_minigame_2.png");
   position: relative;
+  width: 204 px;
+  height: 113 px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 #buttonbot{
@@ -999,25 +1142,93 @@ button.bck_tree{
 
 #peoplecy{
   position: absolute;
-  right: 50.5%;
-  
+  right: 35.5%;
+  top: 25%;
   width: 30%;
   height: auto;
 }
 
 .endgamebox{
-  opacity: 1;
   position: absolute;
+  top: 8vh;
+  bottom: 8vh;
+  left: 8vw;
+  right: 8vw;
+/*   margin: 6vw 20vw;
+  padding: 10vh; */
+  background-color: var(--bgcolor);
+  position: absolute;
+/*   width: 50vw;
+  height: 50vh; */
+/*   display: flex; */
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+} 
+
+.bedroomcontent{
+  position: absolute;
+  top: 16vh;
+  bottom: 16vh;
+  left: 20vw;
+  right: 20vw;
+}
+.roomcontent{
+  position: absolute;
+  top: 16vh;
+  bottom: 16vh;
+  right: 16vh;
+}
+#canmaze{
+  position: relative;
+  top: 8vh;
+  left: 29vh;
+  z-index: -2;
+}
+.img_fix{
+  background-image: url('https://cdn.discordapp.com/attachments/956540195652661348/977847159833649162/minigame.png');
+  height:100%;
+  width:100%;
+  position:relative;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.todolist{
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  left: 70vw;
+  z-index: 10;
+}
+
+.todolist:hover{
+  left: 0vw;
+}
+/* } */
+.endimg{
+  position: relative;
+  height: 100%;
+  width: auto;
+  top: 0;
+  left: 5.5vw;
+  margin: auto;
+}
+.h1_topic{
+  background-image: url('https://cdn.discordapp.com/attachments/956540195652661348/977965387121557504/Multi_Design.png');
+  margin: auto;
+  height:15%;
+  width:100%;
+  position:relative;
   text-align: center;
-  background-color: skyblue;
-  color: white;
-  width: 32vw;
-  height: 32vh;
-  z-index: -99;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  top: 20%;
-  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  top:8%;
+}
+.text_message{
+  padding: 60px 0;
+  height:60%;
+  width:100%;
+  position:relative;
+  text-align: center;
 }

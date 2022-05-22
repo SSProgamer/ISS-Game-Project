@@ -15,8 +15,10 @@
   <link href="open_can.css" rel="stylesheet" type="text/css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@700&display=swap" rel="stylesheet">
-  
 </head>
 
 <body>
@@ -24,13 +26,19 @@
   <!--   <div id="content"> -->
   <div class="room welcome">
     <!--<h1 class="roomname">This is room welcome</h1><br>-->
-    <span class="firstpage" onclick="welcome.style.zIndex = `-1`" style="cursor: pointer"></span>
-    <span class="towebfirstpage" onclick="location.href='Web\\index.html';" style="cursor: pointer"></span>
+<!--     <img src="https://cdn.discordapp.com/attachments/956540195652661348/977637301750476910/page_1_welcome_ele_1.png" id="backmid">
+    <div class="topfirstpage Eng">GAMING STATION</div>
+    <div class="mainfirstpage Eng">1 DAY IN ISS</div>
+    <div class="infofirstpage Eng">A Game about a daily life of an astronaut in International Space Station.</div> -->
+    <div class="w" id="playandweb">
+    <img class="img_button" src="https://cdn.discordapp.com/attachments/956540195652661348/977844301679689778/8.png" style="height:4vw;width:4vw;margin:1vh 2vh;" onclick="location.href='Web\\index.html';"></img>
+    <img class="img_button" src="https://cdn.discordapp.com/attachments/956540195652661348/977844301310595082/0e27979ed74326c1.png" style="height:4vw;width:4vw;margin:1vh 2vh;" onclick="welcome.style.zIndex = `-1`"></img>
+    </div>
   </div>
 
   <div class="room tutorial">
-    <h1 class="roomname">this is tutorial</h1><br>
-<button class="top" onclick="tutorial.style.zIndex = `1`">go</button>
+    <button class="Thai" style="bottom: 2%;top: 8%;left: 86%; right: 0; margin-right: auto; width: 128px;" onclick="tutorial.style.left = `100vw`">ปิด</button>
+<!--     <img class="img_button bottom" style="position:absolute;width:auto;height:auto;" src="https://media.discordapp.net/attachments/956540195652661348/977637246658289664/button_contunue_normal.png" onclick="tutorial.style.zIndex = `1`"> -->
     <!--<img id="setofbreakfast" src="https://cdn.discordapp.com/attachments/956540195652661348/977593079227883620/setbreakfast.png"></img>
     <img id="setoflunch" src="https://cdn.discordapp.com/attachments/956540195652661348/977593531474534460/setlunch.png"></img>
     <img id="setofdinner" src="https://cdn.discordapp.com/attachments/956540195652661348/977593964322504714/setdinner.png"></img>
@@ -42,30 +50,37 @@
   
   
   <div class="room bed">
-    <h1 class="roomname">Bedroom</h1><br>
-    <a id="gotoweb" href="Web\\index.html">กดเพื่อไปที่ Landing Page</a>
-    <h1 id="showallstar">Total Star : 0</h1>
-    <!--       <h1 class="clock">9.00am</h1> -->
-    <button class="right" onclick="cafetaria.style.zIndex = `5`;bedroom.style.zIndex = `1`">Cafetaria</button>
-    <button class="left" onclick="gym.style.zIndex = `5`;bedroom.style.zIndex = `1`">Gym</button>
-    <button class="top" onclick="lab.style.zIndex = `5`;bedroom.style.zIndex = `1`">Lab</button>
+<!--     <img src="https://cdn.discordapp.com/attachments/977633442294530088/977635305345646622/page_3_text_2.png" id="backmid"> -->
+    <div id="showallstar" class="Eng">: 0</div>
+    <div class="bedroomcontent">
+    <img class="img_button" style="position:relative;width:32%;height:100%;" src="https://media.discordapp.net/attachments/956540195652661348/977637217088467024/page_3_gym.png" onclick="gym.style.zIndex = `5`;bedroom.style.zIndex = `1`">
+    <img class="img_button" style="position:relative;width:33%;height:100%;" src="https://media.discordapp.net/attachments/956540195652661348/977637216857759824/page_3_cafe.png" onclick="cafetaria.style.zIndex = `5`;bedroom.style.zIndex = `1`">
+    <img class="img_button" style="position:relative;width:33%;height:100%;" src="https://media.discordapp.net/attachments/956540195652661348/977637216555765891/page_3_lab.png" onclick="lab.style.zIndex = `5`;bedroom.style.zIndex = `1`">        </div>
+    <img class="img_button" style="position:relative;top:5%;left:90%;width:auto;height:15%;" src="https://media.discordapp.net/attachments/956540195652661348/977968855022465024/tutorial3.png" onclick="tutorial.style.left = `8vw`;">
   </div>
 
   <div class="room gym">
-    <h1 class="roomname">Gym</h1>
-    <!--       <h1 class="clock">12.00am</h1> -->
-    <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`;endgame()">Bedroom</button>
-    <img src="https://cdn.discordapp.com/attachments/956540195652661348/972519135181410364/cyling.png" id="cycling"
-      onclick="cycling.style.zIndex = `6`" style="cursor: pointer"></img>
-
+    <img src="https://cdn.discordapp.com/attachments/956540195652661348/977931943008161842/GYM_1.png" id="backmid">
+    <div class="roomcontent">
+    <img class="img_button"
+style="position:relative;top:10%;right:60%;width:auto;height:25%;"      src="https://cdn.discordapp.com/attachments/956540195652661348/977874902713528350/bicycle.png"
+      onclick="cycling.style.zIndex = `6`"></img>
+      
+    </div>
+    <img class="img_button" style="position:relative;left:3%;top:3%;width:auto;height:10%;" onclick="bedroom.style.zIndex = `5`; gym.style.zIndex = `1`; endgame(); addstarend()" src="https://cdn.discordapp.com/attachments/956540195652661348/977931912188428318/arrow.png">
 
   </div>
 
   <div class="minigame cycling">
+    
     <div id="gamecontent">
-      <img src="https://cdn.discordapp.com/attachments/956540195652661348/977239446997061682/4-removebg-preview_copy.png" id="peoplecy"></img>
+  
+      <div class="img_fix">
+      <img src="https://cdn.discordapp.com/attachments/956540195652661348/977239446997061682/4-removebg-preview_copy.png" id="peoplecy">
+        
       <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
       <div id="cycling_roll">
+        
         <div class="center-content">
           <div class="wheel">
             <div class="progress"></div>
@@ -75,23 +90,26 @@
             <a href="javascript:void(0)" id="handle"></a>
           </div>
         </div>
-      </div>
+      </div></div>
       <div id="gamecol">
-        <h1>ปั่นจักรยาน</h1>
-        <p>เมื่อคุณกดปุ่ม Start จะมีกงล้อโผล่ขึ้นมา<br>คุณจะต้องหมุนกงล้อให้ได้อย่างน้อย 40 ครั้ง<br>ภายในเวลา 15 วินาที
+        <div class="h1_topic Thai">
+        <h1>ปั่นจักรยาน</h1></div>
+        <div class="text_message">
+        <p class="Thai">เมื่อคุณกดปุ่ม Start จะมีกงล้อโผล่ขึ้นมา<br>คุณจะต้องหมุนกงล้อให้ได้อย่างน้อย 40 ครั้ง<br>ภายในเวลา 15 วินาที
           เพื่อให้ได้ 3 ดาว</p>
-        <hr>
-        <div id="value_cycling" style="text-align: center;">0</div>
-        <hr>
-        <div class="cycling_text">
-          <div id="counterDisplay"></div>
+        
+        <div class="Eng" id="value_cycling" style="text-align: center; color: white;">0</div>
+        
+        <div class="cycling_text Eng">
+          <div id="counterDisplay" style="color: white;"></div>
         </div>
-        <hr>
+        
         <p id="cycling_star"></p>
-        <hr>
-        <button id="startButton" class="gamebutton"
-          onclick="cycling_roll.style.zIndex = `6`;cyexit.style.zIndex = `-5`; delbut(this.id); addplay()">Start</button>
-        <button id="cyexit" class="gamebutton" onclick="cycling.style.zIndex = `-5`">กลับ</button>
+        
+        <button id="startButton" class="gamebutton Eng"
+          onclick="cycling_roll.style.zIndex = `6`;cyexit.style.zIndex = `-5`; delbut(this.id); addplay();">START</button>
+        <button id="cyexit" class="gamebutton Eng" onclick="cycling.style.zIndex = `-5`">BACK</button>
+        </div>
       </div>
     </div>
   </div>
@@ -106,136 +124,153 @@ $("#slider1").roundSlider({
 
 
   <div class="room cafetaria">
-    <h1 class="roomname">Cafetaria</h1>
-    <!--       <h1 class="clock">15.00am</h1> -->
-    <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`;endgame()">Bedroom</button>
-    <img id="breakfast" class="img_buttom" src="https://cdn.discordapp.com/attachments/956540195652661348/972549175394857030/egggggggg.png"
-      onclick="breakfast.style.zIndex = `6`" style="cursor: pointer"></img>
-    <img id="lunch" class="img_buttom" src="https://cdn.discordapp.com/attachments/956540195652661348/972549918277398668/lunch.png"
-      onclick="lunch.style.zIndex = `6`; tacoRandom();" style="cursor: pointer" </img>
-    <img id="dinner" class="img_buttom" src="https://cdn.discordapp.com/attachments/956540195652661348/972554950557204560/Untitled-7.png"
-      onclick="dinner.style.zIndex='6'; addstardin()" style="cursor: pointer"></img>
-  </div><!-- อาหารเย็น-->
+    <img src="https://cdn.discordapp.com/attachments/956540195652661348/977931943704424468/CAFE_1.png" id="backmid">
+    <div class="roomcontent">
+    <img class="img_button" style="position:relative;top:10%;right:60%;width:auto;height:25%;" src="https://cdn.discordapp.com/attachments/956540195652661348/977874903065833522/breakfast.png"
+      onclick="breakfast.style.zIndex = `6`"><br>
+    <img class="img_button" style="position:relative;top:20%;right:60%;width:auto;height:25%;" src="https://cdn.discordapp.com/attachments/956540195652661348/977874903380410398/dinner.png"
+      onclick="lunch.style.zIndex = `6`; tacoRandom();"><br>
+    <img class="img_button" style="position:relative;top:30%;right:60%;width:auto;height:25%;" src="https://cdn.discordapp.com/attachments/956540195652661348/977874903661412362/lunch.png"
+      onclick="dinner.style.zIndex='6';">
+      </div>
+      <img class="img_button" style="position:relative;left:3%;top:3%;width:auto;height:10%;" onclick="bedroom.style.zIndex = `5`; cafetaria.style.zIndex = `1`; endgame(); addstarend()" src="https://cdn.discordapp.com/attachments/956540195652661348/977931912188428318/arrow.png">
+  </div>
 
   <div class="minigame breakfast">
+    
     <div id="gamecontent">
-      
+
+      <div class="img_fix">
       <div id="breakfast_img">
         <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
           name="microwave" id="microwave">
       </div>
 
       <div class="breakfast_part2">
-
-        <div class="breakfast_bar"></div>
-        <div id="breakfast_bar_win"></div>
-        <div id="breakfast_bar_win_win"></div>
-        <div id="breakfast_oval"></div>
-
+          <div class="breakfast_bar"></div>
+          <div id="breakfast_bar_win"></div>
+          <div id="breakfast_bar_win_win"></div>
+          <div id="breakfast_oval"></div>
+        </div>
       </div>
       <!--
     <div class="breakfast_part3">
         <p id="breakfast_win_text"></p>
     </div>-->
       <div id="gamecol">
-        <h1>อบไข่</h1>
-        <p>คุณจะต้องทำการอบไข่ให้สุขได้ที่<br>โดยการเริ่มกดปุ่ม Cook ! แล้วแถบจะเริ่มเดิน<br>หากคุณกด Stop
-          ได้ตรงกับตำแหน่งที่ถูกต้อง<br>จะได้รับไข่ที่สุขอย่างพอดี</p>
-        <hr>
-        <p id="breakfast_win_text"></p>
-        <hr>
+        <div class="h1_topic Thai">
+        <h1>อบไข่</h1></div>
+        <div class="text_message">
+        <p class="Thai">คุณจะต้องทำการอบไข่ให้สุกพอดี ไม่ไหม้ และ ไม่ดิบเกินไป<br>โดยการเริ่มกดปุ่ม Cook ! แล้วแถบสีฟ้าจะเริ่มเคลื่อนที่<br>หากคุณกดปุ่ม Finish!
+          ได้ตรงกับตำแหน่งที่ถูกต้อง<br>จะได้รับไข่ที่สุขอย่างพอดี<br">เขียว = สุกพอดี, เหลือง = ไข่ไม่สุก, แดง = ไข่ไหม้</p>
         
+        <p id="breakfast_win_text"></p>
         <div id="breakfast_button_2">
-          <button class="gamebutton" id="pause" onclick="delbut(this.id); buttonegg.style.zIndex = `10`;">Pause</button>
+          <button class="gamebutton Eng" id="pause" onclick="delbut(this.id); buttonegg.style.zIndex = `10`;">FINISH!</button>
         </div>
         <div id="breakfast_button_1">
-          <button class="gamebutton" id="play" onclick="breakfast_button_1.style.zIndex = `-20`;breakfast_button_2.style.zIndex = `20`;buttonegg.style.zIndex = `-20`;">Play</button>
+          <button class="gamebutton Eng" id="play" onclick="breakfast_button_1.style.zIndex = `-20`;breakfast_button_2.style.zIndex = `20`;buttonegg.style.zIndex = `-20`;">COOK!</button>
         </div>
-        <hr>
-        <button class="gamebutton" id="buttonegg" onclick="breakfast.style.zIndex = `-5`;">กลับ</button>
+        
+        <button class="gamebutton Eng" id="buttonegg" onclick="breakfast.style.zIndex = `-5`;">BACK</button>
+      </div>
       </div>
     </div>
 
   </div>
   <div class="minigame lunch">
     <div id="gamecontent">
-      <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
-      <div class="gridin">
-        <img name="Tomato" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png"
-          onclick="tacoChange(this.name)">
-        <img name="Lettuce" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/lettuce.png"
-          onclick="tacoChange(this.name)">
-        <img name="Shallot" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/shallot.png"
-          onclick="tacoChange(this.name)">
-        <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
-          class="tacoicon" id="vegetable" name="something vegetable">
-        <img name="Pork" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/pork.png"
-          onclick="tacoChange(this.name)">
-        <img name="Chicken" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/chicken.png"
-          onclick="tacoChange(this.name)">
-        <img name="Beef" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/beef.png"
-          onclick="tacoChange(this.name)">
-        <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
-          class="tacoicon" id="meat" name="something meat">
-        <img name="Ketchup" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/ketchup.png"
-          onclick="tacoChange(this.name)">
-        <img name="Mustard" class="tacoicon"
-          src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/mustard.png"
-          onclick="tacoChange(this.name)">
-        <p></p>
-        <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
-          class="tacoicon" id="sauce" name="something sauce">
+      <div class="img_fix">
+        <div class="gridin">
+          <img name="มะเขือเทศ" class="tacoicon img_button"
+            src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png"
+            onclick="tacoChange(this.name)">
+          <img name="ผักกาด" class="tacoicon img_button"
+            src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/lettuce.png"
+            onclick="tacoChange(this.name)">
+          <img name="หอมแดง" class="tacoicon img_button"
+            src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/shallot.png"
+            onclick="tacoChange(this.name)">
+          <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            class="tacoicon" id="vegetable" name="something vegetable">
+          <img name="หมูฉีก" class="tacoicon img_button"
+            src="https://cdn.discordapp.com/attachments/956540195652661348/977941761433428088/pig2.png"
+            onclick="tacoChange(this.name)">
+          <img name="ไก่ฉีก" class="tacoicon img_button"
+            src="https://cdn.discordapp.com/attachments/956540195652661348/977981100972466206/chicken2.png"
+            onclick="tacoChange(this.name)">
+          <img name="เนื้อวัวฉีก" class="tacoicon img_button"
+            src="https://cdn.discordapp.com/attachments/956540195652661348/977941761127219310/cow2.png"
+            onclick="tacoChange(this.name)">
+          <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            class="tacoicon" id="meat" name="something meat">
+          <img name="ซอสมะเขือเทศ" class="tacoicon img_button"
+            src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/ketchup.png"
+            onclick="tacoChange(this.name)">
+          <img name="มัสตาร์ด" class="tacoicon img_button"
+            src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/mustard.png"
+            onclick="tacoChange(this.name)">
+          <p></p>
+          <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            class="tacoicon" id="sauce" name="something sauce">
+          </div>
       </div>
       <div id="gamecol">
-        <h1>ทำทาโก้</h1>
-        <p>คุณจะต้องเลือกส่วนผสมของทาโก้<br>ให้ถูกต้องตามที่กำหนดไว้ทั้ง 3 อย่าง<br>เมื่อมั่นใจว่าถูกต้องให้กด Serve
+        <div class="h1_topic Thai">
+        <h1>ทำทาโก้</h1></div>
+        <div class="text_message">
+        <p class="Thai">คุณจะต้องเลือกส่วนผสมของทาโก้<br>ให้ถูกต้องตามที่กำหนดไว้ทั้ง 3 อย่าง<br>เมื่อมั่นใจว่าถูกต้องให้กดปุ่ม Serve
           เพื่อดูผลลัพธ์</p>
-        <hr>
-        <p id="startaco"></p>
-        <hr>
-        <h3 id="showwanttaco"></h3>
-        <hr>
-        <h3 id="showtaco">Choose ingredients for your taco.</h3>
-        <hr>
-        <button class="gamebutton" id="buttontaco" onclick="serveTaco(); delbut(this.id)">Serve!</button>
+        
+        <p id="startaco" class="Thai"></p>
+        
+        <h3 id="showwanttaco" class="Thai"></h3>
+        
+        <h3 id="showtaco" class="Thai">เลือกส่วนผสมสำหรับทาโก้ของคุณ</h3>
+        
+        <button class="gamebutton Eng" id="buttontaco" onclick="serveTaco(); delbut(this.id)">SERVE!</button>
 
-        <button class="gamebutton" onclick="lunch.style.zIndex = `-5`">กลับ</button>
+        <button class="gamebutton Eng" onclick="lunch.style.zIndex = `-5`">BACK</button>
       </div>
     </div>
 
-
+ </div>
   </div>
   <div class="minigame dinner">
+    
     <div id="gamecontent">
+      <div class="img_fix">
+      <div id="canmaze">
       <svg width="500" height="500" transform="rotate(0)" transform-origin="center">
-        <g transform-origin="center">
+        <g id="allmaze" transform-origin="center">
           <g id="maze" transform-origin="center">
-            <circle cx="250" cy="250" r="200" fill="yellow" onmouseover="decstar();" ></circle>
-            <rect x="250" y="250" width="200" height="40" fill="red" ></rect>
-            <circle cx="250" cy="250" r="175" fill="red" ></circle>
-            <circle cx="250" cy="250" r="25" fill="green" onmouseover="dinner.style.zIndex = `-5`; fordinner(dinnerstar)" ></circle>
+            <circle cx="250" cy="250" r="200" fill="#6A35D2" onmouseover="decstar();" ></circle>
+            <rect x="250" y="250" width="200" height="40" fill="#17003A" ></rect>
+            <circle cx="250" cy="250" r="175" fill="#17003A" ></circle>
+            <circle cx="250" cy="250" r="25" fill="SpringGreen" onmouseover="canmaze.style.zIndex = `-5`; backmaze.style.zIndex = `5`; fordinner(dinnerstar)" ></circle>
           </g>
           <use href="#maze" transform="scale(0.75) rotate(180)" transform-origin="center"></use>
           <use href="#maze" transform="scale(0.5) rotate(-45)" transform-origin="center"></use>
           <use href="#maze" transform="scale(0.25) rotate(90)" transform-origin="center"></use>
         </g>
       </svg>
+        
+        </div>
+    </div>
       <div id="gamecol">
-        <h1>เปิดกระป๋อง</h1>
-        <p>
-          คุณจะต้องลากเมาส์เข้าช่องสีแดงไปให้ถึงจุดข้างในสุดอย่างระมัดระวัง<br>โดยพยายามอย่าให้โดนกำแพงสีเหลือง<br>โดยมีโอกาสพลาดได้
+        <div class="h1_topic">
+        <h1 class="Thai">เปิดกระป๋อง</h1></div>
+        <div class="text_message">
+        <p class="Thai">
+          คุณจะต้องลากเมาส์เข้าช่องสีม่วงเข้มไปให้ถึงจุดข้างในสุดอย่างระมัดระวัง<br>โดยพยายามอย่าให้โดนกำแพงสีม่วงอ่อน<br>โดยมีโอกาสพลาดได้
           3 ครั้ง</p>
-        <hr>
+        
         <div id="dinnerstar"></div>
-        <hr>
-        <button class="gamebutton" onclick="dinner.style.zIndex = `-5`">กลับ</button>
+        
+         <button id="startmaze" class="gamebutton Eng"
+          onclick="canmaze.style.zIndex = `10`; backmaze.style.zIndex = `-5`; delbut(this.id); addstardin(); addplaydin()">START</button>
+        <button id="backmaze" class="gamebutton Eng" onclick="dinner.style.zIndex = `-5`">BACK</button>
+        </div>
       </div>
     </div>
     <div class="it">
@@ -259,73 +294,79 @@ $("#slider1").roundSlider({
   </div>
 
   <div class="room lab">
-    <h1 class="roomname">Laboratory</h1>
+    <img src="https://cdn.discordapp.com/attachments/956540195652661348/977931943318552634/LAB_1.png" id="backmid">
+<!--     <h1 class="roomname">Laboratory</h1> -->
     <!--       <h1 class="clock">18.00am</h1> -->
-    <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`;endgame()">Bedroom</button>
-    <img id="robot" src="https://cdn.discordapp.com/attachments/956540195652661348/972554032285646911/robot.png"
-      onclick="robot.style.zIndex = `6`" style="cursor: pointer"></img>
-    <img id="plant" src="https://cdn.discordapp.com/attachments/956540195652661348/972556092460654672/Untitled-8.png"
+    <div class="roomcontent">
+<!--     <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`;endgame()">Bedroom</button> -->
+    <img class="img_button"
+style="position:relative;top:10%;right:60%;width:auto;height:25%;"      src="https://cdn.discordapp.com/attachments/956540195652661348/977874903959240724/robot.png"
+      onclick="robot.style.zIndex = `6`" style="cursor: pointer"></img><br>
+    <img class="img_button"
+style="position:relative;top:20%;right:60%;width:auto;height:25%;"       src="https://cdn.discordapp.com/attachments/956540195652661348/977874904231858206/tree.png"
       onclick="plant.style.zIndex = `6`" style="cursor: pointer"></img>
+    </div>
+    <img class="img_button" style="position:relative;left:3%;top:3%;width:auto;height:10%;" onclick="bedroom.style.zIndex = `5`; lab.style.zIndex = `1`; endgame(); addstarend()" src="https://cdn.discordapp.com/attachments/956540195652661348/977931912188428318/arrow.png">
   </div>
   <div class="minigame robot">
 
 
     <div id="gamecontent">
       <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
-      <div class="robot_home">
+      <div class="img_fix">
         <div class="robot_show">
           <div id="robot_part1">
-            <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            <img src="https://cdn.discordapp.com/attachments/956540195652661348/977938962779877416/head.png"
               class="questionicon" id="robot_hand_0" name="something robot_hand">
           </div>
           <div id="robot_part2">
-            <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            <img src="https://cdn.discordapp.com/attachments/956540195652661348/977938962322694144/rightarm.png"
               class="questionicon" id="robot_hand_1" name="something robot_hand">
           </div>
           <div id="robot_part3">
-            <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            <img src="https://cdn.discordapp.com/attachments/956540195652661348/977938961781641236/leftarm.png" 
               class="questionicon" id="robot_hand_2" name="something robot_hand">
           </div>
           <div id="robot_part4">
-            <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            <img src="https://cdn.discordapp.com/attachments/956540195652661348/977938962549194762/body.png"
               class="questionicon" id="robot_hand_3" name="something robot_hand">
           </div>
           <div id="robot_part5">
-            <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
+            <img src="https://cdn.discordapp.com/attachments/956540195652661348/977938962062667816/legs.png"
               class="questionicon" id="robot_hand_4" name="something robot_hand">
           </div>
 
         </div>
 
         <div id="robot_track">
-          <img name="robot_part_1" class="roboticon"
+          <img name="robot_part_1" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_1.png"
             onclick="robotChange(this.name)">
-          <img name="robot_fakepart_2" class="roboticon"
+          <img name="robot_fakepart_2" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_2.png"
             onclick="robotChange(this.name)">
-          <img name="robot_fakepart_4" class="roboticon"
+          <img name="robot_fakepart_4" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_4.png"
             onclick="robotChange(this.name)">
-          <img name="robot_part_4" class="roboticon"
+          <img name="robot_part_4" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_3.png"
             onclick="robotChange(this.name)">
-          <img name="robot_part_3" class="roboticon"
+          <img name="robot_part_3" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_4.png"
             onclick="robotChange(this.name)">
-          <img name="robot_fakepart_1" class="roboticon"
+          <img name="robot_fakepart_1" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_1.png"
             onclick="robotChange(this.name)">
-          <img name="robot_part_5" class="roboticon"
+          <img name="robot_part_5" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_5.png"
             onclick="robotChange(this.name)">
-          <img name="robot_fakepart_5" class="roboticon"
+          <img name="robot_fakepart_5" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_5.png"
             onclick="robotChange(this.name)">
-          <img name="robot_part_2" class="roboticon"
+          <img name="robot_part_2" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_2.png"
             onclick="robotChange(this.name)">
-          <img name="robot_fakepart_3" class="roboticon"
+          <img name="robot_fakepart_3" class="roboticon img_button"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/fakepart_3.png"
             onclick="robotChange(this.name)">
         </div>
@@ -334,21 +375,24 @@ $("#slider1").roundSlider({
 
 
       <div id="gamecol">
-        <h1>สร้างหุ่นยนต์</h1>
-        <p>คุณจะต้องทำการเลือกชิ้นส่วนหุ่นยนต์<br>เพื่อทำการประกอบให้ตรงตามที่นักบินอวกาศต้องการ<br>จากนั้นทำการกดปุ่ม Build! เพื่อสร้าง</p>
-        <hr>
-        <button class="gamebutton" id="buttonbot" onclick="serverobot(); delbut(this.id); backbot.style.zIndex = `10`">Build!</button>
-        <hr>
+        <div class="h1_topic Thai">
+        <h1>สร้างหุ่นยนต์</h1></div>
+        <div class="text_message">
+        <p class="Thai">คุณจะต้องทำการเลือกชิ้นส่วนหุ่นยนต์เพื่อทำการประกอบให้ตรงตามที่นักบินอวกาศต้องการ<br>จากนั้นทำการกดปุ่ม Build! เพื่อสร้าง</p>
+        
+        <button class="gamebutton End" id="buttonbot" onclick="serverobot(); delbut(this.id); backbot.style.zIndex = `10`">BUILD!</button>
+        
         <p id="starrobot"></p>
-        <hr>
-        <p class="we">พวกเราต้องการส่วน</p>
-        <p id="showrobot">หัวของหุ่น ISS</p>
-        <hr>
-        <p id="showrobotsum"> </p>
-        <hr>
-        <button id="startbot" class="gamebutton"
-          onclick="backbot.style.zIndex = `-10`; buttonbot.style.zIndex = `10`; startbot.style.zIndex = `-10`; robot_track.style.zIndex = `10`;">Start</button>
-        <button class="gamebutton" id="backbot" onclick="robot.style.zIndex = `-5`">กลับ</button>
+        
+        <p class="we Thai">พวกเราต้องการส่วน</p>
+        <p class="Thai" id="showrobot">หัวของหุ่น ISS</p>
+        
+        <p class="Thai" id="showrobotsum"> </p>
+        
+        <button id="startbot" class="gamebutton Eng"
+          onclick="backbot.style.zIndex = `-10`; buttonbot.style.zIndex = `10`; startbot.style.zIndex = `-10`; robot_track.style.zIndex = `10`;animationrobot()">START</button>
+        <button class="gamebutton Eng" id="backbot" onclick="robot.style.zIndex = `-5`">BACK</button>
+        </div>
       </div>
     </div>
     <!-- 
@@ -365,7 +409,7 @@ $("#slider1").roundSlider({
   <div class="minigame plant">
     <div id="gamecontent">
       
-      <div class="box_02">
+      <div class="img_fix">
         <div id="plantimg">
         <img style="width:100%; height: 100%;"       src="https://cdn.discordapp.com/attachments/956540195652661348/972879290746171402/unknown.png">
       
@@ -375,11 +419,13 @@ $("#slider1").roundSlider({
           
 <div class="row">
             <div class="col-sm-3 col-xs-3 pad shape1" data-pad="1">
+              <img src="https://media.discordapp.net/attachments/877745544380944465/977838997688692736/imgbin_sensor-computer-icons-symbol-temperature-png.png?width=676&height=676" class="imgplantbot">
               <audio preload="auto" class="sound1">
                 <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" />
               </audio>
             </div>
             <div class="col-sm-3 col-xs-3 pad shape2" data-pad="2">
+              <img src="https://media.discordapp.net/attachments/877745544380944465/977841352022839346/32d3ce4f-1abf-5457-a7a5-18e24584c21e.png" class="imgplantbot">
               <audio preload="auto" class="sound2">
                 <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mpeg" />
               </audio>
@@ -387,11 +433,13 @@ $("#slider1").roundSlider({
           </div>
           <div class="row">
             <div class="col-sm-3 col-xs-3 pad shape4" data-pad="4">
+              <img src="https://media.discordapp.net/attachments/877745544380944465/977840322354741319/free-icon-sun-146199.png" class="imgplantbot">
               <audio preload="auto" class="sound4">
                 <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mpeg" />
               </audio>
             </div>
             <div class="col-sm-3 col-xs-3 pad shape3" data-pad="3">
+              <img src="https://media.discordapp.net/attachments/877745544380944465/977841804386914364/image-asset.png?width=676&height=676" class="imgplantbot">
               <audio preload="auto" class="sound3">
                 <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mpeg" />
               </audio>
@@ -417,21 +465,23 @@ $("#slider1").roundSlider({
           
       </div>
       <div id="gamecol">
-        <h1>ปลูกต้นไม้</h1>
-        <p>เมื่อกดเริ่มต้น แถบปุ่มจะส่งเสียงแล้วสว่างขึ้นมา<br>ให้คุณกดตามลำดับของปุ่มที่สว่างขึ้นมาจนครบ 6 รอบ</p>
-        <hr>
-        <div class="level">
-          <h2>Level: 1</h2>
+        <div class="h1_topic Thai">
+        <h1>ปลูกต้นไม้</h1></div>
+        <div class="text_message">
+        <p class="Thai">เมื่อกดเริ่มต้น แถบปุ่มจะส่งเสียงแล้วสว่างขึ้นมา<br>ให้คุณกดตามลำดับของปุ่มที่สว่างขึ้นมาจนครบ 6 รอบ</p>
+        
+        <div class="level Eng">
+          <h2 class="Eng">Level : 1</h2>
           </div>
-        <hr>
+        
         <p id="name"></p>
         <div class="score">
-          <h2>Star: </h2>
           <p id="starplant"> </p>
         </div>
-        <hr>
-        <button class="starto start btn btn-danger">start</button>
-        <button class="gamebutton" onclick="plant.style.zIndex = `-5`">กลับ</button>
+        
+        <button class="gamebutton start btn btn-danger Eng" onclick="backplant.style.zIndex = `-5`">START</button>
+        <button id="backplant" class="gamebutton Eng" onclick="plant.style.zIndex = `-5`">BACK</button>
+        </div>
       </div>
     </div>
     <script src="time.js"></script>
@@ -445,12 +495,19 @@ $("#slider1").roundSlider({
     
   </div>
   <div class="endgamebox" id="endgametext">
-      <h1>Game Over??????</h1>
+    <img src="https://cdn.discordapp.com/attachments/956540195652661348/977961859967746068/Ending.png" class="endimg">
+    <div class="w" id="playandreload">
+    <img class="img_button" src="https://cdn.discordapp.com/attachments/956540195652661348/977844301679689778/8.png" style="height:4vw;width:4vw;margin:1vh 2vh;" onclick="location.href='Web\\index.html';"></img>
+    <img class="img_button" src="https://cdn.discordapp.com/attachments/956540195652661348/977945210074046484/restart_button2.png" style="height:4vw;width:4vw;margin:1vh 2vh;" onclick="window.location.reload();"></img>
+<!--       <h1>Game Over??????</h1>
       <p>You are success training.</p>
       <p>Greay job!</p>
-      <a href="Web\\index.html">link</a>
+      <a href="Web\\index.html">link</a> -->
     </div>
+    <div id="showallstarend" class="Eng">0</div>
+  </div>
+<!-- <img class="todolist" src="https://media.discordapp.net/attachments/956540195652661348/977776908215414804/tutorial.png"> -->
 <!-- <button onClick="window.location.reload();">Refresh Page</button> -->
 </body>
 
-</html>
+<!-- </html> -->

@@ -20,6 +20,8 @@ idx = 0
 played = 0
 checktaco = 0
 checkdin = 0
+bluecyc = 0
+bluedin = 0
 // var allstar = 0
 var allstar1={
   x:0
@@ -27,17 +29,38 @@ var allstar1={
 
 function addstar(star){
   allstar1.x = allstar1.x + star;
-  document.getElementById("showallstar").innerHTML = `Total Star : ${allstar1.x}`;
+  document.getElementById("showallstar").innerHTML = `: ${allstar1.x}`;
   if(allstar1 == 8){
     console.log(allstar1);
   }
   
 }
 
+function addstarend(){
+  document.getElementById("showallstarend").innerHTML = `${allstar1.x}`;
+}
+
 function addplay(){
   played += 1;
   if(played == 3){
     addstar(1);
+    bluecyc = 1;
+    var img = document.createElement("img");
+    img.src = "images\\starblue.png";
+    var src = document.getElementById("cycling_star");
+    src.appendChild(img);
+  }
+}
+
+function addplaydin(){
+  played += 1;
+  if(played == 6){
+    addstar(1);
+    bluedin = 1;
+    var img = document.createElement("img");
+    img.src = "images\\starblue.png";
+    var src = document.getElementById("dinnerstar");
+    src.appendChild(img);
   }
 }
 
@@ -55,25 +78,31 @@ function addstardin(){
       var src = document.getElementById("dinnerstar");
       src.appendChild(img);
     }
+    if (bluedin == 1){
+      var img = document.createElement("img");
+      img.src = "images\\starblue.png";
+      var src = document.getElementById("dinnerstar");
+      src.appendChild(img);
+    }
     checkdinstar = 0;
   }
 }
 
 //taco
 tacoimg = {
-  "Tomato": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png",
-  "Lettuce": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/lettuce.png",
-  "Shallot": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/shallot.png",
-  "Pork": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/pork.png",
-  "Chicken": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/chicken.png",
-  "Beef": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/beef.png",
-  "Ketchup": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/ketchup.png",
-  "Mustard": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/mustard.png",
+  "มะเขือเทศ": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/tomato.png",
+  "ผักกาด": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/lettuce.png",
+  "หอมแดง": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/shallot.png",
+  "หมูฉีก": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/pork.png",
+  "ไก่ฉีก": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/chicken.png",
+  "เนื้อวัวฉีก": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/beef.png",
+  "ซอสมะเขือเทศ": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/ketchup.png",
+  "มัสตาร์ด": "https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/taco/mustard.png",
 }
 
 var wantvegetable = ""
 var wantmeat = ""
-var wnatsauce = ""
+var wantsauce = ""
 
 function tacoRandom(){
   if(checktaco == 0){
@@ -84,43 +113,43 @@ function tacoRandom(){
   }
   switch (ranvegetable) {
     case 0:
-      wantvegetable = "Tomato";
+      wantvegetable = "มะเขือเทศ";
       break;
     case 1:
-      wantvegetable = "Lettuce";
+      wantvegetable = "ผักกาด";
       break;
     case 2:
-      wantvegetable = "Shallot";
+      wantvegetable = "หอมแดง";
       break;
   }
   switch (ranmeat) {
     case 0:
-      wantmeat = "Pork";
+      wantmeat = "หมูฉีก";
       break;
     case 1:
-      wantmeat = "Chicken";
+      wantmeat = "ไก่ฉีก";
       break;
     case 2:
-      wantmeat = "Beef";
+      wantmeat = "เนื้อวัวฉีก";
       break;
   }
   switch (ransauce) {
     case 0:
-      wantsauce = "Ketchup";
+      wantsauce = "ซอสมะเขือเทศ";
       break;
     case 1:
-      wantsauce = "Mustard";
+      wantsauce = "มัสตาร์ด";
       break;
   }
-  document.getElementById("showwanttaco").innerHTML = `<h3>เราต้องการ ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h3>`;
+  document.getElementById("showwanttaco").innerHTML = `<h3>เราต้องการทาโก้ใส่ ${wantvegetable}, ${wantmeat}, และราดด้วย ${wantsauce} </h3>`;
 }
 
 function tacoChange(name) {
   document.getElementById("showtaco").innerHTML = name;
-  if (name == "Tomato" || name == "Lettuce" || name == "Shallot"){
+  if (name == "มะเขือเทศ" || name == "ผักกาด" || name == "หอมแดง"){
     document.getElementById("vegetable").src = tacoimg[name];
     document.getElementById("vegetable").name = name;
-  }else if (name == "Pork" || name == "Chicken" || name == "Beef"){
+  }else if (name == "หมูฉีก" || name == "ไก่ฉีก" || name == "เนื้อวัวฉีก"){
     document.getElementById("meat").src = tacoimg[name];
     document.getElementById("meat").name = name;
   }else{
@@ -133,10 +162,6 @@ function serveTaco(){
   vegetable = document.getElementById("vegetable").name
   meat = document.getElementById("meat").name
   sauce = document.getElementById("sauce").name
-  played += 1;
-  if(played == 4){
-    addstar(1);
-  }
   if ( (vegetable == wantvegetable && meat == wantmeat) || (meat == wantmeat && sauce == wantsauce) || (vegetable == wantvegetable && sauce == wantsauce) ){
     addstar(2);
     for (let i = 0; i < 2; i++) {
@@ -155,7 +180,7 @@ function serveTaco(){
   }
   if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
     addstar(1);
-  document.getElementById("showtaco").innerHTML = `ใช่! นั้นแหละทาโก้ที่เราต้องการ ( ͡° ͜ʖ ͡°)`;
+  document.getElementById("showtaco").innerHTML = `<p>ใช่! นั้นแหละทาโก้ที่เราต้องการ<p>`;
   var img = document.createElement("img");
   img.src = "images\\Star.png";
   var src = document.getElementById("startaco");
@@ -163,13 +188,25 @@ function serveTaco(){
   // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
   else{
-    document.getElementById("showtaco").innerHTML = `ไม่ใช่ทาโก้แบบนั้นสิ!!!`;
+    document.getElementById("showtaco").innerHTML = `<p>ไม่ใช่ทาโก้แบบนั้นสิ!!!<p>`;
+  }
+  played += 1;
+  if(played == 4){
+    addstar(1);
+    var img = document.createElement("img");
+    img.src = "images\\starblue.png";
+    var src = document.getElementById("startaco");
+    src.appendChild(img);
   }
 }
 //taco
 
 
 // ประกอบหุ่นยนต์
+
+function animationrobot() {
+//  document.getElementById("robot_hand_0").style.transform = "translateY(100px)";
+}
 
 ro = 0; // เพิ่มตัวเลขเพื่อตำแหน่งที่แสดง
 var wantpart_1 = "robot_part_1"
@@ -179,24 +216,27 @@ var wantpart_4 = "robot_part_4"
 var wantpart_5 = "robot_part_5"
 function robotChange(name) {
   name_robot = ("robot_hand_"+ro);// เพิ่มตัวเลขและตำแหน่งที่แสดงจะเปลี่ยน
+  //name_robot_animation = ("robot_hand_"+(ro));
+  //document.getElementById(name_robot_animation).style.transform = "translateY(100px)";
   ro++;
+  
   if(ro > 5){
     ro = 5;
   }
   if(ro == 0){
-    document.getElementById("showrobot").innerHTML = "หัวหุ่น ISS";
+    document.getElementById("showrobot").innerHTML = "<p>หัวหุ่น ISS<p>";
   }
   else if(ro == 1){
-    document.getElementById("showrobot").innerHTML = "แขนขวาของหุ่น ISS";
+    document.getElementById("showrobot").innerHTML = "<p>แขนขวาของหุ่น ISS<p>";
   }
   else if(ro == 2){
-    document.getElementById("showrobot").innerHTML = "แขนซ้ายของหุ่น ISS";
+    document.getElementById("showrobot").innerHTML = "<p>แขนซ้ายของหุ่น ISS<p>";
   }
   else if(ro == 3){
-    document.getElementById("showrobot").innerHTML = "ลำตัวของหุ่น ISS";
+    document.getElementById("showrobot").innerHTML = "<p>ลำตัวของหุ่น ISS<p>";
   }
   else if(ro == 4){
-    document.getElementById("showrobot").innerHTML = "ขาของหุ่น ISS";
+    document.getElementById("showrobot").innerHTML = "<p>ขาของหุ่น ISS<p>";
   }
   if (name == "robot_part_1" || name == "robot_part_2" || name == "robot_part_3"){
     document.getElementById(name_robot).src = robotcoimg[name];
@@ -232,13 +272,9 @@ function serverobot(){
   console.log(check_robot_3);
   console.log(check_robot_4);
   console.log(check_robot_5);
-  played += 1;
-  if(played == 2){
-    addstar(1);
-  }
   if ( check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5){
     addstar(3);
-  document.getElementById("showrobotsum").innerHTML = `<h2>This perfect ISS robot<h2>`;
+  document.getElementById("showrobotsum").innerHTML = `<p>นี้สิหุ่นยนต์ของ ISS</p>`;
   for (let i = 0; i < 3; i++) {
       var img = document.createElement("img");
       img.src = "images\\Star.png";
@@ -249,7 +285,7 @@ function serverobot(){
   }
     else if ( (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_4 == wantpart_4) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_5 == wantpart_5) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_5 == wantpart_5)|| (check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5)){
       addstar(2);
-      document.getElementById("showrobotsum").innerHTML = `<h2>This like ISS robot<h2>`;
+      document.getElementById("showrobotsum").innerHTML = `<p>หน้าตาเกือบเหมือนหุ่นยนต์ ISS</p>`;
     for (let i = 0; i < 2; i++) {
       var img = document.createElement("img");
       img.src = "images\\Star.png";
@@ -260,7 +296,7 @@ function serverobot(){
   }
   else if ( check_robot_1 == wantpart_1 || check_robot_2 == wantpart_2 || check_robot_3 == wantpart_3 || check_robot_4 == wantpart_4|| check_robot_5 == wantpart_5){
     addstar(1);
-    document.getElementById("showrobotsum").innerHTML = `<h2>This same like ISS robot<h2>`;
+    document.getElementById("showrobotsum").innerHTML = `<p>หน้าตาไม่เหมือนหุ่นยนต์ ISS เลย</p>`;
     var img = document.createElement("img");
     img.src = "images\\Star.png";
     var src = document.getElementById("starrobot");
@@ -268,7 +304,15 @@ function serverobot(){
   }
   
   else{
-    document.getElementById("showrobotsum").innerHTML = `<h2>No, this is not ISS robot<h2>`;
+    document.getElementById("showrobotsum").innerHTML = `<p>นี้มันตัวอะไร</p>`;
+  }
+  played += 1;
+  if(played == 2){
+    addstar(1);
+    var img = document.createElement("img");
+    img.src = "images\\starblue.png";
+    var src = document.getElementById("starrobot");
+    src.appendChild(img);
   }
 }
 
@@ -320,9 +364,21 @@ function decstar(){
         var src = document.getElementById("dinnerstar");
         src.appendChild(img);
       }
+      if (bluedin == 1){
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("dinnerstar");
+        src.appendChild(img);
+      }
     }else{
       dinnerstar = 0
       document.getElementById("dinnerstar").innerHTML = ``;
+      if (bluedin == 1){
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("dinnerstar");
+        src.appendChild(img);
+      }
     }
   }
 }
@@ -412,7 +468,7 @@ var game={
 			element.stop().animate({opacity: '1'}, {		
 				duration: 50,
 				complete: function(){
-				element.stop().animate({opacity: '0.5'}, 200);
+				element.stop().animate({opacity: '0.7'}, 200);
 				}
 			});											
 
@@ -466,7 +522,7 @@ var game={
 			this.level++;
 			this.displayLevel();
 			this.active=false;
-      if(this.level === 3){
+      if(this.level ===3){
         this.score++;
         this.displayScore();
         addstar(1);
@@ -535,10 +591,15 @@ var game={
 
 	},
 
-	incorrectSequence: function(){		
+	incorrectSequence: function(){
+    document.getElementById("backplant").style.zIndex = "5";
     played += 1;
     if(played == 5){
       addstar(1);
+      var img = document.createElement("img");
+      img.src = "images\\starblue.png";
+      var src = document.getElementById("starplant");
+      src.appendChild(img);
     }
 		var corPad = this.genSequence[this.turn],		
 			
@@ -601,6 +662,10 @@ document.querySelector("#pause").addEventListener('click', function() {
       played += 1;
       if(played == 1){
         addstar(1);
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
       }
     }
     else if (elementsOverlap(el1, el2)){
@@ -617,6 +682,10 @@ document.querySelector("#pause").addEventListener('click', function() {
       played += 1;
       if(played == 1){
         addstar(1);
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
       }
     }
     else{
@@ -631,6 +700,10 @@ document.querySelector("#pause").addEventListener('click', function() {
       played += 1;
       if(played == 1){
         addstar(1);
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("breakfast_win_text");
+        src.appendChild(img);
       }
     }
     
@@ -808,6 +881,12 @@ var chenk_sro3 = 1;
       img.src = "images\\Star.png";
       var src = document.getElementById("cycling_star");
       src.appendChild(img);
+      if(bluecyc == 1){
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }
     }
     else if (self.oldvalue == 25 && chenk_sro2 == 1) {
       //alert("Hello! I am an tum!");
@@ -817,6 +896,12 @@ var chenk_sro3 = 1;
       for (let i = 0; i < 2; i++) {
         var img = document.createElement("img");
         img.src = "images\\Star.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }
+      if(bluecyc == 1){
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
         var src = document.getElementById("cycling_star");
         src.appendChild(img);
       }
@@ -832,7 +917,12 @@ var chenk_sro3 = 1;
         var src = document.getElementById("cycling_star");
         src.appendChild(img);
       }
-        
+      if(bluecyc == 1){
+        var img = document.createElement("img");
+        img.src = "images\\starblue.png";
+        var src = document.getElementById("cycling_star");
+        src.appendChild(img);
+      }  
     }
 
     if (typeof self.options.onChange === "function") {
@@ -912,10 +1002,6 @@ $(function() {
 function fordinner(thescore) {
   if(checkdin == 0){
     addstar(thescore);
-    played += 1;
-    if(played == 6){
-      addstar(1);
-    }
   }
   checkdin = 1;
 }
