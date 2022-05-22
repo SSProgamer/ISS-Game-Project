@@ -1,4 +1,5 @@
- html, body {
+/* -------------------------------------page---------------------------------- */
+html, body {
   overflow-x: visible;
   height: 100%;
   width: 100%;
@@ -6,6 +7,7 @@
   margin: 0;
   scroll-snap-points-y: repeat(100px);
   scroll-snap-type: y proximity;
+  z-index: -999;
 }   
 .page {
   text-align: center;
@@ -16,7 +18,9 @@
   position: relative;
   background: #010101;
   scroll-snap-align: start;
+  z-index: -999;
 }
+
 .pageexit {
   text-align: center;
   font-size: 1rem;
@@ -36,56 +40,80 @@
 }
 .time {
   margin: auto;
+  display: inline-flex;
 }
-/* #colon {
-  margin:auto;
-  padding-bottom: 15px;
-} */
 #tbox {
   background:#3d3d3d;
   border-radius: 6px;
   margin: 2px;
   font-size: 5vw;
-}
-#page1 {
-  background: #010101;
-  height: 100%;
-  width: 100%;
-}
-
-#page2 {
-  background: black;
-  
+  width:55px;
 }
 #page3 {
-  background: #010A2D;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif');
+  background-size: cover;
 }
 #page4 {
   background: #010A2D;
 }
-#page5 {
-  background: #010101;
-}
 #page7 {
   background: #010A2D;
 }
-#page10 {
-  background: #010101;
+#page13{
+  background-image:url('https://media.discordapp.net/attachments/956540505792073778/977577471065063464/unknown.png?width=1247&height=702');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-#page11 {
-  background: #010101;
-}
-#page13 {
-  background: #010101;
-}
-#page14 {
-  background: #010101;
+#page13-5 {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/StarfieldSimulation.gif');
+  background-size: cover;
 }
 
+
+#Footepage {
+  background: #010101;
+  width: 100%;
+  height: 50%;
+  padding-top:100px;
+}
+#logocontainer {
+  padding-left: 9%;
+  width: 100%;
+  height: 50%;
+  display: inline-flex;
+  left: 5%;
+  margin: auto;
+}
+#footer {
+  width: 80%;
+  height: 100%;
+  text-align: center;
+  padding-top: 5%;
+}
+
+/* -------------------------------------page---------------------------------- */
+
+
+
+
+
+
+
+/* -------------------------------------pic------------------------------------ */
+#logo1 {
+  margin: auto 0;
+    width: 5%;
+    height: 36%;
+    transform: scale(1);
+}
+#logo2 {
+  margin: auto 0;
+    width: 17%;
+    height: 46%;
+    transform: scale(1);
+}
 #picp1 {
   background-image: url('https://ecdn5.wn.com/ph/img/bc/46/c4e212cdd80a5aa3b3b7617ee078-large.jpg');
-/*   https://smd-prod.s3.amazonaws.com/ciencia-pink/s3fs-public/styles/background_image_file_size/public/thumbnails/image/3_50884177063_1e7a6c8d39_o.jpg?itok=wOARvrnD */
-/*   https://newscdn2.weigelbroadcasting.com/BVcS7-1615723826-189831-blog-hypatia-h_d7e24a2753e512f532ba839426c9a943-h_d3f9f78803a0340f18795a8af332f4c4.jpg */
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -101,6 +129,7 @@
   top: 0px;
   width: 100%;
   height: 80%;
+  z-index: -111;
   background-size: cover;
 }
 #picp4 {
@@ -125,7 +154,7 @@
 }
 
 #picp61 {
-  background-image: url('https://media.discordapp.net/attachments/519861660203220993/969622097800331274/fesfsfdsfde.png?width=971&height=670') ;
+  background-image: url('https://media.discordapp.net/attachments/519861660203220993/977834423645007892/unknown.png?width=899&height=671') ;
   background-repeat: no-repeat;
   background-size: contain;
   position: absolute;
@@ -135,7 +164,7 @@
   bottom: 0;
 }
 
-#picp62 {
+/* #picp62 {
   background-image: url('https://media.discordapp.net/attachments/519861660203220993/969622097066332230/assds.png?width=906&height=670') ;
   background-repeat: no-repeat;
   background-size: contain;
@@ -144,7 +173,7 @@
   width: 50%;
   left: -1%;
   bottom: 1%;
-}
+} */
 
 #pic9 {
   background-image: url('https://naked-science.ru/wp-content/uploads/2019/03/images_custom_2019_03_7.jpg') ;
@@ -187,6 +216,7 @@
   left: 80%;
   top: 7%;
 }
+
 #pic14 {
   background-image: url('https://cdn.discordapp.com/attachments/956540505792073778/971787705233063936/giphy.gif') ;
   background-repeat: no-repeat;
@@ -195,9 +225,20 @@
   height: 80%;
   width: 50%;
   left: 15%;
-  bottom: 0;
+  bottom: 10%;
   transform:scale(0.9);
+  opacity:(0.1);
 }
+/* -------------------------------------pic------------------------------------ */
+
+
+
+
+
+
+
+
+/* -------------------------------------qoute---------------------------------- */
 .header {
   font-size: 3vw;
   position: absolute;
@@ -227,19 +268,18 @@
 .q-size-n {
   font-size: 1.2vw;
   color:white ;
-/*   border: 1px solid red; */
 }
 .q-size-m {
   font-size: 1.3vw;
-/*   border: 1px solid red; */
 }
 .q-size-h {
   font-size: 2vw;
-/*   border: 1px solid red; */
 }
 .q-size-l {
   font-size: 3vw;
-/*   border: 1px solid red; */
+}
+.q-size-ul {
+  font-size: 3.3vw;
 }
 
 .qoute {
@@ -252,31 +292,25 @@
   top: 55%;
   left: 65%;
   width: fit-content;
-/*   border: 1px solid red; */
 }
 #qoute2 {
   position: absolute;
   top: 25%;
-/*   border: 1px solid red; */
 }
 #qoute3 {
   position: absolute;
   top:30%;
-/*   border: 1px solid red; */
 }
 #day {
   font-size: 10rem;
-/*   border: 1px solid red; */
 }
 #qoute4 {
   position: absolute;
   top: 5%;
-/*   border: 1px solid red; */
 }
 #sharpword {
   position: absolute;
   bottom: 10% ;
-/*   border: 1px solid red; */
 }
 
 #qoute5 {
@@ -287,7 +321,6 @@
   left: 0;
   bottom: 0;
   margin-left: 2%;
-/*   border: 1px solid red; */
 }
 
 #qoute6 {
@@ -297,28 +330,24 @@
   height: 80%;
   left: 55%;
   bottom: 0;
-/*   border: 1px solid red; */
 }
 #wps {
   width: 50%;
   text-align:right;
-/*   border: 1px solid red; */
 }
 
 #qoute7 {
   position: absolute;
   text-align: center;
   top: 40%;
-/*   border: 1px solid red; */
 }
 #qoute8 {
   position: absolute;
   text-align:left;
   width: 50%;
   height: 80%;
-  left: 5%;
+  left: 2%;
   bottom: 0;
-/*   border: 1px solid red; */
 }
 
 #qoute9 {
@@ -328,7 +357,6 @@
   height: 80%;
   left: 55%;
   bottom: 0;
-/*   border: 1px solid red; */
 }
 #qoute10 {
   position: absolute;
@@ -338,7 +366,6 @@
   left: 0;
   bottom: 0;
   margin-left: 2%;
-/*   border: 1px solid red; */
 }
 #qoute11 {
   position: absolute;
@@ -348,7 +375,6 @@
   left: 55%;
   bottom: 0;
   margin-right: 2%;
-/*   border: 1px solid red; */
 }
 #qoute13 {
   position: absolute;
@@ -358,8 +384,12 @@
   left: 0;
   bottom: 0;
   margin-left: 2%;
-/*   border: 1px solid red; */
 }
+#qoute13-5 {
+  position: absolute;
+  top: 45vh;
+  left: 13vw;
+} 
 
 #qoute14 {
   position: absolute;
@@ -367,8 +397,7 @@
   width: 40%;
   height: 50%;
   left: 60%;
-  top: 45%;
-/*   border: 1px solid red; */
+  top: 40%;
 }
 
 .Thai{
@@ -388,6 +417,16 @@ p{
   left: 900px;
   top: 300px;
 }
+pre{
+  margin: 0 0;
+}
+/* -------------------------------------qoute---------------------------------- */
+
+
+
+
+
+/*-----------------------------rect-------------------------------------------- */
  #rectangle_page5 {
     position: absolute;
     top: 65px;
@@ -399,7 +438,7 @@ p{
  #rectangle_page9 {
     position: absolute;
     top: 255px;
-    left: 70%;
+    left: 75%;
     width: 70px;
     height: 4px;
     background: white;
@@ -407,7 +446,7 @@ p{
  #rectangle_page10 {
     position: absolute;
     top:  100px;
-    right: 89%;
+    right: 83%;
     width: 70px;
     height: 4px;
     background: white;
@@ -415,7 +454,15 @@ p{
  #rectangle_page11 {
     position: absolute;
     top: 255px;
-    left: 60%;
+    left: 62%;
+    width: 70px;
+    height: 4px;
+    background: white;
+  }
+ #rectangle_page12 {
+    position: absolute;
+    top:  100px;
+    right: 86%;
     width: 70px;
     height: 4px;
     background: white;
@@ -444,7 +491,7 @@ p{
     height: 8px;
     background: white;
   }
-
+/*-----------------------------rect-------------------------------------------- */
 
 
 
@@ -537,9 +584,6 @@ img {vertical-align: middle;}
 }
 #text-slider{
   position: absolute;
-/*   border-style: solid;
-  border-color: red;
-  border-width: 5px; */
   color: white;
   left: 100px;
   top: 200px;
@@ -547,20 +591,27 @@ img {vertical-align: middle;}
 
 #b111 {
   
-  width: 10px;
+/*   width: 10px;
   height: 20px;
   border-radius: 50%;
-  background: white;
-  z-index: 9999;
+  background: white; */
+  position: absolute;
+  left: 43%;
+  top: -10%;
+  z-index: 10;
   
 }
-/* -----------------------------------endpage8------------------------------------ */
+#b112 {
+  
+/*   width: 10px;
+  height: 20px;
+  border-radius: 50%;
+  background: white; */
+  position: absolute;
+  top: -10%;
+  left: 53%;
+  z-index: 10;
+  
+}
+/* -----------------------------------endpage8--------------------------------- */
 
-
-/* .slideshow-container-page11{
-  max-width: 1100px;
-  position: relative;
-  margin: auto;
-  left: 400px;
-  top:120px;
-} */
