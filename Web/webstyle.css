@@ -427,16 +427,16 @@ pre{
 
 
 /*-----------------------------rect-------------------------------------------- */
- #rectangle_page5 {
-    position: absolute;
-    top: 57px;
-    right: 85%;
+/*  #rectangle_page5 {
+    position: fixed;
+    top: 54px;
+    left: 75px;
     width: 70px;
     height: 4px;
     background: white;
   }
  #rectangle_page9 {
-    position: absolute;
+     position: static;
     top: 300px;
     left: 70%;
     width: 70px;
@@ -444,7 +444,7 @@ pre{
     background: white;
   }
  #rectangle_page10 {
-    position: absolute;
+     position: static;
     top:  85px;
     right: 76%;
     width: 70px;
@@ -452,22 +452,22 @@ pre{
     background: white;
   }
  #rectangle_page11 {
-    position: absolute;
+     position: static;
     top: 273px;
     left: 62%;
     width: 70px;
     height: 4px;
     background: white;
-  }
- #rectangle_page12 {
-    position: absolute;
+  } */ 
+/*   #rectangle_page12 {
+     position: static;
     top:  110px;
     right: 77%;
     width: 70px;
     height: 4px;
     background: white;
-  }
- #rectangle {
+  } */
+/*  #rectangle {
     position: absolute;
     top: 750px;
     right: 200px;
@@ -490,7 +490,7 @@ pre{
     width: 280px;
     height: 8px;
     background: white;
-  }
+  } */
 /*-----------------------------rect-------------------------------------------- */
 
 
