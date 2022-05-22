@@ -213,7 +213,7 @@ var game={
       $.getScript("script.js", function(){addstar(0);});
     }
     $('.level h2').text('Level: END');
-		$('.start').show();				
+		$('.start').show();		
 	
 
 	}

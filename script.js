@@ -1,19 +1,25 @@
-bedroom = document.getElementsByClassName("room")[0]
-gym = document.getElementsByClassName("room")[1]
-cafetaria = document.getElementsByClassName("room")[2]
-lab = document.getElementsByClassName("room")[3]
+welcome = document.getElementsByClassName("room")[0]
+tutorial = document.getElementsByClassName("room")[1]
+bedroom = document.getElementsByClassName("room")[2]
+gym = document.getElementsByClassName("room")[3]
+cafetaria = document.getElementsByClassName("room")[4]
+lab = document.getElementsByClassName("room")[5]
 cycling = document.getElementsByClassName("minigame")[0]
 breakfast = document.getElementsByClassName("minigame")[1]
 lunch = document.getElementsByClassName("minigame")[2]
 dinner = document.getElementsByClassName("minigame")[3]
 robot = document.getElementsByClassName("minigame")[4]
 plant = document.getElementsByClassName("minigame")[5]
+lolz = document.getElementsByClassName('endgamebox');
 
 message1 = [
   "สวัสดีครับ",
   "ท่านสมาชิก"
 ]
 idx = 0
+played = 0
+checktaco = 0
+checkdin = 0
 // var allstar = 0
 var allstar1={
   x:0
@@ -22,8 +28,18 @@ var allstar1={
 function addstar(star){
   allstar1.x = allstar1.x + star;
   document.getElementById("showallstar").innerHTML = `Total Star : ${allstar1.x}`;
+  if(allstar1 == 8){
+    console.log(allstar1);
+  }
+  
 }
 
+function addplay(){
+  played += 1;
+  if(played == 3){
+    addstar(1);
+  }
+}
 
 function delbut(idbut) {
   const element = document.getElementById(idbut);
@@ -60,9 +76,12 @@ var wantmeat = ""
 var wnatsauce = ""
 
 function tacoRandom(){
-  ranvegetable = Math.floor(Math.random() * 3);
-  ranmeat = Math.floor(Math.random() * 3);
-  ransauce = Math.floor(Math.random() * 2);
+  if(checktaco == 0){
+    ranvegetable = Math.floor(Math.random() * 3);
+    ranmeat = Math.floor(Math.random() * 3);
+    ransauce = Math.floor(Math.random() * 2);
+    checktaco = 1;
+  }
   switch (ranvegetable) {
     case 0:
       wantvegetable = "Tomato";
@@ -93,7 +112,7 @@ function tacoRandom(){
       wantsauce = "Mustard";
       break;
   }
-  document.getElementById("showwanttaco").innerHTML = `<h1>เราต้องการ ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h1>`;
+  document.getElementById("showwanttaco").innerHTML = `<h3>เราต้องการ ${wantvegetable}, ${wantmeat}, and ${wantsauce} Taco!!</h3>`;
 }
 
 function tacoChange(name) {
@@ -114,7 +133,10 @@ function serveTaco(){
   vegetable = document.getElementById("vegetable").name
   meat = document.getElementById("meat").name
   sauce = document.getElementById("sauce").name
-  
+  played += 1;
+  if(played == 4){
+    addstar(1);
+  }
   if ( (vegetable == wantvegetable && meat == wantmeat) || (meat == wantmeat && sauce == wantsauce) || (vegetable == wantvegetable && sauce == wantsauce) ){
     addstar(2);
     for (let i = 0; i < 2; i++) {
@@ -133,7 +155,7 @@ function serveTaco(){
   }
   if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
     addstar(1);
-  document.getElementById("showtaco").innerHTML = `<h2>ใช่! นั้นแหละทาโก้ที่เราต้องการ ( ͡° ͜ʖ ͡°)<h2>`;
+  document.getElementById("showtaco").innerHTML = `ใช่! นั้นแหละทาโก้ที่เราต้องการ ( ͡° ͜ʖ ͡°)`;
   var img = document.createElement("img");
   img.src = "images\\Star.png";
   var src = document.getElementById("startaco");
@@ -141,7 +163,7 @@ function serveTaco(){
   // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
   else{
-    document.getElementById("showtaco").innerHTML = `<h2>ไม่ใช่ทาโก้แบบนั้นสิ!!!<h2>`;
+    document.getElementById("showtaco").innerHTML = `ไม่ใช่ทาโก้แบบนั้นสิ!!!`;
   }
 }
 //taco
@@ -210,7 +232,10 @@ function serverobot(){
   console.log(check_robot_3);
   console.log(check_robot_4);
   console.log(check_robot_5);
-  
+  played += 1;
+  if(played == 2){
+    addstar(1);
+  }
   if ( check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5){
     addstar(3);
   document.getElementById("showrobotsum").innerHTML = `<h2>This perfect ISS robot<h2>`;
@@ -249,6 +274,7 @@ function serverobot(){
 
 // ประกอบหุ่นยนต์
 
+// กล่องข้อความ
 function closebox() {
   var x = document.getElementById("messagebox");
   if (idx < message1.length) {
@@ -264,6 +290,8 @@ function closebox() {
   
 }
 
+
+// กล่องข้อความ
 // ประกอบหุ่นยนต์
 function allowDrop(event) {
   event.preventDefault();
@@ -282,18 +310,20 @@ function drop(event) {
 dinnerstar = 3
 function decstar(){
   console.log("Collide!");
-  if (dinnerstar > 1){
-    dinnerstar -= 1
-    document.getElementById("dinnerstar").innerHTML = "";
-    for (let i = 0; i < dinnerstar; i++) {
-      var img = document.createElement("img");
-      img.src = "images\\Star.png";
-      var src = document.getElementById("dinnerstar");
-      src.appendChild(img);
+  if (checkdin == 0){
+    if (dinnerstar > 1){
+      dinnerstar -= 1
+      document.getElementById("dinnerstar").innerHTML = "";
+      for (let i = 0; i < dinnerstar; i++) {
+        var img = document.createElement("img");
+        img.src = "images\\Star.png";
+        var src = document.getElementById("dinnerstar");
+        src.appendChild(img);
+      }
+    }else{
+      dinnerstar = 0
+      document.getElementById("dinnerstar").innerHTML = ``;
     }
-  }else{
-    dinnerstar = 0
-    document.getElementById("dinnerstar").innerHTML = ``;
   }
 }
 
@@ -506,7 +536,10 @@ var game={
 	},
 
 	incorrectSequence: function(){		
-
+    played += 1;
+    if(played == 5){
+      addstar(1);
+    }
 		var corPad = this.genSequence[this.turn],		
 			
 			that = this;
@@ -516,18 +549,6 @@ var game={
 		setTimeout(function(){						
 			that.flash($(that.shape+corPad),4,300,corPad);
 		},500);
-    // if (this.score === 1){
-    //   $.getScript("script.js", function(){addstar(1);});
-    // }
-    // else if (this.score === 2){
-    //   $.getScript("script.js", function(){addstar(2);});
-    // }
-    // else if (this.score ===3){
-    //   $.getScript("script.js", function(){addstar(3);});
-    // }
-    // else{
-    //   $.getScript("script.js", function(){addstar(0);});
-    // }
     $('.level h2').text('Level: END');
 		//$('.start').show();				
 	
@@ -577,7 +598,10 @@ document.querySelector("#pause").addEventListener('click', function() {
         var src = document.getElementById("breakfast_win_text");
         src.appendChild(img);
       }
-    
+      played += 1;
+      if(played == 1){
+        addstar(1);
+      }
     }
     else if (elementsOverlap(el1, el2)){
       document.getElementById("microwave").src = egg_cook["egg_raw"];
@@ -590,7 +614,10 @@ document.querySelector("#pause").addEventListener('click', function() {
         var src = document.getElementById("breakfast_win_text");
         src.appendChild(img);
       }
-      
+      played += 1;
+      if(played == 1){
+        addstar(1);
+      }
     }
     else{
       document.getElementById("microwave").src = egg_cook["egg_burn"];
@@ -601,7 +628,10 @@ document.querySelector("#pause").addEventListener('click', function() {
       img.src = "images\\Star.png";
       var src = document.getElementById("breakfast_win_text");
       src.appendChild(img);
-      
+      played += 1;
+      if(played == 1){
+        addstar(1);
+      }
     }
     
 });
@@ -878,3 +908,20 @@ $(function() {
 });
 
 //wheel
+
+function fordinner(thescore) {
+  if(checkdin == 0){
+    addstar(thescore);
+    played += 1;
+    if(played == 6){
+      addstar(1);
+    }
+  }
+  checkdin = 1;
+}
+
+function endgame(){
+  if(played >= 6){
+    lolz.endgametext.style.zIndex = '50';
+  }
+}

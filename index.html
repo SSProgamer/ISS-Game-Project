@@ -5,7 +5,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>ISS</title>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>ISS Game</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="another_style.css" rel="stylesheet" type="text/css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -15,11 +16,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@700&display=swap" rel="stylesheet">
+  
 </head>
 
 <body>
-  <img id="wallpaper" src="https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg">
+  <!--<img id="wallpaper" src="https://cdn.pixabay.com/photo/2012/12/27/19/40/night-72871_960_720.jpg">-->
   <!--   <div id="content"> -->
+  <div class="room welcome">
+    <!--<h1 class="roomname">This is room welcome</h1><br>-->
+    <span class="firstpage" onclick="welcome.style.zIndex = `-1`" style="cursor: pointer"></span>
+    <span class="towebfirstpage" onclick="location.href='Web\\index.html';" style="cursor: pointer"></span>
+  </div>
+
+  <div class="room tutorial">
+    <h1 class="roomname">this is tutorial</h1><br>
+<button class="top" onclick="tutorial.style.zIndex = `1`">go</button>
+    <!--<img id="setofbreakfast" src="https://cdn.discordapp.com/attachments/956540195652661348/977593079227883620/setbreakfast.png"></img>
+    <img id="setoflunch" src="https://cdn.discordapp.com/attachments/956540195652661348/977593531474534460/setlunch.png"></img>
+    <img id="setofdinner" src="https://cdn.discordapp.com/attachments/956540195652661348/977593964322504714/setdinner.png"></img>
+    <img id="setofrobot" src="https://cdn.discordapp.com/attachments/956540195652661348/977593703138996244/setrobot.png"></img>
+    <img id="setoftree" src="https://cdn.discordapp.com/attachments/956540195652661348/977592628721893516/settree.png"></img>
+    <img id="setofbicycle" src="https://cdn.discordapp.com/attachments/956540195652661348/977593281980547092/setbycicle.png"></img>-->
+
+  </div>
+  
+  
   <div class="room bed">
     <h1 class="roomname">Bedroom</h1><br>
     <a id="gotoweb" href="Web\\index.html">กดเพื่อไปที่ Landing Page</a>
@@ -33,8 +54,8 @@
   <div class="room gym">
     <h1 class="roomname">Gym</h1>
     <!--       <h1 class="clock">12.00am</h1> -->
-    <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`">Bedroom</button>
-    <img src="https://cdn.discordapp.com/attachments/956540195652661348/972519135181410364/cyling.png" id="cycling "
+    <button class="right" onclick="bedroom.style.zIndex = `5`;gym.style.zIndex = `1`;endgame()">Bedroom</button>
+    <img src="https://cdn.discordapp.com/attachments/956540195652661348/972519135181410364/cyling.png" id="cycling"
       onclick="cycling.style.zIndex = `6`" style="cursor: pointer"></img>
 
 
@@ -42,6 +63,7 @@
 
   <div class="minigame cycling">
     <div id="gamecontent">
+      <img src="https://cdn.discordapp.com/attachments/956540195652661348/977239446997061682/4-removebg-preview_copy.png" id="peoplecy"></img>
       <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
       <div id="cycling_roll">
         <div class="center-content">
@@ -56,7 +78,7 @@
       </div>
       <div id="gamecol">
         <h1>ปั่นจักรยาน</h1>
-        <p>เมื่อคุณกดปุ่ม Start จะมีกงล้อโผล่ขึ้นมา<br>คุณจะต้องหมุนกงล้อให้ได้อย่างน้อย X ครั้ง<br>ภายในเวลา Y วินาที
+        <p>เมื่อคุณกดปุ่ม Start จะมีกงล้อโผล่ขึ้นมา<br>คุณจะต้องหมุนกงล้อให้ได้อย่างน้อย 40 ครั้ง<br>ภายในเวลา 15 วินาที
           เพื่อให้ได้ 3 ดาว</p>
         <hr>
         <div id="value_cycling" style="text-align: center;">0</div>
@@ -68,8 +90,8 @@
         <p id="cycling_star"></p>
         <hr>
         <button id="startButton" class="gamebutton"
-          onclick="cycling_roll.style.zIndex = `6`; delbut(this.id)">Start</button>
-        <button class="gamebutton" onclick="cycling.style.zIndex = `-5`">กลับ</button>
+          onclick="cycling_roll.style.zIndex = `6`;cyexit.style.zIndex = `-5`; delbut(this.id); addplay()">Start</button>
+        <button id="cyexit" class="gamebutton" onclick="cycling.style.zIndex = `-5`">กลับ</button>
       </div>
     </div>
   </div>
@@ -86,18 +108,18 @@ $("#slider1").roundSlider({
   <div class="room cafetaria">
     <h1 class="roomname">Cafetaria</h1>
     <!--       <h1 class="clock">15.00am</h1> -->
-    <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`">Bedroom</button>
-    <img id="breakfast" src="https://cdn.discordapp.com/attachments/956540195652661348/972549175394857030/egggggggg.png"
+    <button class="left" onclick="bedroom.style.zIndex = `5`;cafetaria.style.zIndex = `1`;endgame()">Bedroom</button>
+    <img id="breakfast" class="img_buttom" src="https://cdn.discordapp.com/attachments/956540195652661348/972549175394857030/egggggggg.png"
       onclick="breakfast.style.zIndex = `6`" style="cursor: pointer"></img>
-    <img id="lunch" src="https://cdn.discordapp.com/attachments/956540195652661348/972549918277398668/lunch.png"
+    <img id="lunch" class="img_buttom" src="https://cdn.discordapp.com/attachments/956540195652661348/972549918277398668/lunch.png"
       onclick="lunch.style.zIndex = `6`; tacoRandom();" style="cursor: pointer" </img>
-    <img id="dinner" src="https://cdn.discordapp.com/attachments/956540195652661348/972554950557204560/Untitled-7.png"
+    <img id="dinner" class="img_buttom" src="https://cdn.discordapp.com/attachments/956540195652661348/972554950557204560/Untitled-7.png"
       onclick="dinner.style.zIndex='6'; addstardin()" style="cursor: pointer"></img>
   </div><!-- อาหารเย็น-->
 
   <div class="minigame breakfast">
     <div id="gamecontent">
-      <!--<h1>อันนี้ปั่นจักรยาน</h1>-->
+      
       <div id="breakfast_img">
         <img src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/question2.png"
           name="microwave" id="microwave">
@@ -122,14 +144,15 @@ $("#slider1").roundSlider({
         <hr>
         <p id="breakfast_win_text"></p>
         <hr>
+        
         <div id="breakfast_button_2">
-          <button class="gamebutton" id="pause" onclick="delbut(this.id); buttonegg.style.zIndex = `10`">Pause</button>
+          <button class="gamebutton" id="pause" onclick="delbut(this.id); buttonegg.style.zIndex = `10`;">Pause</button>
         </div>
         <div id="breakfast_button_1">
-          <button class="gamebutton" id="play" onclick="breakfast_button_1.style.zIndex = `-20`; buttonegg.style.zIndex = `-20`">Play</button>
+          <button class="gamebutton" id="play" onclick="breakfast_button_1.style.zIndex = `-20`;breakfast_button_2.style.zIndex = `20`;buttonegg.style.zIndex = `-20`;">Play</button>
         </div>
         <hr>
-        <button class="gamebutton" id="buttonegg" onclick="breakfast.style.zIndex = `-5`">กลับ</button>
+        <button class="gamebutton" id="buttonegg" onclick="breakfast.style.zIndex = `-5`;">กลับ</button>
       </div>
     </div>
 
@@ -194,10 +217,10 @@ $("#slider1").roundSlider({
       <svg width="500" height="500" transform="rotate(0)" transform-origin="center">
         <g transform-origin="center">
           <g id="maze" transform-origin="center">
-            <circle cx="250" cy="250" r="200" fill="yellow" onmouseover="decstar();" />
-            <rect x="250" y="250" width="200" height="40" fill="red" />
-            <circle cx="250" cy="250" r="175" fill="red" />
-            <circle cx="250" cy="250" r="25" fill="green" onmouseover="dinner.style.zIndex = `-5`; addstar(dinnerstar)" />
+            <circle cx="250" cy="250" r="200" fill="yellow" onmouseover="decstar();" ></circle>
+            <rect x="250" y="250" width="200" height="40" fill="red" ></rect>
+            <circle cx="250" cy="250" r="175" fill="red" ></circle>
+            <circle cx="250" cy="250" r="25" fill="green" onmouseover="dinner.style.zIndex = `-5`; fordinner(dinnerstar)" ></circle>
           </g>
           <use href="#maze" transform="scale(0.75) rotate(180)" transform-origin="center"></use>
           <use href="#maze" transform="scale(0.5) rotate(-45)" transform-origin="center"></use>
@@ -223,12 +246,12 @@ $("#slider1").roundSlider({
       <div class="s">
       </div>
     </div>
-    <div class="results">
+    <!-- <div class="results">
       <div class="win">Got it!</div>
       <div class="lose">Try again.</div>
       <div class="tie">Try again.</div>
       <button type="reset">Again</button>
-    </div>
+    </div> -->
     </form>
   </div>
   </div>
@@ -238,11 +261,11 @@ $("#slider1").roundSlider({
   <div class="room lab">
     <h1 class="roomname">Laboratory</h1>
     <!--       <h1 class="clock">18.00am</h1> -->
-    <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`">Bedroom</button>
+    <button class="bottom" onclick="bedroom.style.zIndex = `5`;lab.style.zIndex = `1`;endgame()">Bedroom</button>
     <img id="robot" src="https://cdn.discordapp.com/attachments/956540195652661348/972554032285646911/robot.png"
       onclick="robot.style.zIndex = `6`" style="cursor: pointer"></img>
     <img id="plant" src="https://cdn.discordapp.com/attachments/956540195652661348/972556092460654672/Untitled-8.png"
-      onclick="plant.style.zIndex = `6`" style="cursor: pointer">การทดลอง 2 (ปลูกต้นไม้)</img>
+      onclick="plant.style.zIndex = `6`" style="cursor: pointer"></img>
   </div>
   <div class="minigame robot">
 
@@ -274,7 +297,7 @@ $("#slider1").roundSlider({
 
         </div>
 
-        <div class="robot_track">
+        <div id="robot_track">
           <img name="robot_part_1" class="roboticon"
             src="https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/robot/robot_part_1.png"
             onclick="robotChange(this.name)">
@@ -312,8 +335,7 @@ $("#slider1").roundSlider({
 
       <div id="gamecol">
         <h1>สร้างหุ่นยนต์</h1>
-        <p>คุณจะต้องทำการอบไข่ให้สุขได้ที่<br>โดยการเริ่มกดปุ่ม Cook ! แล้วแถบจะเริ่มเดิน<br>หากคุณกด Stop
-          ได้ตรงกับตำแหน่งที่ถูกต้อง<br>จะได้รับไข่ที่สุขอย่างพอดี</p>
+        <p>คุณจะต้องทำการเลือกชิ้นส่วนหุ่นยนต์<br>เพื่อทำการประกอบให้ตรงตามที่นักบินอวกาศต้องการ<br>จากนั้นทำการกดปุ่ม Build! เพื่อสร้าง</p>
         <hr>
         <button class="gamebutton" id="buttonbot" onclick="serverobot(); delbut(this.id); backbot.style.zIndex = `10`">Build!</button>
         <hr>
@@ -325,7 +347,7 @@ $("#slider1").roundSlider({
         <p id="showrobotsum"> </p>
         <hr>
         <button id="startbot" class="gamebutton"
-          onclick="backbot.style.zIndex = `-10`; buttonbot.style.zIndex = `10`; delbut(this.id)">Start</button>
+          onclick="backbot.style.zIndex = `-10`; buttonbot.style.zIndex = `10`; startbot.style.zIndex = `-10`; robot_track.style.zIndex = `10`;">Start</button>
         <button class="gamebutton" id="backbot" onclick="robot.style.zIndex = `-5`">กลับ</button>
       </div>
     </div>
@@ -342,15 +364,16 @@ $("#slider1").roundSlider({
   </div>
   <div class="minigame plant">
     <div id="gamecontent">
-      <div id="plantimg">
-        <img style="width:100%; height: 100%;"       src="https://cdn.discordapp.com/attachments/956540195652661348/972879290746171402/unknown.png">
-      </div>
-      <div id="plantback">
-      </div>
+      
       <div class="box_02">
-        <p id="name"></p>
+        <div id="plantimg">
+        <img style="width:100%; height: 100%;"       src="https://cdn.discordapp.com/attachments/956540195652661348/972879290746171402/unknown.png">
+      
+      <div id="plantback">
+      </div></div>
         <div class="box_01">
-          <div class="row">
+          
+<div class="row">
             <div class="col-sm-3 col-xs-3 pad shape1" data-pad="1">
               <audio preload="auto" class="sound1">
                 <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mpeg" />
@@ -374,13 +397,24 @@ $("#slider1").roundSlider({
               </audio>
             </div>
           </div>
+          
         </div>
-        <button class="starto start btn btn-danger">start</button>
+     <!--<div id="plantimg">
+        <img style="width:100%; height: 100%;border: 15px solid #555;position: absolute;left: 20%;"       src="https://cdn.discordapp.com/attachments/956540195652661348/972879290746171402/unknown.png">
+      </div>
+      <div id="plantback">
+      </div>
+      
+        <p id="name"></p>
+        
+          
+        </div>
+        
         <div class="score">
-          <h2>Star: </h2>
-          <p id="starplant"> </p>
-        </div>
-        <script src="script.js"></script>
+          
+        
+        -->
+          
       </div>
       <div id="gamecol">
         <h1>ปลูกต้นไม้</h1>
@@ -390,21 +424,33 @@ $("#slider1").roundSlider({
           <h2>Level: 1</h2>
           </div>
         <hr>
+        <p id="name"></p>
+        <div class="score">
+          <h2>Star: </h2>
+          <p id="starplant"> </p>
+        </div>
+        <hr>
+        <button class="starto start btn btn-danger">start</button>
         <button class="gamebutton" onclick="plant.style.zIndex = `-5`">กลับ</button>
       </div>
     </div>
     <script src="time.js"></script>
-
+<script src="script.js"></script>
     <div class="newcan"></div>
     <!-- <div id="messagebox">
   <h1>ยินดีต้อนทรัพย์</h1>
   <p id="message">อิอิ</p>
   <button onclick="closebox()" class="bottom">ต่อไป</button>
 </div> -->
-
-    <!-- <button onClick="window.location.reload();">Refresh Page</button> -->
-
-
+    
+  </div>
+  <div class="endgamebox" id="endgametext">
+      <h1>Game Over??????</h1>
+      <p>You are success training.</p>
+      <p>Greay job!</p>
+      <a href="Web\\index.html">link</a>
+    </div>
+<!-- <button onClick="window.location.reload();">Refresh Page</button> -->
 </body>
 
 </html>

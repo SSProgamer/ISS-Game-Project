@@ -6,6 +6,38 @@
 }
 *{
   font-family: 'Noto Sans Thai', sans-serif;
+/*   font-family: "SAO", ssao; */
+}
+
+p {
+  color: white;
+}
+
+.firstpage {
+  position: absolute;
+  height: 85px;
+  width: 85px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  left: 51.6%;
+  top: 71.9%;
+}
+.towebfirstpage {
+  position: absolute;
+  height: 85px;
+  width: 85px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  left: 42.9%;
+  top: 71.9%;
+}
+
+#setbreakfast{
+  position: absolute;
+  width: 30%;
+  height: auto;
 }
 
 #gotoweb {
@@ -43,10 +75,12 @@
 
 body {
   background-color: var(--bgcolor);
+  background-image: url('https://cdn.pixabay.com/photo/2012/12/27/19/40/night-72871_960_720.jpg');
   overflow: hidden;
   
 }
 h1 {
+  padding-left: 80px;
   background-color: black;
   color: white;
 }
@@ -100,6 +134,7 @@ h1 {
 }
 h2{
   position: relative;
+  /*font-family: ssao;*/
   font-family: sans-serif;
   color: var(--text);
 }
@@ -138,6 +173,19 @@ h2{
 .lab{
  background-image: url("https://raw.githubusercontent.com/SSProgamer/ISS-Game-Project/main/images/LabCartoon.jpg");
   z-index:2;
+}
+.tutorial{
+  background: var(--labelcolor);
+  background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977235269814198282/how_to_play.jpg");
+  z-index:4;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.welcome{
+ background-image: url("https://cdn.discordapp.com/attachments/956540195652661348/977616662201245756/Multi_Design.jpg");
+  z-index:5;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 .minigame{
@@ -314,7 +362,13 @@ background: grey;
 }
 #breakfast_button_2{
   position: absolute;
-    z-index: 1;
+  z-index: -1;
+}
+#breakfast_button_3{
+  
+  position: absolute;
+  width:10%;
+  height:10%;
 }
  @keyframes moving {
 	from { left:10%; }
@@ -335,7 +389,7 @@ background: grey;
   width:100%;
   height:100%;
 }
-.robot_track{
+#robot_track{
   background:#794284;
   position: relative;
   left: 0%;
@@ -345,6 +399,7 @@ background: grey;
   padding: 10px;
   grid-gap: 5px;
   justify-items: center;
+  z-index: -5;
 }
 .robot_show{
  /* background:red;*/
@@ -422,55 +477,64 @@ background: grey;
   opacity:0.4;
   position: absolute;
   left: 0%;
-  top: 30%;
-  width: 20%;
-  height: 30%;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+  
 }
 
 #plantimg{
-  
-  position: absolute;
-  left: 0%;
-  top: 30%;
-  width: 20%;
-  height: 30%;
+  border: 15px solid #555;
+  position: relative;
+  left: 35%;
+  top: 70%;
+  width: 25%;
+  height: 25%;
 }
 
 button{
   background-color: var(--button);
   margin: 1vh;
+  padding: 1vh;
   position: absolute;
-  width: 10vw;
+/*   width: 10vw; */
   height: 10vh;
   color: white;
   font-size: 1.5vw;
   border-radius: 8px;
   box-shadow: 4px 4px white;
+  transition: all .5s;
 }
 button:hover{
+  transform: scale(1.1);
   cursor: pointer;
+  color: var(--text);
+  box-shadow: 8px 8px var(--text);
+  background: var(--labelcolor);
+
 }
 .right{
   top: 50%;
-  right: 0%;
+  right: 2%;
   font-size: 2vw;
 }
 .left{
   top: 50%;
-  left: 0%;
+  left: 2%;
   font-size: 2vw;
 }
 .top{
-  top: 0%;
+  top: 2%;
   right: 45%;
   font-size: 2vw;
 }
 .bottom{
-  margin-left: auto;
+  /*margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
-  bottom: 0%;
+  
+  right: 0;*/
+  left: 45%;
+  bottom: 2%;
 }
 /* .tacoinpic{
   position: relative;
@@ -482,13 +546,13 @@ button:hover{
 #cycling{
   margin: 0;
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: 40%;
 }
 #breakfast{
   margin: 0;
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 45%;
 }
 #lunch{
@@ -500,7 +564,7 @@ button:hover{
 #dinner{
   margin: 0;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 45%;
 }
 #robot{
@@ -642,23 +706,17 @@ sussy{
     width: 100px; }
 
 .box_02 {
-    height: 50vh;
-    width: 50vh;
-    left: 20vw;
+    height: 100%;
+    width: 100%;
+    left: 0%;
     position: relative;
-
 }
 .box_01 {
-    padding: 1px;
-    height: 35vh;
-    width:35vh;
-/*     background-color: white; */
-    z-index: 10;
-    top:10vh;
-    left:5vh;
-    position: relative;
-    margin:4vh auto;
-    display:flex;
+    height:30%;
+    width:20%;
+  position: relative;
+  display:flex;
+  left:30%;top:-15%;
 }
 
 .button_click{
@@ -696,6 +754,17 @@ img {
   height: 200px;
   object-fit: cover;
   width: 200px;
+  transition: all .5s;
+}
+
+.img_buttom:hover{
+  transform:scale(1.1);
+}
+
+.tt {
+  height: auto;
+  width: auto;
+  background: white;
 }
 
 #wallpaper{
@@ -754,8 +823,9 @@ img {
   opacity: 0.5;
 }
 .starto{
-  top: 31vw;
-  left: 11vw;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 .level{
   position: relative;
@@ -763,9 +833,9 @@ img {
   left:66%; */
 }
 .score{
-  position: absolute;
-  top:10%;
-  left:50%;
+  position: relative;
+  top:0%;
+  left:0%;
 }
 
 /* ต้นไม้*/
@@ -853,8 +923,8 @@ button.bck_tree{
   width: 200px;
   height: 120px;
   position: absolute;
-  top: 1%;
-  left:130%;
+  top: -2%;
+  left:10%;
 }
 
 #starplant img {
@@ -925,4 +995,29 @@ button.bck_tree{
 }
 #value_cycling{
   font-size: 2vw;
+}
+
+#peoplecy{
+  position: absolute;
+  right: 50.5%;
+  
+  width: 30%;
+  height: auto;
+}
+
+.endgamebox{
+  opacity: 1;
+  position: absolute;
+  text-align: center;
+  background-color: skyblue;
+  color: white;
+  width: 32vw;
+  height: 32vh;
+  z-index: -99;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 20%;
+  border-radius: 16px;
 }
