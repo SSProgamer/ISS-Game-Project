@@ -22,7 +22,6 @@ checktaco = 0
 checkdin = 0
 bluecyc = 0
 bluedin = 0
-// var allstar = 0
 var allstar1={
   x:0
   };
@@ -141,7 +140,7 @@ function tacoRandom(){
       wantsauce = "มัสตาร์ด";
       break;
   }
-  document.getElementById("showwanttaco").innerHTML = `<h3>เราต้องการทาโก้ใส่ ${wantvegetable}, ${wantmeat}, และราดด้วย ${wantsauce} </h3>`;
+  document.getElementById("showwanttaco").innerHTML = `<h3>เราต้องการทาโก้ใส่ <span class="Thai" style="color:lime">${wantvegetable}</span>, <span class="Thai" style="color:darkorange">${wantmeat}</span>, และราดด้วย<span class="Thai" style="color:khaki"> ${wantsauce} </span></h3>`;
 }
 
 function tacoChange(name) {
@@ -180,15 +179,14 @@ function serveTaco(){
   }
   if ( vegetable == wantvegetable && meat == wantmeat && sauce == wantsauce ){
     addstar(1);
-  document.getElementById("showtaco").innerHTML = `<p>ใช่! นั้นแหละทาโก้ที่เราต้องการ<p>`;
+  document.getElementById("showtaco").innerHTML = `<p style="color:lime">ใช่! นั้นแหละทาโก้ที่เราต้องการ<p>`;
   var img = document.createElement("img");
   img.src = "images\\Star.png";
   var src = document.getElementById("startaco");
   src.appendChild(img);
-  // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
   else{
-    document.getElementById("showtaco").innerHTML = `<p>ไม่ใช่ทาโก้แบบนั้นสิ!!!<p>`;
+    document.getElementById("showtaco").innerHTML = `<p style="color:red">ไม่ใช่ทาโก้แบบนั้นสิ!!!<p>`;
   }
   played += 1;
   if(played == 4){
@@ -216,8 +214,7 @@ var wantpart_4 = "robot_part_4"
 var wantpart_5 = "robot_part_5"
 function robotChange(name) {
   name_robot = ("robot_hand_"+ro);// เพิ่มตัวเลขและตำแหน่งที่แสดงจะเปลี่ยน
-  //name_robot_animation = ("robot_hand_"+(ro));
-  //document.getElementById(name_robot_animation).style.transform = "translateY(100px)";
+  
   ro++;
   
   if(ro > 5){
@@ -274,18 +271,17 @@ function serverobot(){
   console.log(check_robot_5);
   if ( check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5){
     addstar(3);
-  document.getElementById("showrobotsum").innerHTML = `<p>นี้สิหุ่นยนต์ของ ISS</p>`;
+  document.getElementById("showrobotsum").innerHTML = `<p style="color:lime">นี้สิหุ่นยนต์ของ ISS</p>`;
   for (let i = 0; i < 3; i++) {
       var img = document.createElement("img");
       img.src = "images\\Star.png";
       var src = document.getElementById("starrobot");
       src.appendChild(img);
     }
-  // document.getElementById("startaco").innerHTML = `Star : 3`;
   }
     else if ( (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_4 == wantpart_4) || (check_robot_1 == wantpart_1 && check_robot_2 == wantpart_2 && check_robot_5 == wantpart_5) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4) || (check_robot_2 == wantpart_2 && check_robot_3 == wantpart_3 && check_robot_5 == wantpart_5)|| (check_robot_3 == wantpart_3 && check_robot_4 == wantpart_4 && check_robot_5 == wantpart_5)){
       addstar(2);
-      document.getElementById("showrobotsum").innerHTML = `<p>หน้าตาเกือบเหมือนหุ่นยนต์ ISS</p>`;
+      document.getElementById("showrobotsum").innerHTML = `<p style="color:yellow">หน้าตาเกือบเหมือนหุ่นยนต์ ISS</p>`;
     for (let i = 0; i < 2; i++) {
       var img = document.createElement("img");
       img.src = "images\\Star.png";
@@ -296,7 +292,7 @@ function serverobot(){
   }
   else if ( check_robot_1 == wantpart_1 || check_robot_2 == wantpart_2 || check_robot_3 == wantpart_3 || check_robot_4 == wantpart_4|| check_robot_5 == wantpart_5){
     addstar(1);
-    document.getElementById("showrobotsum").innerHTML = `<p>หน้าตาไม่เหมือนหุ่นยนต์ ISS เลย</p>`;
+    document.getElementById("showrobotsum").innerHTML = `<p style="color:orange">หน้าตาไม่เหมือนหุ่นยนต์ ISS เลย</p>`;
     var img = document.createElement("img");
     img.src = "images\\Star.png";
     var src = document.getElementById("starrobot");
@@ -304,7 +300,7 @@ function serverobot(){
   }
   
   else{
-    document.getElementById("showrobotsum").innerHTML = `<p>นี้มันตัวอะไร</p>`;
+    document.getElementById("showrobotsum").innerHTML = `<p style="color:red">นี้มันตัวอะไร</p>`;
   }
   played += 1;
   if(played == 2){
@@ -383,14 +379,7 @@ function decstar(){
   }
 }
 
-// //reset
-// const reloadtButton = document.querySelector("#reload");
-// // Reload everything:
-// function reload() {
-//     reload = location.reload();
-// }
-// // Event listeners for reload
-// reloadButton.addEventListener("click", reload, false);
+
 
 function fun(){  
    document.getElementByClass("minigame lunch").reset();  
@@ -611,8 +600,6 @@ var game={
 			that.flash($(that.shape+corPad),4,300,corPad);
 		},500);
     $('.level h2').text('Level: END');
-		//$('.start').show();				
-	
 
 	}
 
@@ -649,10 +636,8 @@ document.querySelector("#pause").addEventListener('click', function() {
 	document.querySelector("#breakfast_oval").style.animationPlayState = 'paused';
   if (elementsOverlap(el1, el3)){
     document.getElementById("microwave").src = egg_cook["egg_welldone"];
-   // document.getElementById("breakfast_img_welldone").style.zIndex = `10`;
       document.getElementById("breakfast_win_text").innerHTML = "";
       addstar(3);
-      //document.getElementById("showallstar").stepUp();
       for (let i = 0; i < 3; i++) {
         var img = document.createElement("img");
         img.src = "images\\Star.png";
@@ -672,7 +657,6 @@ document.querySelector("#pause").addEventListener('click', function() {
       document.getElementById("microwave").src = egg_cook["egg_raw"];
         document.getElementById("breakfast_win_text").innerHTML = "";
       addstar(2);
-      //document.getElementById("showallstar").stepUp();
       for (let i = 0; i < 2; i++) {
         var img = document.createElement("img");
         img.src = "images\\Star.png";
@@ -692,7 +676,6 @@ document.querySelector("#pause").addEventListener('click', function() {
       document.getElementById("microwave").src = egg_cook["egg_burn"];
       document.getElementById("breakfast_win_text").innerHTML = "";
       addstar(1);
-      //document.getElementById("showallstar").stepUp();
       var img = document.createElement("img");
       img.src = "images\\Star.png";
       var src = document.getElementById("breakfast_win_text");
